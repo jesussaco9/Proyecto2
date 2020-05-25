@@ -12,5 +12,4 @@ public:
 	CampoAbstracto() {}
 	virtual ~CampoAbstracto() {}
 	virtual string getCodigo() = 0;
-
 };
