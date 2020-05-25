@@ -138,10 +138,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CampoNuevePuntos.cpp" />
+    <ClCompile Include="CampoQuincePuntos.cpp" />
+    <ClCompile Include="CampoResultante.cpp" />
+    <ClCompile Include="CampoSeisPuntos.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CampoAbstracto.h" />
+    <ClInclude Include="CampoNuevePuntos.h" />
+    <ClInclude Include="CampoQuincePuntos.h" />
+    <ClInclude Include="CampoResultante.h" />
+    <ClInclude Include="CampoSeisPuntos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-class CampoAbstracto {
+class CampoAbstracto {//  <<Abstrac>>
 
 public:
 	CampoAbstracto() {}
