@@ -1,6 +1,6 @@
 #include "ContenedorM.h"
 
-ContenedorM::ContenedorM(/*int fil, int col*/){
+ContenedorM::ContenedorM(){
 	fil = 5;
 	col = 5;
 	mat = new string * [fil];
@@ -15,11 +15,11 @@ ContenedorM::ContenedorM(/*int fil, int col*/){
 }
 
 ContenedorM::~ContenedorM(){
-	/*for (int i = 0; i < fil; i++) {
+	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			delete mat[i][j];
+			delete mat[i];
 		}
-	}*/
+	}
 	for (int i = 0; i < fil; i++) {
 		delete[] mat[i];
 	}
@@ -31,10 +31,11 @@ string ContenedorM::toStirng() const{
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			s << "  .  ";
+			
 		}
 		s << endl;
 	}
-	s << endl; s << endl;
+	s << endl;
 	return s.str();
 }
 

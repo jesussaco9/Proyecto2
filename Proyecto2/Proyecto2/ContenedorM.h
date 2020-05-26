@@ -10,7 +10,7 @@ private:
 	int col;
 	//int separador;//Siguiendo el UML del profe
 public:
-	ContenedorM(/*int fil = 0, int col = 0*/);
+	ContenedorM();
 	virtual ~ContenedorM();
 	string toStirng() const;
 	void ingresaPunto(int, int,bool);//Siguiendo el UML del profe

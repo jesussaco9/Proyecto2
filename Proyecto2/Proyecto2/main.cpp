@@ -9,11 +9,11 @@ using namespace std;
 
 
 int main() {
-	CampoAbstracto* ca = new CampoNuevePuntos("A2");
-	//cout << ca->getCodigo() << endl;
-	CampoNuevePuntos* cnp = new CampoNuevePuntos("CampoNuevePuntos");
-	//cout << cnp->getCodigo() << endl;
-	ContenedorM* m = new ContenedorM(/*5, 5*/);
+	//CampoAbstracto* ca = new CampoNuevePuntos("A2");
+	////cout << ca->getCodigo() << endl;
+	//CampoNuevePuntos* cnp = new CampoNuevePuntos("CampoNuevePuntos");
+	////cout << cnp->getCodigo() << endl;
+	ContenedorM* m = new ContenedorM();
 	cout << m->toStirng();
 
 	system("pause");
