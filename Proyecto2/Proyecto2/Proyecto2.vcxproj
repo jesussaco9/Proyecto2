@@ -145,6 +145,7 @@
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Vista.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CampoAbstracto.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="CampoSeisPuntos.h" />
     <ClInclude Include="ContenedorM.h" />
     <ClInclude Include="ContenedorV.h" />
+    <ClInclude Include="Vista.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
