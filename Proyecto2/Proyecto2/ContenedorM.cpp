@@ -1,4 +1,4 @@
-#include "ContenedorM.h"
+﻿#include "ContenedorM.h"
 
 ContenedorM::ContenedorM(){
 	fil = 5;
@@ -28,7 +28,14 @@ ContenedorM::~ContenedorM(){
 
 string ContenedorM::toStirng() const{
 	stringstream s;
+	s<< " ===================================================\n";
+	for (int j = 0; j < col; j++) {
+		s << "   "; s<<j+1; s << " ";
+	}
+	s << endl;
 	for (int i = 0; i < fil; i++) {
+		
+		s << i+1;
 		for (int j = 0; j < col; j++) {
 			s << "  O  ";
 			
@@ -36,7 +43,9 @@ string ContenedorM::toStirng() const{
 		s << endl;
 	}
 	s << endl;
+	s << " ===================================================\n";
 	return s.str();
+
 }
 
 void ContenedorM::ingresaPunto(int, int, bool){
