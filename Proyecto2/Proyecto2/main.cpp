@@ -13,8 +13,9 @@ int main() {
 	////cout << ca->getCodigo() << endl;
 	//CampoNuevePuntos* cnp = new CampoNuevePuntos("CampoNuevePuntos");
 	////cout << cnp->getCodigo() << endl;
-	ContenedorM* m = new ContenedorM();
-	cout << m->toStirng();
+	int a = 10, b = 10;
+	ContenedorM* m = new ContenedorM(a,b);
+	cout<<m->toStirng();
 
 	system("pause");
 	return 0;

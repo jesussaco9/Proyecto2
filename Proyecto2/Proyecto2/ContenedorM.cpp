@@ -1,15 +1,15 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(){
-	fil = 5;
-	col = 5;
-	mat = new string * [fil];
+ContenedorM::ContenedorM(int fila,int colu){
+	fil = fila;
+	col = colu;
+	mat = new string ** [fil];
 	for (int i = 0; i < fil; i++) {
-		mat[i] = new string[col];
+		mat[i] = new string*[col];
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			mat[i][j] = " ";
+			mat[i][j] = NULL;
 		}
 	}
 }
@@ -17,7 +17,7 @@ ContenedorM::ContenedorM(){
 ContenedorM::~ContenedorM(){
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			delete mat[i];
+			delete mat[i][j];
 		}
 	}
 	for (int i = 0; i < fil; i++) {
@@ -28,24 +28,29 @@ ContenedorM::~ContenedorM(){
 
 string ContenedorM::toStirng() const{
 	stringstream s;
-	s<< " ===================================================\n";
+	s <<"===================================================\n";
 	for (int j = 0; j < col; j++) {
-		s << "   "; s<<j+1; s << " ";
+		s << "    "; s <<j+1; cout << " ";
 	}
 	s << endl;
 	for (int i = 0; i < fil; i++) {
-		
-		s << i+1;
-		for (int j = 0; j < col; j++) {
-			s << "  O  ";
-			
+		if ((i + 1) < 10) {
+			s <<" "<< i + 1;
+			for (int j = 0; j < col; j++) {
+				s << "  O  ";
+			}
+		}
+		else{
+			s << i + 1;
+			for (int j = 0; j < col; j++) {
+				s << "  O  ";
+			}
 		}
 		s << endl;
 	}
 	s << endl;
 	s << " ===================================================\n";
 	return s.str();
-
 }
 
 void ContenedorM::ingresaPunto(int, int, bool){
