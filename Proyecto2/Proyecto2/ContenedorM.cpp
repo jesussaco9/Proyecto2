@@ -30,7 +30,7 @@ string ContenedorM::toStirng() const{
 	stringstream s;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			s << "  .  ";
+			s << "  O  ";
 			
 		}
 		s << endl;
