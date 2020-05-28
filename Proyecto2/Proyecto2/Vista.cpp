@@ -1,4 +1,8 @@
 #include "Vista.h"
-void Vista::menuPrincipal{
+
+
+
+
+void Vista::menuPrincipal(){
 	cout << "Hola Jesus";
 }

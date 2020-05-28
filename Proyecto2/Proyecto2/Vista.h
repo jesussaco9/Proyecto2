@@ -1,6 +1,8 @@
 #pragma once
-class Vista
-{
+#include <iostream>
+using namespace std;
+
+class Vista{
 public:
 	void menuPrincipal();
 };
