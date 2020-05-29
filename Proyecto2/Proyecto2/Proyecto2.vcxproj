@@ -138,23 +138,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aleatorio.cpp" />
     <ClCompile Include="CampoNuevePuntos.cpp" />
     <ClCompile Include="CampoQuincePuntos.cpp" />
     <ClCompile Include="CampoResultante.cpp" />
     <ClCompile Include="CampoSeisPuntos.cpp" />
+    <ClCompile Include="Central.cpp" />
+    <ClCompile Include="Cercano.cpp" />
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
+    <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="Islas.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Periferico.cpp" />
     <ClCompile Include="Vista.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aleatorio.h" />
     <ClInclude Include="CampoAbstracto.h" />
     <ClInclude Include="CampoNuevePuntos.h" />
     <ClInclude Include="CampoQuincePuntos.h" />
     <ClInclude Include="CampoResultante.h" />
     <ClInclude Include="CampoSeisPuntos.h" />
+    <ClInclude Include="Central.h" />
+    <ClInclude Include="Cercano.h" />
     <ClInclude Include="ContenedorM.h" />
     <ClInclude Include="ContenedorV.h" />
+    <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="Islas.h" />
+    <ClInclude Include="Periferico.h" />
     <ClInclude Include="Vista.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
