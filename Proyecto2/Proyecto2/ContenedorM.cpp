@@ -46,7 +46,7 @@ string ContenedorM::toStirng() const{
 				s << "  O  ";
 			}
 		}
-		s << endl;
+		s << endl << endl;
 	}
 	s << endl;
 	s << " ===================================================\n";

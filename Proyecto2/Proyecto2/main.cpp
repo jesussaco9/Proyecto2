@@ -13,7 +13,7 @@ int main() {
 	////cout << ca->getCodigo() << endl;
 	//CampoNuevePuntos* cnp = new CampoNuevePuntos("CampoNuevePuntos");
 	////cout << cnp->getCodigo() << endl;
-	int a = 15, b = 15;
+	int a = 10, b = 10;
 	ContenedorM* m = new ContenedorM(a,b);
 	cout<<m->toStirng();
 
