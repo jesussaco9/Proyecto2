@@ -1,7 +1,9 @@
 #include "CampoResultante.h"
 
-CampoResultante::CampoResultante(string codigo)
-	:CampoAbstracto(),codigo(codigo){
+CampoResultante::CampoResultante()
+	:CampoAbstracto(){
+	codigo = "";
+	vector = new ContenedorV;
 }
 
 CampoResultante::~CampoResultante(){
@@ -12,11 +14,10 @@ string CampoResultante::getCodigo(){
 }
 
 
-void CampoResultante::ingresaCampo(CampoAbstracto*)
-{
+void CampoResultante::ingresaCampo(CampoAbstracto* obj){
+	vector->agregaCampo(obj);
 }
 
-ContenedorV* CampoResultante::retornaContenedor()
-{
-	return nullptr;
+ContenedorV* CampoResultante::retornaContenedor(){
+	return vector;
 }

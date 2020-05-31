@@ -1,12 +1,11 @@
 #include "Vista.h"
 
 
-void Vista::limpiaPantalla()
-{
+void Vista::limpiaPantalla(){
 	system("cls");
 }
-int Vista::opcion()
-{
+
+int Vista::opcion(){
 	int n;
 	while (true) {
 		if (cin >> n) {

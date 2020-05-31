@@ -1,8 +1,8 @@
 #include "ContenedorV.h"
 
-ContenedorV::ContenedorV(int tam){
+ContenedorV::ContenedorV(){
 	can = 0;
-	tam = tam;
+	tam = 20;
 	vec = new CampoAbstracto * [tam];
 	for (int i = 0; i < tam; i++) {
 		vec[i] = NULL;
@@ -30,6 +30,9 @@ int ContenedorV::getTamano(){
 	return tam;
 }
 
-CampoAbstracto** ContenedorV::getCampoAbstracto(){
-	return vec;
+CampoAbstracto* ContenedorV::getCampoAbstracto(int pos){
+	if (pos >= 0 && pos < can) {
+		return vec[pos];
+	}
+	return NULL;
 }

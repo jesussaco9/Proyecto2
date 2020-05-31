@@ -6,9 +6,10 @@ class CampoQuincePuntos: public CampoAbstracto{
 private:
 	string codigo;
 public:
-	CampoQuincePuntos(string codigo ="");
+	CampoQuincePuntos();
 	virtual ~CampoQuincePuntos();
 	string getCodigo();
+	void ingresaCampo(CampoAbstracto*);
 };
 
 

@@ -4,18 +4,28 @@
 #include "CampoResultante.h"
 #include "CampoSeisPuntos.h"
 #include "ContenedorM.h"
-
+#include "ProcesaCompuesto.h"
 using namespace std;
 
 
 int main() {
-	//CampoAbstracto* ca = new CampoNuevePuntos("A2");
-	////cout << ca->getCodigo() << endl;
-	//CampoNuevePuntos* cnp = new CampoNuevePuntos("CampoNuevePuntos");
-	////cout << cnp->getCodigo() << endl;
 	int a = 10, b = 10;
-	ContenedorM* m = new ContenedorM(a,b);
-	cout<<m->toStirng();
+	CampoAbstracto* resul = new CampoResultante();
+	ContenedorV* vec = new ContenedorV();
+	CampoAbstracto* cSeis = new CampoSeisPuntos();
+	CampoAbstracto* cNueve = new CampoNuevePuntos();
+	CampoAbstracto* cQuince = new CampoQuincePuntos();
+
+	/*resul->ingresaCampo(cSeis);
+	resul->ingresaCampo(cNueve);
+	resul->ingresaCampo(cQuince);*/
+	vec->agregaCampo(cSeis);
+	vec->agregaCampo(cNueve);
+	vec->agregaCampo(cQuince);
+	ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
+	comp->pasaInfoVecMatriz();
+	comp->muestraFinal();
+
 
 	system("pause");
 	return 0;

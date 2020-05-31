@@ -1,8 +1,9 @@
 
 #include <iostream>
 #include <sstream>
-#include"Controladora.h"
+
 using namespace std;
+
 class Vista{
 
 public:

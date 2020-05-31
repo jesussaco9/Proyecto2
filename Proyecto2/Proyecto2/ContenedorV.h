@@ -7,11 +7,11 @@ private:
 	int tam;
 	CampoAbstracto** vec;
 public:
-	ContenedorV(int tam);
+	ContenedorV();
 	virtual ~ContenedorV();
 	void agregaCampo(CampoAbstracto*);
 	int getCantidad();
 	int getTamano();
-	CampoAbstracto** getCampoAbstracto();
+	CampoAbstracto* getCampoAbstracto(int);
 };
 

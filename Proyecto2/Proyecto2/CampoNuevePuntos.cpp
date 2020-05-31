@@ -1,7 +1,8 @@
 #include "CampoNuevePuntos.h"
 
-CampoNuevePuntos::CampoNuevePuntos(string codigo)
-:CampoAbstracto(),codigo(codigo){
+CampoNuevePuntos::CampoNuevePuntos()
+:CampoAbstracto(){
+	codigo = "class CampoNuevePuntos";
 }
 
 CampoNuevePuntos::~CampoNuevePuntos(){
@@ -9,4 +10,7 @@ CampoNuevePuntos::~CampoNuevePuntos(){
 
 string CampoNuevePuntos::getCodigo(){
 	return codigo;
+}
+
+void CampoNuevePuntos::ingresaCampo(CampoAbstracto*){
 }

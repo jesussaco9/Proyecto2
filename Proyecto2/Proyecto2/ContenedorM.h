@@ -11,12 +11,14 @@ private:
 	int col;
 	//int separador;//Siguiendo el UML del profe
 public:
-	ContenedorM(int fil,int col);
+	ContenedorM(int,int);
 	virtual ~ContenedorM();
 	string toStirng() const;
 	void ingresaPunto(int, int,bool);//Siguiendo el UML del profe
 	int getFila();
 	int getColumna();
+	void setFila(int);
+	void setCol(int);
 	//int getSeparador();
 };
 

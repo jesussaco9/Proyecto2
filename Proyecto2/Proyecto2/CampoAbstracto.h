@@ -12,4 +12,5 @@ public:
 	CampoAbstracto() {}
 	virtual ~CampoAbstracto() {}
 	virtual string getCodigo() = 0;
+	virtual void ingresaCampo(CampoAbstracto*)=0;
 };

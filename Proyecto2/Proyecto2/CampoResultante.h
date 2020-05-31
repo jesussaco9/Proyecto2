@@ -5,9 +5,9 @@
 class CampoResultante:public CampoAbstracto{
 private:
 	string codigo;
-	ContenedorV* ConPtr;
+	ContenedorV* vector;
 public:
-	CampoResultante(string codigo="" );
+	CampoResultante();
 	virtual ~CampoResultante();
 	string getCodigo();
 	void ingresaCampo(CampoAbstracto*);
