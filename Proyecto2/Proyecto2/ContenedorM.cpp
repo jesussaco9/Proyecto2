@@ -39,16 +39,16 @@ string ContenedorM::toStirng() const{
 		if ((i + 1) < 10) {
 			s <<" "<< i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  O  ";
+				s << "  0  ";
 			}
 		}
 		else{
 			s << i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  O  ";
+				s << "  0  ";
 			}
 		}
-		s << endl;
+		s << endl << endl;
 	}
 	/*s << endl;*/
 	s << "===================================================\n";
