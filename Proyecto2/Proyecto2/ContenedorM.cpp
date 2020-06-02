@@ -3,6 +3,7 @@
 ContenedorM::ContenedorM(int f,int c){
 	fil = f;
 	col = c;
+	separador = "  ";
 	mat = new string ** [fil];
 	for (int i = 0; i < fil; i++) {
 		mat[i] = new string*[col];
@@ -39,13 +40,13 @@ string ContenedorM::toStirng() const{
 		if ((i + 1) < 10) {
 			s <<" "<< i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  0  ";
+				s << "  +"<<separador;
 			}
 		}
 		else{
 			s << i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  0  ";
+				s << "  +"<<separador;
 			}
 		}
 		s << endl << endl;
@@ -55,7 +56,7 @@ string ContenedorM::toStirng() const{
 	return s.str();
 }
 
-void ContenedorM::ingresaPunto(int, int, bool){
+void ContenedorM::ingresaPunto(int n, int, bool){
 
 }
 
@@ -75,7 +76,11 @@ void ContenedorM::setCol(int col){
 	this->col = col;
 }
 
-//int ContenedorM::getSeparador()
-//{
-//	return 0;
-//}
+string ContenedorM::getSeparador(){
+	return separador;
+}
+
+void ContenedorM::setSeparador(string sepa){
+	this->separador = sepa;
+}
+

@@ -6,7 +6,7 @@ ProcesaCompuesto::ProcesaCompuesto(ContenedorV*  vec){
 	/*fil = 0;
 	col = 0;*/
 	matriz = new ContenedorM(fil,col);
-	separador = 0;
+	separador = "   ";
 }
 
 ProcesaCompuesto::~ProcesaCompuesto()
@@ -35,8 +35,8 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 		if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
 			//setFilas(5);
 			//setCol(3);
-			varFil = 5;
-			varCol = varCol + 3;
+			varFil = 3;
+			varCol = varCol + 5;
 		}
 	}
 	setFilas(varFil);
@@ -55,7 +55,10 @@ void ProcesaCompuesto::muestraFinal(){
 	cout<<matriz->toStirng()<<endl;
 }
 
-ContenedorM* ProcesaCompuesto::getContenidoMatriz()
-{
+void ProcesaCompuesto::setSeparador(string separador){
+	matriz->setSeparador(separador);
+}
+
+ContenedorM* ProcesaCompuesto::getContenidoMatriz(){
 	return nullptr;
 }

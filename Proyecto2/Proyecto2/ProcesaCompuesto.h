@@ -7,7 +7,7 @@ private:
 	ContenedorM* matriz;
 	ContenedorV* vector;
 	int fil, col;
-	int separador;
+	string separador;
 public:
 	ProcesaCompuesto(ContenedorV*);
 	virtual ~ProcesaCompuesto();
@@ -15,6 +15,7 @@ public:
 	void setFilas(int);
 	void setCol(int);
 	void muestraFinal();
+	void setSeparador(string);
 	ContenedorM* getContenidoMatriz();
 };
 

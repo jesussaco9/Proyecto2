@@ -9,7 +9,7 @@ private:
 	string*** mat;//Siguiendo el UML del profe
 	int fil;
 	int col;
-	//int separador;//Siguiendo el UML del profe
+	string separador;//Siguiendo el UML del profe
 public:
 	ContenedorM(int,int);
 	virtual ~ContenedorM();
@@ -19,6 +19,7 @@ public:
 	int getColumna();
 	void setFila(int);
 	void setCol(int);
-	//int getSeparador();
+	string getSeparador();
+	void setSeparador(string);
 };
 

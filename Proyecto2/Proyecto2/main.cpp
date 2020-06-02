@@ -25,7 +25,8 @@ int main() {
 	ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
 	comp->pasaInfoVecMatriz();
 	comp->muestraFinal();
-
+	comp->setSeparador("--");
+	comp->muestraFinal();
 
 	system("pause");
 	return 0;
