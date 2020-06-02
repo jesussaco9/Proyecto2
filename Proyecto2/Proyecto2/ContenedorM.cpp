@@ -1,8 +1,8 @@
 ﻿#include "ContenedorM.h"
 
 ContenedorM::ContenedorM(int f,int c){
-	fil = f;
-	col = c;
+	fil = f +2;
+	col = c +2;
 	separador = "  ";
 	mat = new string ** [fil];
 	for (int i = 0; i < fil; i++) {
@@ -31,6 +31,7 @@ string ContenedorM::toStirng() const{
 	stringstream s;
 	s <<"===================================================\n";
 	s << "\t\tColumnas\n";
+	
 	for (int j = 0; j < col; j++) {
 		s << "    "; s <<j+1; /*cout << " ";*/
 	}

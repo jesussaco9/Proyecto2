@@ -26,13 +26,13 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 			varFil = 3;
 			varCol = varCol + 2;
 		}
-		if (tipo2 == typeid(*vector->getCampoAbstracto(i)).name()) {
+		else if (tipo2 == typeid(*vector->getCampoAbstracto(i)).name()) {
 			//setFilas(3);
 			//setCol(3);
 			varFil = 3;
 			varCol = varCol + 3;
 		}
-		if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
+		else if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
 			//setFilas(5);
 			//setCol(3);
 			varFil = 3;

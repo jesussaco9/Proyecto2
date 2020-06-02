@@ -20,13 +20,13 @@ int main() {
 	resul->ingresaCampo(cNueve);
 	resul->ingresaCampo(cQuince);*/
 	vec->agregaCampo(cSeis);
-	vec->agregaCampo(cNueve);
-	vec->agregaCampo(cQuince);
+	//vec->agregaCampo(cNueve);
+	//vec->agregaCampo(cQuince);
 	ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
 	comp->pasaInfoVecMatriz();
 	comp->muestraFinal();
-	comp->setSeparador("--");
-	comp->muestraFinal();
+	//comp->setSeparador("--");
+	//comp->muestraFinal();
 
 	system("pause");
 	return 0;
