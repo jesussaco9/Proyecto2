@@ -145,6 +145,7 @@
     <ClCompile Include="CampoSeisPuntos.cpp" />
     <ClCompile Include="Central.cpp" />
     <ClCompile Include="Cercano.cpp" />
+    <ClCompile Include="Conexion.cpp" />
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
     <ClCompile Include="main.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="CampoSeisPuntos.h" />
     <ClInclude Include="Central.h" />
     <ClInclude Include="Cercano.h" />
+    <ClInclude Include="Conexion.h" />
     <ClInclude Include="ContenedorM.h" />
     <ClInclude Include="ContenedorV.h" />
     <ClInclude Include="ProcesaCompuesto.h" />

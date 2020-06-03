@@ -54,9 +54,41 @@ int Vista::menuMatriz()
 	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
 	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
-	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
+	cout << "\t\t3. Matriz(15 ptos) 3x5\n";
 	cout << "\t\t4. Matriz mixta\n";
 	cout << "\t\t5. Regresar\n";
+	cout << "===================================================\n";
+	cout << "\t\tDigite la opcion:\n";
+	cout << "\t\t-> "; return opcion();
+	system("cls");
+}
+
+int Vista::menuMatrizMixto()
+{
+	limpiaPantalla();
+	cout << "===================================================\n";
+	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
+	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
+	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
+	cout << "\t\t3. Matriz(15 ptos) 3x5\n";
+	cout << "\t\t4. Crear\n";
+	cout << "===================================================\n";
+	cout << "\t\tDigite la opcion:\n";
+	cout << "\t\t-> "; return opcion();
+	system("cls");
+}
+
+int Vista::menuModoJuego()
+{
+	limpiaPantalla();
+	cout << "===================================================\n";
+	cout << "\t\tSeleccione el modo de juego que desea:\n";
+	cout << "\t\t1. Juego Aleatorio \n";
+	cout << "\t\t2. Juego Cercano\n";
+	cout << "\t\t3. Juego Periferico\n";
+	cout << "\t\t4. Juego Central\n";
+	cout << "\t\t5. Juego Islas\n";
+	cout << "\t\t6. Salir";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
 	cout << "\t\t-> "; return opcion();

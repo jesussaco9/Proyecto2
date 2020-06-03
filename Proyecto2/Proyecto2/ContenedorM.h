@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 using namespace std;
+#include"Conexion.h"
 
 class ContenedorM{
 private:
@@ -14,7 +15,7 @@ public:
 	ContenedorM(int,int);
 	virtual ~ContenedorM();
 	string toStirng() const;
-	void ingresaPunto(int, int,bool);//Siguiendo el UML del profe
+	void ingresaPunto(int, int,Conexion*);//Siguiendo el UML del profe
 	int getFila();
 	int getColumna();
 	void setFila(int);

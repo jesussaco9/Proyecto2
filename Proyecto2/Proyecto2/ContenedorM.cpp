@@ -29,35 +29,57 @@ ContenedorM::~ContenedorM(){
 
 string ContenedorM::toStirng() const{
 	stringstream s;
-	s <<"===================================================\n";
-	s << "\t\tColumnas\n";
+	cout <<"===================================================\n";
+	cout << "\t\tColumnas\n";
 	
 	for (int j = 0; j < col; j++) {
-		s << "    "; s <<j+1; /*cout << " ";*/
+		cout << "    "; cout <<j+1;
 	}
-	s << endl;
+	cout << endl;
 	for (int i = 0; i < fil; i++) {
 
 		if ((i + 1) < 10) {
-			s <<" "<< i + 1;
+			cout <<" "<< i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  +"<<separador;
+		
+				if (i % 2 == 0 && j % 2 == 1) {
+					cout << "  +" << separador;
+					if (j % 2 == 0) {
+						cout << "  +" << separador;
+
+					}
+					else {
+						cout << "   " << separador;
+					}
+				}
+				
 			}
+			
 		}
 		else{
-			s << i + 1;
+			cout << i + 1;
 			for (int j = 0; j < col; j++) {
-				s << "  +"<<separador;
+				
+				if (i % 2 == 0 && j % 2 == 1) {
+					cout << "  +" << separador;
+					if (j % 2 == 0) {
+						cout << "  +" << separador;
+
+					}
+					else {
+						cout << "   " << separador;
+					}
+				}
 			}
 		}
-		s << endl << endl;
+		cout << endl << endl;
 	}
-	/*s << endl;*/
-	s << "===================================================\n";
+
+	cout << "===================================================\n";
 	return s.str();
 }
 
-void ContenedorM::ingresaPunto(int n, int, bool){
+void ContenedorM::ingresaPunto(int n, int, Conexion*){
 
 }
 

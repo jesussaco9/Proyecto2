@@ -5,6 +5,7 @@
 #include "CampoSeisPuntos.h"
 #include "ContenedorM.h"
 #include "ProcesaCompuesto.h"
+#include"Conexion.h"
 using namespace std;
 
 
@@ -27,6 +28,12 @@ int main() {
 	comp->muestraFinal();
 	//comp->setSeparador("--");
 	//comp->muestraFinal();
+	/*int a = 0,b=1;
+	Conexion* c1 = new Conexion();
+	c1->setPosicionX(a);
+	c1->setPosicionY(b);*/
+	
+	/*cout << c1->toString()[2];*/
 
 	system("pause");
 	return 0;

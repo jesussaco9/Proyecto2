@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <sstream>
 
@@ -12,5 +11,7 @@ public:
 	static int menuPrincipal();
 	static int menuModalidad();
 	static int menuMatriz();
+	static int menuMatrizMixto();
+	static int menuModoJuego();
 };
 
