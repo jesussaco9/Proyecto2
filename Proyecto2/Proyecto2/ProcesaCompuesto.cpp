@@ -2,15 +2,17 @@
 
 ProcesaCompuesto::ProcesaCompuesto(ContenedorV*  vec){
 	vector = vec;
+	cantidadM = 0;
 	pasaInfoVecMatriz();
 	/*fil = 0;
 	col = 0;*/
-	matriz = new ContenedorM(fil,col);
+
+	matriz = new ContenedorM(fil,col,cantidadM);
 	separador = "   ";
 }
 
-ProcesaCompuesto::~ProcesaCompuesto()
-{
+ProcesaCompuesto::~ProcesaCompuesto(){
+
 }
 
 void ProcesaCompuesto::pasaInfoVecMatriz(){
@@ -19,7 +21,8 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 	string tipo3 = "class CampoQuincePuntos";
 	int varFil =0;
 	int varCol = 0;
-	for (int i = 0; i < vector->getCantidad(); i++) {
+	int cantM = vector->getCantidad();
+	for (int i = 0; i < cantM; i++) {
 		if (tipo == typeid(*vector->getCampoAbstracto(i)).name()) {
 			//setFilas(3);
 			//setCol(2);
@@ -41,6 +44,7 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 	}
 	setFilas(varFil);
 	setCol(varCol);
+	setCanMatriz(cantM);
 }
 
 void ProcesaCompuesto::setFilas(int fil){
@@ -49,6 +53,10 @@ void ProcesaCompuesto::setFilas(int fil){
 
 void ProcesaCompuesto::setCol(int col){
 	this->col = col;
+}
+
+void ProcesaCompuesto::setCanMatriz(int cantidadM){
+	this->cantidadM = cantidadM;
 }
 
 void ProcesaCompuesto::muestraFinal(){

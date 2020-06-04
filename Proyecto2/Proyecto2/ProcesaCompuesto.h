@@ -6,7 +6,7 @@ class ProcesaCompuesto{
 private:
 	ContenedorM* matriz;
 	ContenedorV* vector;
-	int fil, col;
+	int fil, col,cantidadM;
 	string separador;
 public:
 	ProcesaCompuesto(ContenedorV*);
@@ -14,6 +14,7 @@ public:
 	void pasaInfoVecMatriz();
 	void setFilas(int);
 	void setCol(int);
+	void setCanMatriz(int);
 	void muestraFinal();
 	void setSeparador(string);
 	ContenedorM* getContenidoMatriz();
