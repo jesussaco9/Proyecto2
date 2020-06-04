@@ -148,6 +148,7 @@
     <ClCompile Include="Conexion.cpp" />
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
+    <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Periferico.cpp" />
     <ClCompile Include="ProcesaCompuesto.cpp" />
