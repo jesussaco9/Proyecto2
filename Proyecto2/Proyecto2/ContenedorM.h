@@ -11,8 +11,9 @@ private:
 	int fil;
 	int col;
 	string separador;//Siguiendo el UML del profe
+	int cantidadM;
 public:
-	ContenedorM(int,int);
+	ContenedorM(int,int,int);
 	virtual ~ContenedorM();
 	string toStirng() const;
 	void ingresaPunto(int, int,Conexion*);//Siguiendo el UML del profe

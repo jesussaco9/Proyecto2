@@ -17,23 +17,17 @@ int main() {
 	CampoAbstracto* cNueve = new CampoNuevePuntos();
 	CampoAbstracto* cQuince = new CampoQuincePuntos();
 
-	/*resul->ingresaCampo(cSeis);
+	resul->ingresaCampo(cSeis);
 	resul->ingresaCampo(cNueve);
-	resul->ingresaCampo(cQuince);*/
+	resul->ingresaCampo(cQuince);
 	vec->agregaCampo(cSeis);
 	vec->agregaCampo(cNueve);
-	vec->agregaCampo(cQuince);
+	//vec->agregaCampo(cQuince);
 	ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
 	comp->pasaInfoVecMatriz();
 	comp->muestraFinal();
-	//comp->setSeparador("--");
-	//comp->muestraFinal();
-	/*int a = 0,b=1;
-	Conexion* c1 = new Conexion();
-	c1->setPosicionX(a);
-	c1->setPosicionY(b);*/
 	
-	/*cout << c1->toString()[2];*/
+
 
 	system("pause");
 	return 0;

@@ -1,8 +1,8 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(int f,int c){
-	fil = f +2;
-	col = c +2;
+ContenedorM::ContenedorM(int f,int c,int cM){
+	fil = f + 2;
+	col = c + (cM*3);
 	separador = "  ";
 	mat = new string ** [fil];
 	for (int i = 0; i < fil; i++) {
