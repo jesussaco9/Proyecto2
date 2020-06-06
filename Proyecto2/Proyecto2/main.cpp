@@ -14,15 +14,17 @@ int main() {
 	CampoAbstracto* resul = new CampoResultante();
 	ContenedorV* vec = new ContenedorV();
 	CampoAbstracto* cSeis = new CampoSeisPuntos();
+	CampoAbstracto* cSeis2 = new CampoSeisPuntos();
 	CampoAbstracto* cNueve = new CampoNuevePuntos();
 	CampoAbstracto* cQuince = new CampoQuincePuntos();
 
-	resul->ingresaCampo(cSeis);
+	/*resul->ingresaCampo(cSeis);
 	resul->ingresaCampo(cNueve);
-	resul->ingresaCampo(cQuince);
+	resul->ingresaCampo(cQuince);*/
 	vec->agregaCampo(cSeis);
+	//vec->agregaCampo(cSeis2);
 	vec->agregaCampo(cNueve);
-	//vec->agregaCampo(cQuince);
+	vec->agregaCampo(cQuince);
 	ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
 	comp->pasaInfoVecMatriz();
 	comp->muestraFinal();

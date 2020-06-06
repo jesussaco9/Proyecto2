@@ -2,7 +2,7 @@
 
 ContenedorM::ContenedorM(int f,int c,int cM){
 	fil = f + 2;
-	col = c + (cM*3);
+	col = c;
 	separador = "  ";
 	mat = new string ** [fil];
 	for (int i = 0; i < fil; i++) {
@@ -33,7 +33,12 @@ string ContenedorM::toStirng() const{
 	cout << "\t\tColumnas\n";
 	
 	for (int j = 0; j < col; j++) {
-		cout << "    "; cout <<j+1;
+		if ((j + 1) < 10) {
+			cout << "    "; cout << j + 1;
+		}
+		else{
+			cout << "   "; cout << j + 1;
+		}
 	}
 	cout << endl;
 	for (int i = 0; i < fil; i++) {
@@ -52,9 +57,7 @@ string ContenedorM::toStirng() const{
 						cout << "   " << separador;
 					}
 				}
-				
 			}
-			
 		}
 		else{
 			cout << i + 1;

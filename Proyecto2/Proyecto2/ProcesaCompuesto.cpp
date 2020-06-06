@@ -19,27 +19,18 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 	string tipo = "class CampoSeisPuntos";
 	string tipo2 = "class CampoNuevePuntos";
 	string tipo3 = "class CampoQuincePuntos";
-	int varFil =0;
+	int varFil =3;
 	int varCol = 0;
 	int cantM = vector->getCantidad();
 	for (int i = 0; i < cantM; i++) {
 		if (tipo == typeid(*vector->getCampoAbstracto(i)).name()) {
-			//setFilas(3);
-			//setCol(2);
-			varFil = 3;
-			varCol = varCol + 2;
+			varCol = varCol + 4;
 		}
 		else if (tipo2 == typeid(*vector->getCampoAbstracto(i)).name()) {
-			//setFilas(3);
-			//setCol(3);
-			varFil = 3;
-			varCol = varCol + 3;
+			varCol = varCol + 6;
 		}
 		else if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
-			//setFilas(5);
-			//setCol(3);
-			varFil = 3;
-			varCol = varCol + 5;
+			varCol = varCol + 10;
 		}
 	}
 	setFilas(varFil);
