@@ -4,9 +4,9 @@ ContenedorM::ContenedorM(int f,int c,int cM){
 	fil = f + 2;
 	col = c;
 	separador = "  ";
-	mat = new string ** [fil];
+	mat = new ElementosDeMatriz** [fil];
 	for (int i = 0; i < fil; i++) {
-		mat[i] = new string*[col];
+		mat[i] = new ElementosDeMatriz *[col];
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
@@ -27,6 +27,26 @@ ContenedorM::~ContenedorM(){
 	delete[] mat;
 }
 
+void ContenedorM::llenarMatrizElementos(){
+	for (int i = 0; i < fil; i++) {
+			for (int j = 0; j < col; j++) {
+				if (i % 2 == 0 && j % 2 == 0) {
+						mat[i][j] = new Punto();
+				}
+				else {
+					//mat[i][j] = new Conexion();
+					mat[i][j] = NULL;
+				}
+			}
+		}
+}
+
+ElementosDeMatriz* ContenedorM::retornarPos(int x, int y){
+	if (x >= 0 && x <= fil && y >= 0 && y <= col)
+		return mat[x][y];
+	else return NULL;
+}
+
 string ContenedorM::toStirng() const{
 	stringstream s;
 	cout <<"===================================================\n";
@@ -34,7 +54,7 @@ string ContenedorM::toStirng() const{
 	
 	for (int j = 0; j < col; j++) {
 		if ((j + 1) < 10) {
-			cout << "    "; cout << j + 1;
+			cout << "   "; cout << j + 1;
 		}
 		else{
 			cout << "   "; cout << j + 1;
@@ -46,33 +66,29 @@ string ContenedorM::toStirng() const{
 		if ((i + 1) < 10) {
 			cout <<" "<< i + 1;
 			for (int j = 0; j < col; j++) {
-		
-				if (i % 2 == 0 && j % 2 == 1) {
-					cout << "  +" << separador;
-					if (j % 2 == 0) {
-						cout << "  +" << separador;
-
-					}
-					else {
-						cout << "   " << separador;
-					}
+				if (i % 2 == 0 && j % 2 == 0) {
+					cout <<"  "<< mat[i][j]->toString2();
+				}
+				else if (mat[i][j]==NULL) {
+					cout << "    " ;
+				} else{
+					cout << "  " << mat[i][j]->toString();
 				}
 			}
 		}
 		else{
 			cout << i + 1;
 			for (int j = 0; j < col; j++) {
-				
-				if (i % 2 == 0 && j % 2 == 1) {
-					cout << "  +" << separador;
-					if (j % 2 == 0) {
-						cout << "  +" << separador;
-
-					}
-					else {
-						cout << "   " << separador;
-					}
+				if (i % 2 == 0 && j % 2 == 0) {
+					cout << mat[i][j]->toString2() << "   ";
 				}
+				else if (mat[i][j] == NULL){
+						cout << "    ";
+				}
+				else{
+						cout << "  " << mat[i][j]->toString();
+				}
+
 			}
 		}
 		cout << endl << endl;
@@ -82,8 +98,14 @@ string ContenedorM::toStirng() const{
 	return s.str();
 }
 
-void ContenedorM::ingresaPunto(int n, int, Conexion*){
-
+void ContenedorM::ingresaPunto(int x, int y){
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+			if ((x - 1 == 0) && (y - 1 == 2)) {
+				mat[0][1] = new Conexion();
+			}
+		}
+	}
 }
 
 int ContenedorM::getFila(){
@@ -102,11 +124,11 @@ void ContenedorM::setCol(int col){
 	this->col = col;
 }
 
-string ContenedorM::getSeparador(){
-	return separador;
-}
-
-void ContenedorM::setSeparador(string sepa){
-	this->separador = sepa;
-}
+//string ContenedorM::getSeparador(){
+//	return separador;
+//}
+//
+//void ContenedorM::setSeparador(string sepa){
+//	this->separador = sepa;
+//}
 

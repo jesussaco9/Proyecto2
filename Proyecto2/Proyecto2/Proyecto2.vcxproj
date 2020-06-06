@@ -149,9 +149,11 @@
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
     <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Periferico.cpp" />
     <ClCompile Include="ProcesaCompuesto.cpp" />
+    <ClCompile Include="Punto.cpp" />
     <ClCompile Include="Vista.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +169,9 @@
     <ClInclude Include="ContenedorM.h" />
     <ClInclude Include="ContenedorV.h" />
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="ElementosDeMatriz.h" />
     <ClInclude Include="ProcesaCompuesto.h" />
+    <ClInclude Include="Punto.h" />
     <ClInclude Include="Vista.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

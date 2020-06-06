@@ -1,20 +1,17 @@
 #pragma once
-
 #include "ElementosDeMatriz.h"
 
-class Conexion:public ElementosDeMatriz{
+class Punto:public ElementosDeMatriz{
 private:
-	string separadorHorizontal;
 public:
-	Conexion();
-	virtual ~Conexion();
+	Punto();
+	virtual ~Punto();
 	virtual string toString();
 	virtual string toString2();
-	void setSeparadorHorizontal(string);
-	string getSeparadorHorizontal();
 	virtual int getPosicionX();
 	virtual int getPosicionY();
 	virtual void setPosicionX(int);
 	virtual void setPosicionY(int);
 	string getTipo();
 };
+

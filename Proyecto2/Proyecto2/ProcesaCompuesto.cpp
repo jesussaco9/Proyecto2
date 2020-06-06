@@ -55,9 +55,17 @@ void ProcesaCompuesto::muestraFinal(){
 }
 
 void ProcesaCompuesto::setSeparador(string separador){
-	matriz->setSeparador(separador);
+	//matriz->setSeparador(separador);
+}
+
+void ProcesaCompuesto::meterRayita(int i, int j){
+	matriz->ingresaPunto(i, j);
 }
 
 ContenedorM* ProcesaCompuesto::getContenidoMatriz(){
 	return nullptr;
+}
+
+void ProcesaCompuesto::LlenarMatriz(){
+	matriz->llenarMatrizElementos();
 }

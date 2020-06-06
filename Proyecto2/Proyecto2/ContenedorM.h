@@ -2,12 +2,14 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "ElementosDeMatriz.h"
+#include "Punto.h"
+#include "Conexion.h"
 using namespace std;
-#include"Conexion.h"
 
 class ContenedorM{
 private:
-	string*** mat;//Siguiendo el UML del profe
+	ElementosDeMatriz*** mat;//Siguiendo el UML del profe
 	int fil;
 	int col;
 	string separador;//Siguiendo el UML del profe
@@ -15,13 +17,15 @@ private:
 public:
 	ContenedorM(int,int,int);
 	virtual ~ContenedorM();
+	void llenarMatrizElementos();
+	ElementosDeMatriz* retornarPos(int x, int y);
 	string toStirng() const;
-	void ingresaPunto(int, int,Conexion*);//Siguiendo el UML del profe
+	void ingresaPunto(int, int);//Siguiendo el UML del profe
 	int getFila();
 	int getColumna();
 	void setFila(int);
 	void setCol(int);
-	string getSeparador();
-	void setSeparador(string);
+	/*string getSeparador();
+	void setSeparador(string);*/
 };
 

@@ -17,6 +17,8 @@ public:
 	void setCanMatriz(int);
 	void muestraFinal();
 	void setSeparador(string);
+	void meterRayita(int, int);
 	ContenedorM* getContenidoMatriz();
+	void LlenarMatriz();
 };
 
