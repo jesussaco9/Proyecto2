@@ -11,7 +11,7 @@ Conexion::~Conexion() {
 string Conexion::toString() {
 	stringstream s;
 
-	s << "-";
+	s << "---";
 
 	return s.str();
 }
@@ -19,7 +19,7 @@ string Conexion::toString() {
 string Conexion::toString2() {
 	stringstream s;
 
-	s << " ";
+	s << "|";
 
 	return s.str();
 }

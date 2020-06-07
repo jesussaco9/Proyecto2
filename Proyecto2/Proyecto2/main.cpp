@@ -35,7 +35,12 @@ int main() {
 	mat->llenarMatrizElementos();
 	cout << mat->toStirng();
 	cout << "----------------------" << endl;
-	mat->ingresaPunto(1, 3);
+	mat->ingresaPunto(1,2);
+	mat->ingresaPunto(3,2);
+	mat->ingresaPunto(5,2);
+	mat->ingresaPunto(2,1);
+	mat->ingresaPunto(2,3);
+	mat->ingresaPunto(4,3);
 	cout << mat->toStirng();
 	system("pause");
 	return 0;

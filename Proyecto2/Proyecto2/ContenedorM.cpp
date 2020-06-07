@@ -51,10 +51,10 @@ string ContenedorM::toStirng() const{
 	stringstream s;
 	cout <<"===================================================\n";
 	cout << "\t\tColumnas\n";
-	
+	cout << "  ";
 	for (int j = 0; j < col; j++) {
 		if ((j + 1) < 10) {
-			cout << "   "; cout << j + 1;
+			cout << " "; cout << j + 1;
 		}
 		else{
 			cout << "   "; cout << j + 1;
@@ -64,15 +64,18 @@ string ContenedorM::toStirng() const{
 	for (int i = 0; i < fil; i++) {
 
 		if ((i + 1) < 10) {
-			cout <<" "<< i + 1;
+			cout <<" "<< i + 1 << " ";
 			for (int j = 0; j < col; j++) {
 				if (i % 2 == 0 && j % 2 == 0) {
-					cout <<"  "<< mat[i][j]->toString2();
+					cout << mat[i][j]->toString2();
 				}
 				else if (mat[i][j]==NULL) {
-					cout << "    " ;
-				} else{
-					cout << "  " << mat[i][j]->toString();
+					cout << "   " ;
+				} else if(i%2==0){
+					cout << mat[i][j]->toString();
+				}
+				else {
+					cout << mat[i][j]->toString2();
 				}
 			}
 		}
@@ -91,7 +94,7 @@ string ContenedorM::toStirng() const{
 
 			}
 		}
-		cout << endl << endl;
+		cout<< endl;
 	}
 
 	cout << "===================================================\n";
@@ -99,10 +102,11 @@ string ContenedorM::toStirng() const{
 }
 
 void ContenedorM::ingresaPunto(int x, int y){
+	int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			if ((x - 1 == 0) && (y - 1 == 2)) {
-				mat[0][1] = new Conexion();
+			if (i==a&&j==b) {
+				mat[i][j] = new Conexion();
 			}
 		}
 	}

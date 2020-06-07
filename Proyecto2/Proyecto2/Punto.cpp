@@ -10,7 +10,7 @@ Punto::~Punto() {
 string Punto::toString() {
 	stringstream s;
 
-	s << "  ";
+	s << " ";
 
 	return s.str();
 }
