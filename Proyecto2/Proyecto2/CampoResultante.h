@@ -13,5 +13,7 @@ public:
 	void ingresaCampo(CampoAbstracto*);
 	ContenedorV* retornaContenedor();
 	string toString();
+	ElementosDeMatriz* retornarPos(int x, int y);
+	int getCol();
 };
 

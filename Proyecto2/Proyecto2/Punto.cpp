@@ -18,7 +18,7 @@ string Punto::toString() {
 string Punto::toString2() {
 	stringstream s;
 
-	s << "+";
+	s << " + ";
 
 	return s.str();
 }

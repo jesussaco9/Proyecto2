@@ -67,3 +67,13 @@ string CampoQuincePuntos::toString(){
 
 	return s.str();
 }
+
+ElementosDeMatriz* CampoQuincePuntos::retornarPos(int x, int y){
+	if (x >= 0 && x <= fil && y >= 0 && y <= col)
+		return matrizQuince[x][y];
+	else return NULL;
+}
+
+int CampoQuincePuntos::getCol(){
+	return col;
+}

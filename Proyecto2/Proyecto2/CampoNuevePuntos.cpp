@@ -16,7 +16,7 @@ CampoNuevePuntos::CampoNuevePuntos()
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			if (i < 5) {
+			if (i < 6) {
 				if (i % 2 == 0 && j % 2 == 0) {
 					matrizNueve[i][j] = new Punto();
 				}
@@ -65,4 +65,14 @@ string CampoNuevePuntos::toString(){
 	}
 
 	return s.str();
+}
+
+ElementosDeMatriz* CampoNuevePuntos::retornarPos(int x, int y){
+	if (x >= 0 && x <= fil && y >= 0 && y <= col)
+		return matrizNueve[x][y];
+	else return NULL;
+}
+
+int CampoNuevePuntos::getCol(){
+	return col;
 }

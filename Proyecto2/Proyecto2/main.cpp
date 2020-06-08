@@ -28,6 +28,29 @@ int main() {
 	//comp->pasaInfoVecMatriz();
 	//comp->LlenarMatriz();
 	//comp->muestraFinal();
+	//vec->agregaCampo(cSeis);
+	//vec->agregaCampo(cNueve);
+	
+	vec->agregaCampo(cSeis);
+	vec->agregaCampo(cNueve);
+	vec->agregaCampo(cQuince);
+	
+	ContenedorM* mat = new ContenedorM(vec);
+	//mat->pasaInfoVectorMatriz();
+	mat->llenarMatrizElementos();
+	cout << mat->toStirng();
+	mat->ingresaPunto(1,2);
+	mat->ingresaPunto(3,2);
+	mat->ingresaPunto(5,2);
+	mat->ingresaPunto(2,1);
+	mat->ingresaPunto(2,3);
+	mat->ingresaPunto(4,3);
+	mat->ingresaPunto(4, 5);
+	cout << "-----------------" << endl;
+	cout << mat->toStirng();
+
+
+
 	/*cout << "------------------" << endl;
 	comp->meterRayita(0, 2);
 	comp->muestraFinal();*/

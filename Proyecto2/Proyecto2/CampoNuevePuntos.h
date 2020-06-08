@@ -13,5 +13,7 @@ public:
 	string getCodigo();
 	void ingresaCampo(CampoAbstracto*);
 	string toString();
+	virtual ElementosDeMatriz* retornarPos(int x, int y);
+	int getCol();
 };
 

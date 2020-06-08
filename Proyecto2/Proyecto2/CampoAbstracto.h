@@ -17,4 +17,6 @@ public:
 	virtual string getCodigo() = 0;
 	virtual void ingresaCampo(CampoAbstracto*)=0;
 	virtual string toString() = 0;
+	virtual ElementosDeMatriz* retornarPos(int x, int y) = 0;
+	virtual int getCol() = 0;
 };

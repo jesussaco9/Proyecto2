@@ -60,9 +60,18 @@ string CampoSeisPuntos::toString(){
 		}
 		cout << endl;
 	}
-	
 	return s.str();
 }
 
+ElementosDeMatriz* CampoSeisPuntos::retornarPos(int x, int y) {
+	if (x >= 0 && x <= fil && y >= 0 && y <= col)
+		return matrizSeis[x][y];
+	else return NULL;
+}
+
 void CampoSeisPuntos::ingresaCampo(CampoAbstracto*){//No se desarrolla
+}
+
+int CampoSeisPuntos::getCol(){
+	return col;
 }

@@ -11,6 +11,8 @@ public:
 	virtual ~CampoSeisPuntos();
 	string getCodigo();
 	string toString();
+	ElementosDeMatriz* retornarPos(int x, int y);
 	void ingresaCampo(CampoAbstracto*);
+	int getCol();
 };
 

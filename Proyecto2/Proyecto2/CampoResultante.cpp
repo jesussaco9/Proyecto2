@@ -26,3 +26,13 @@ string CampoResultante::toString()
 {
 	return string();
 }
+
+ElementosDeMatriz* CampoResultante::retornarPos(int x, int y)
+{
+	return nullptr;
+}
+
+int CampoResultante::getCol()
+{
+	return 0;
+}
