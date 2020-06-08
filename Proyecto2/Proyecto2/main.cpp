@@ -16,7 +16,7 @@ int main() {
 	CampoAbstracto* cSeis2 = new CampoSeisPuntos();
 	CampoAbstracto* cNueve = new CampoNuevePuntos();
 	CampoAbstracto* cQuince = new CampoQuincePuntos();
-
+	
 	/*resul->ingresaCampo(cSeis);
 	resul->ingresaCampo(cNueve);
 	resul->ingresaCampo(cQuince);*/
@@ -24,24 +24,27 @@ int main() {
 	//vec->agregaCampo(cSeis2);
 	//vec->agregaCampo(cNueve);
 	//vec->agregaCampo(cQuince);
-	/*ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
-	comp->pasaInfoVecMatriz();
-	comp->LlenarMatriz();
-	comp->muestraFinal();
-	cout << "------------------" << endl;
+	//ProcesaCompuesto* comp = new ProcesaCompuesto(vec);
+	//comp->pasaInfoVecMatriz();
+	//comp->LlenarMatriz();
+	//comp->muestraFinal();
+	/*cout << "------------------" << endl;
 	comp->meterRayita(0, 2);
 	comp->muestraFinal();*/
-	ContenedorM* mat = new ContenedorM(3, 4, 1);
+	/*ContenedorM* mat = new ContenedorM(10, 4, 1);
 	mat->llenarMatrizElementos();
 	cout << mat->toStirng();
-	cout << "----------------------" << endl;
-	mat->ingresaPunto(1,2);
+	cout << "----------------------" << endl;*/
+	/*mat->ingresaPunto(1,2);
 	mat->ingresaPunto(3,2);
 	mat->ingresaPunto(5,2);
 	mat->ingresaPunto(2,1);
 	mat->ingresaPunto(2,3);
 	mat->ingresaPunto(4,3);
-	cout << mat->toStirng();
+	cout << mat->toStirng();*/
+	/*cout << cSeis->toString();
+	cout << cNueve->toString();
+	cout << cQuince->toString();*/
 	system("pause");
 	return 0;
 }

@@ -3,11 +3,10 @@
 ProcesaCompuesto::ProcesaCompuesto(ContenedorV*  vec){
 	vector = vec;
 	cantidadM = 0;
+	matriz = NULL;
 	pasaInfoVecMatriz();
-	/*fil = 0;
-	col = 0;*/
-
-	matriz = new ContenedorM(fil,col,cantidadM);
+	
+	
 	separador = "   ";
 }
 
@@ -19,23 +18,26 @@ void ProcesaCompuesto::pasaInfoVecMatriz(){
 	string tipo = "class CampoSeisPuntos";
 	string tipo2 = "class CampoNuevePuntos";
 	string tipo3 = "class CampoQuincePuntos";
-	int varFil =3;
+	int varFil = 10;
 	int varCol = 0;
 	int cantM = vector->getCantidad();
 	for (int i = 0; i < cantM; i++) {
 		if (tipo == typeid(*vector->getCampoAbstracto(i)).name()) {
 			varCol = varCol + 4;
+			matriz = new ContenedorM(varFil, varCol, 1);
 		}
 		else if (tipo2 == typeid(*vector->getCampoAbstracto(i)).name()) {
 			varCol = varCol + 6;
+			matriz = new ContenedorM(varFil, varCol, 1);
 		}
 		else if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
 			varCol = varCol + 10;
+			matriz = new ContenedorM(varFil, varCol, 1);
 		}
 	}
-	setFilas(varFil);
+	/*setFilas(varFil);
 	setCol(varCol);
-	setCanMatriz(cantM);
+	setCanMatriz(cantM);*/
 }
 
 void ProcesaCompuesto::setFilas(int fil){

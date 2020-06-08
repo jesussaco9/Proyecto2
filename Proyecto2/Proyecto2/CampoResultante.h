@@ -12,5 +12,6 @@ public:
 	string getCodigo();
 	void ingresaCampo(CampoAbstracto*);
 	ContenedorV* retornaContenedor();
+	string toString();
 };
 

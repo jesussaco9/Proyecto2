@@ -5,10 +5,13 @@
 class CampoNuevePuntos:public CampoAbstracto{
 private:
 	string codigo;
+	int fil, col;
+	ElementosDeMatriz*** matrizNueve;
 public:
 	CampoNuevePuntos();
 	virtual ~CampoNuevePuntos();
 	string getCodigo();
 	void ingresaCampo(CampoAbstracto*);
+	string toString();
 };
 

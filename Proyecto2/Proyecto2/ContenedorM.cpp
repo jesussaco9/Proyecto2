@@ -1,7 +1,7 @@
 ﻿#include "ContenedorM.h"
 
 ContenedorM::ContenedorM(int f,int c,int cM){
-	fil = f + 2;
+	fil = f;
 	col = c;
 	separador = "  ";
 	mat = new ElementosDeMatriz** [fil];
@@ -10,7 +10,7 @@ ContenedorM::ContenedorM(int f,int c,int cM){
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			mat[i][j] = NULL;
+				mat[i][j] = NULL;
 		}
 	}
 }
@@ -30,11 +30,15 @@ ContenedorM::~ContenedorM(){
 void ContenedorM::llenarMatrizElementos(){
 	for (int i = 0; i < fil; i++) {
 			for (int j = 0; j < col; j++) {
-				if (i % 2 == 0 && j % 2 == 0) {
+				if (i < 5) {
+					if (i % 2 == 0 && j % 2 == 0) {
 						mat[i][j] = new Punto();
+					}
+					else {
+						mat[i][j] = NULL;
+					}
 				}
-				else {
-					//mat[i][j] = new Conexion();
+				else{
 					mat[i][j] = NULL;
 				}
 			}
@@ -66,16 +70,22 @@ string ContenedorM::toStirng() const{
 		if ((i + 1) < 10) {
 			cout <<" "<< i + 1 << " ";
 			for (int j = 0; j < col; j++) {
-				if (i % 2 == 0 && j % 2 == 0) {
-					cout << mat[i][j]->toString2();
+				if (mat[i][j] != NULL) {
+					if (i % 2 == 0 && j % 2 == 0) {
+						cout << mat[i][j]->toString2();
+					}
+					else if (mat[i][j] == NULL) {
+						cout << "   ";
+					}
+					else if (i % 2 == 0) {
+						cout << mat[i][j]->toString();
+					}
+					else {
+						cout << mat[i][j]->toString2();
+					}
 				}
-				else if (mat[i][j]==NULL) {
-					cout << "   " ;
-				} else if(i%2==0){
-					cout << mat[i][j]->toString();
-				}
-				else {
-					cout << mat[i][j]->toString2();
+				else{
+					cout << "   ";
 				}
 			}
 		}
@@ -83,7 +93,12 @@ string ContenedorM::toStirng() const{
 			cout << i + 1;
 			for (int j = 0; j < col; j++) {
 				if (i % 2 == 0 && j % 2 == 0) {
-					cout << mat[i][j]->toString2() << "   ";
+					if (mat[i][j] != NULL) {
+						cout << mat[i][j]->toString2();
+					}
+					else {
+						cout << "   ";
+					}
 				}
 				else if (mat[i][j] == NULL){
 						cout << "    ";

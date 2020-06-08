@@ -21,3 +21,8 @@ void CampoResultante::ingresaCampo(CampoAbstracto* obj){
 ContenedorV* CampoResultante::retornaContenedor(){
 	return vector;
 }
+
+string CampoResultante::toString()
+{
+	return string();
+}
