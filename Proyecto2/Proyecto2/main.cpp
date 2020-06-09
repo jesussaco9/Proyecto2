@@ -32,9 +32,9 @@ int main() {
 	//vec->agregaCampo(cNueve);
 	
 	vec->agregaCampo(cSeis);
-	vec->agregaCampo(cNueve);
+	//vec->agregaCampo(cNueve);
 	vec->agregaCampo(cQuince);
-	vec->agregaCampo(cSeis2);
+	//vec->agregaCampo(cSeis2);
 	ContenedorM* mat = new ContenedorM(vec);
 	//mat->pasaInfoVectorMatriz();
 	mat->llenarMatrizElementos();
@@ -46,6 +46,8 @@ int main() {
 	mat->ingresaPunto(2,3);
 	mat->ingresaPunto(4,3);
 	mat->ingresaPunto(4, 5);
+	mat->ingresaPunto(9, 12);
+	mat->ingresaPunto(2,2);
 	cout << "-----------------" << endl;
 	cout << mat->toStirng();
 
