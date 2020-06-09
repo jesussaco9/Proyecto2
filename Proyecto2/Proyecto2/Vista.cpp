@@ -33,8 +33,7 @@ int Vista::menuPrincipal(){
 	system("cls");
 }
 
-int Vista::menuModalidad()
-{
+int Vista::menuModalidad(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione la modalidad deseada:\n";
@@ -47,8 +46,7 @@ int Vista::menuModalidad()
 	system("cls");
 }
 
-int Vista::menuMatriz()
-{
+int Vista::menuMatriz(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
@@ -63,14 +61,13 @@ int Vista::menuMatriz()
 	system("cls");
 }
 
-int Vista::menuMatrizMixto()
-{
+int Vista::menuMatrizMixto(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
 	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
-	cout << "\t\t3. Matriz(15 ptos) 3x5\n";
+	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
 	cout << "\t\t4. Crear\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
@@ -78,8 +75,7 @@ int Vista::menuMatrizMixto()
 	system("cls");
 }
 
-int Vista::menuModoJuego()
-{
+int Vista::menuModoJuego(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el modo de juego que desea:\n";

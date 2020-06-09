@@ -34,7 +34,7 @@ int main() {
 	vec->agregaCampo(cSeis);
 	vec->agregaCampo(cNueve);
 	vec->agregaCampo(cQuince);
-	
+	vec->agregaCampo(cSeis2);
 	ContenedorM* mat = new ContenedorM(vec);
 	//mat->pasaInfoVectorMatriz();
 	mat->llenarMatrizElementos();

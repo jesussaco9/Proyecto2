@@ -125,7 +125,6 @@ void ContenedorM::llenarMatrizElementos(){
 					setFin(fin);
 				}
 		}
-	
 }
 
 ElementosDeMatriz* ContenedorM::retornarPos(int x, int y){
@@ -184,7 +183,7 @@ string ContenedorM::toStirng() const{
 					}
 				}
 				else if (mat[i][j] == NULL){
-						cout << "    ";
+						cout << "   ";
 				}
 				else{
 						cout << "  " << mat[i][j]->toString();
@@ -194,7 +193,6 @@ string ContenedorM::toStirng() const{
 		}
 		cout<< endl;
 	}
-
 	cout << "===================================================\n";
 	return s.str();
 }
