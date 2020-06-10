@@ -11,7 +11,6 @@ Controladora::Controladora(){
 void Controladora::menuPrincipal(){
 	int opcion;
 	do {
-
 		opcion = Vista::menuPrincipal();
 		switch (opcion) {
 		case 1:
@@ -25,30 +24,15 @@ void Controladora::menuPrincipal(){
 	} while (opcion != 1);
 }
 
-int Controladora::menuModalidad()
-{
+int Controladora::menuModalidad(){
 	int opcion;
-	//do {
-
 	opcion = Vista::menuModalidad();
-	return opcion;
-	//	switch (opcion) {
-	//	case 1:
-
-	//		break;
-	//	case 2:
-
-	//		break;
-	//	default:
-	//		break;
-	//	}
-
-	//} while (opcion != 2);
+	return opcion;	
 }
 
 void Controladora::menuMatriz(){
 	int opcion;
-	/*do {*/
+	do {
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
 		case 1:
@@ -62,11 +46,12 @@ void Controladora::menuMatriz(){
 			break;
 		case 4:
 			cout << "creando matriz..." << endl;
+			MostrarCampoDeJuego();
 			break;
 		default:
 			break;
 		}
-	/*} while (opcion != 4);*/
+	} while (opcion != 4);
 }
 
 void Controladora::MostrarCampoDeJuego(){
@@ -74,34 +59,10 @@ void Controladora::MostrarCampoDeJuego(){
 	cout<<campoMatriz->toStirng();
 }
 
-int Controladora::menuModoJuego()
-{
+int Controladora::menuModoJuego(){
 	int opcion;
-	/*do {*/
-
-		opcion = Vista::menuModoJuego();
-		return opcion;
-		/*switch (opcion) {
-		case 1:
-			creaModoAleatorio();
-			break;
-		case 2:
-
-			break;
-		case 3:
-
-			break;
-		case 4:
-
-			break;
-		case 5:
-
-			break;
-		default:
-			break;
-		}
-
-	} while (opcion != 5);*/
+	opcion = Vista::menuModoJuego();
+	return opcion;
 }
 
 void Controladora::comenzarJuego(){
@@ -176,7 +137,6 @@ void Controladora::crea15puntos(){
 	campoAbs->ingresaCampo(c);
 }
 
-void Controladora::creaModoAleatorio()
-{
+void Controladora::creaModoAleatorio(){
 	a = new Aleatorio();
 }

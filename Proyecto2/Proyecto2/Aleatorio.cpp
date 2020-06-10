@@ -22,13 +22,6 @@ bool Aleatorio::jugada(){
 			tab->ingresaPunto(x,y);
 		bandera = true;
 	}
-	/*for (int i = 0; i < tab->getFila(); i++) {
-		for (int j = 0; j < tab->getColumna(); j++) {
-			if (i == a && j == b) {
-				mat[i][j] = new Conexion();
-			}
-		}
-	}*/
 
 	return bandera;
 }

@@ -6,6 +6,7 @@
 #include "ElementosDeMatriz.h"
 #include "Punto.h"
 #include "Conexion.h"
+#include "ElementoVacio.h"
 using namespace std;
 
 class ContenedorM{

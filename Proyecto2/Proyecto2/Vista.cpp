@@ -84,7 +84,7 @@ int Vista::menuModoJuego(){
 	cout << "\t\t3. Juego Periferico\n";
 	cout << "\t\t4. Juego Central\n";
 	cout << "\t\t5. Juego Islas\n";
-	cout << "\t\t6. Salir";
+	cout << "\t\t6. Salir\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
 	cout << "\t\t-> "; return opcion();
@@ -110,8 +110,7 @@ void Vista::coordenadas()
 	cout << "Ingrese las coordenadas de la posicion: [fila][columna]\n";
 }
 
-void Vista::ganador()
-{
+void Vista::ganador(){
 	cout << "Ya hay ganador...\n";
 }
 

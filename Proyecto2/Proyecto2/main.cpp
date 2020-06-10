@@ -12,8 +12,8 @@ using namespace std;
 
 int main() {
 	Controladora* inicio = new Controladora();
-	inicio->menuPrincipal();
-
+	//inicio->menuPrincipal();
+	inicio->menuMatriz();
 	/*CampoAbstracto* resul = new CampoResultante();
 	ContenedorV* vec = new ContenedorV();
 	CampoAbstracto* cSeis = new CampoSeisPuntos();

@@ -1,4 +1,6 @@
 #pragma once
+
+#include"ContenedorM.h"
 #include <sstream>
 #include <iostream>
 #include <ctime>

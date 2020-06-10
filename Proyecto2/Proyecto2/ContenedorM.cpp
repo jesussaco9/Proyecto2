@@ -86,8 +86,8 @@ void ContenedorM::llenarMatrizElementos(){
 									mat[i][inicia] = NULL;
 								}
 							}
-							else{
-								mat[i][inicia] = NULL;
+							else{////
+								mat[i][inicia] = new ElementoVacio();
 							}
 						}
 						setInicia(inicia);
@@ -108,7 +108,7 @@ void ContenedorM::llenarMatrizElementos(){
 								}
 							}
 							else {
-								mat[i][inicia] = NULL;
+								mat[i][inicia] == new ElementoVacio();;
 							}
 						}
 						setInicia(inicia);
@@ -129,7 +129,7 @@ void ContenedorM::llenarMatrizElementos(){
 								}
 							}
 							else {
-								mat[i][inicia] = NULL;
+								mat[i][inicia] = new ElementoVacio();
 							}
 						}
 						setInicia(inicia);
@@ -187,21 +187,24 @@ string ContenedorM::toStirng() const{
 		else{
 			cout << i + 1;
 			for (int j = 0; j < col; j++) {
-				if (i % 2 == 0 && j % 2 == 0) {
-					if (mat[i][j] != NULL) {
+				if (mat[i][j] != NULL) {
+					if (i % 2 == 0 && j % 2 == 0) {
 						cout << mat[i][j]->toString2();
 					}
+					else if (mat[i][j] == NULL) {
+						cout << "  ";
+					}
+					else if (i % 2 == 0) {
+						cout << mat[i][j]->toString();
+					}
 					else {
-						cout << "   ";
+						cout << mat[i][j]->toString2();
 					}
 				}
-				else if (mat[i][j] == NULL){
-						cout << "   ";
-				}
-				else{
-						cout << "  " << mat[i][j]->toString();
-				}
+				else {
+					cout << "  ";
 
+				}
 			}
 		}
 		cout<< endl;
@@ -254,8 +257,7 @@ void ContenedorM::setFin(int f){
 	this->fin = f;
 }
 
-bool ContenedorM::continuaJuego()
-{
+bool ContenedorM::continuaJuego(){
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j <= col; j++) {
 			if (mat[i][j] != NULL) {
@@ -266,8 +268,8 @@ bool ContenedorM::continuaJuego()
 	return false;
 }
 
-bool ContenedorM::posicionVacia(int x,int y)
-{
+bool ContenedorM::posicionVacia(int x,int y){
+
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j <= col; j++) {
 			if (i==x && j==y) {

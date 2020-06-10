@@ -4,9 +4,8 @@
 #include<cstdlib>
 #include<ctime>
 using std::string;
-#include"ContenedorM.h"
-class Aleatorio :public Estrategia
-{
+
+class Aleatorio :public Estrategia{
 private:
 	ContenedorM* tab;
 	int filas;
