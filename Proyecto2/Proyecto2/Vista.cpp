@@ -53,7 +53,7 @@ int Vista::menuMatriz(){
 	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
 	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
-	cout << "\t\t4. Mostrar Campo de Juego\n";
+	cout << "\t\t4. Salir\n";
 	cout << "\t\t5. Regresar\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
@@ -89,6 +89,30 @@ int Vista::menuModoJuego(){
 	cout << "\t\tDigite la opcion:\n";
 	cout << "\t\t-> "; return opcion();
 	system("cls");
+}
+
+int Vista::primerMov()
+{
+	limpiaPantalla();
+	cout << "===================================================\n";
+	cout << "\t\tSeleccione el Jugador que inicia la partida:\n";
+	cout << "\t\t1. Jugador 1 \n";
+	cout << "\t\t2. Jugador 2 \n";
+	cout << "===================================================\n";
+	cout << "\t\tDigite la opcion:\n";
+	cout << "\t\t-> "; return opcion();
+	system("cls");
+}
+
+void Vista::coordenadas()
+{
+	cout << "===================================================\n";
+	cout << "Ingrese las coordenadas de la posicion: [fila][columna]\n";
+}
+
+void Vista::ganador()
+{
+	cout << "Ya hay ganador...\n";
 }
 
 CampoAbstracto* Vista::creandoMatriz6(){

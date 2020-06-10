@@ -11,7 +11,7 @@ private:
 public:
 	Central();
 	~Central();
-	virtual void jugada();
+	virtual bool jugada();
 	string toString();
 	void mover();
 };

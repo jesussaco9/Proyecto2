@@ -33,6 +33,8 @@ public:
 	int getFin();
 	void setInicia(int);
 	void setFin(int);
+	bool continuaJuego();
+	bool posicionVacia(int,int);
 	/*string getSeparador();
 	void setSeparador(string);*/
 };

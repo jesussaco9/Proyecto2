@@ -11,7 +11,7 @@ private:
 public:
 	Periferico();
 	~Periferico();
-	virtual void jugada();
+	virtual bool jugada();
 	string toString();
 	void mover();
 };

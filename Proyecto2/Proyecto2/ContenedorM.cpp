@@ -2,8 +2,8 @@
 
 ContenedorM::ContenedorM(/*int f,int c,int cM*/ContenedorV* vec){
 	vector = vec;
-	fil = 0;
-	col = 0;
+	//fil = 0;
+	//col = 0;
 	inicia = 0;
 	fin = 0;
 	pasaInfoVectorMatriz();
@@ -241,6 +241,7 @@ int ContenedorM::getInicia(){
 	return inicia;
 }
 
+
 int ContenedorM::getFin(){
 	return fin;
 }
@@ -251,6 +252,31 @@ void ContenedorM::setInicia(int i){
 
 void ContenedorM::setFin(int f){
 	this->fin = f;
+}
+
+bool ContenedorM::continuaJuego()
+{
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j <= col; j++) {
+			if (mat[i][j] != NULL) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool ContenedorM::posicionVacia(int x,int y)
+{
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j <= col; j++) {
+			if (i==x && j==y) {
+				if (mat[i][j] == NULL)
+					return true;
+			}
+		}
+	}
+	return false;
 }
 
 //string ContenedorM::getSeparador(){

@@ -4,5 +4,5 @@
 #include <ctime>
 class Estrategia {
 public:
-	virtual void jugada() = 0;
+	virtual bool jugada() = 0;
 };

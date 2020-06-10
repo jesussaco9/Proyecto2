@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
 	Controladora* inicio = new Controladora();
-	inicio->menuMatriz();
+	inicio->menuPrincipal();
 
 	/*CampoAbstracto* resul = new CampoResultante();
 	ContenedorV* vec = new ContenedorV();

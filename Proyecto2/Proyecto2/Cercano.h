@@ -11,7 +11,7 @@ private:
 public:
 	Cercano();
 	~Cercano();
-	virtual void jugada();
+	virtual bool jugada();
 	string toString();
 	void mover();
 };
