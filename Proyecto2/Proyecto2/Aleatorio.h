@@ -2,10 +2,11 @@
 #include"Estrategia.h"
 #include<iostream>
 using std::string;
+#include"ContenedorM.h"
 class Aleatorio :public Estrategia
 {
 private:
-	char** tab;
+	ContenedorM* tab;
 	int filas;
 	int columnas;
 public:

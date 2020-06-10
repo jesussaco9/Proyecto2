@@ -1,4 +1,10 @@
 #include "Controladora.h"
+#include"Vista.h"
+Controladora::Controladora()
+{
+	contenedorCampos = new ContenedorV();
+	campoMatriz = new ContenedorM(contenedorCampos);
+}
 
 void Controladora::menuPrincipal()
 {
@@ -8,6 +14,7 @@ void Controladora::menuPrincipal()
 		opcion = Vista::menuPrincipal();
 		switch (opcion) {
 		case 1:
+			system("cls");
 
 			break;
 		default:
@@ -17,24 +24,25 @@ void Controladora::menuPrincipal()
 	} while (opcion != 1);
 }
 
-void Controladora::menuModalidad()
+int Controladora::menuModalidad()
 {
 	int opcion;
-	do {
+	//do {
 
-		opcion = Vista::menuModalidad();
-		switch (opcion) {
-		case 1:
+	opcion = Vista::menuModalidad();
+	return opcion;
+	//	switch (opcion) {
+	//	case 1:
 
-			break;
-		case 2:
+	//		break;
+	//	case 2:
 
-			break;
-		default:
-			break;
-		}
+	//		break;
+	//	default:
+	//		break;
+	//	}
 
-	} while (opcion != 2);
+	//} while (opcion != 2);
 }
 
 void Controladora::menuMatriz()
@@ -45,16 +53,19 @@ void Controladora::menuMatriz()
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
 		case 1:
-
+			CampoAbstracto * campo6 = Vista::creandoMatriz6();
+			campoAbs->ingresaCampo(campo6);
 			break;
 		case 2:
-
+			CampoAbstracto * campo9 = Vista::creandoMatriz9();
+			campoAbs->ingresaCampo(campo9);
 			break;
 		case 3:
-
+			CampoAbstracto * campo15 = Vista::creandoMatriz15();
+			campoAbs->ingresaCampo(campo15);
 			break;
 		case 4:
-
+			menuMatrizMixto();
 			break;
 		default:
 			break;
@@ -68,16 +79,19 @@ void Controladora::menuMatrizMixto()
 	int opcion;
 	do {
 
-		opcion = Vista::menuMatriz();
+		opcion = Vista::menuMatrizMixto();
 		switch (opcion) {
 		case 1:
-
+			CampoAbstracto * campo6 = Vista::creandoMatriz6();
+			campoAbs->ingresaCampo(campo6);
 			break;
 		case 2:
-
+			CampoAbstracto * campo9 = Vista::creandoMatriz9();
+			campoAbs->ingresaCampo(campo9);
 			break;
 		case 3:
-
+			CampoAbstracto * campo15 = Vista::creandoMatriz15();
+			campoAbs->ingresaCampo(campo15);
 			break;
 		case 4:
 
@@ -116,4 +130,13 @@ void Controladora::menuModoJuego()
 		}
 
 	} while (opcion != 5);
+}
+
+void Controladora::comenzarJuego()
+{
+	int modalidad = 0;
+	modalidad=menuModalidad();
+	if (modalidad == 1) {
+
+	}
 }

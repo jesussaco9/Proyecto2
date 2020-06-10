@@ -6,4 +6,3 @@ class Estrategia {
 public:
 	virtual void jugada() = 0;
 };
-
