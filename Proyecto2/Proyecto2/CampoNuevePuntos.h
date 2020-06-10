@@ -15,5 +15,6 @@ public:
 	string toString();
 	virtual ElementosDeMatriz* retornarPos(int x, int y);
 	int getCol();
+	ContenedorV* retornaContenedor();
 };
 

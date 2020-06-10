@@ -1,7 +1,10 @@
-#include <iostream>
-#include <sstream>
+//#include <iostream>
+//#include <sstream>
 
-#include"Controladora.h"
+#include"CampoAbstracto.h"
+#include"CampoNuevePuntos.h"
+#include"CampoSeisPuntos.h"
+#include"CampoQuincePuntos.h"
 using namespace std;
 
 class Vista{
@@ -14,8 +17,8 @@ public:
 	static int menuMatriz();
 	static int menuMatrizMixto();
 	static int menuModoJuego();
-	static CampoSeisPuntos* creandoMatriz6();
-	static CampoNuevePuntos* creandoMatriz9();
-	static CampoQuincePuntos* creandoMatriz15();
+	static CampoAbstracto* creandoMatriz6();
+	static CampoAbstracto* creandoMatriz9();
+	static CampoAbstracto* creandoMatriz15();
 };
 

@@ -91,22 +91,25 @@ int Vista::menuModoJuego(){
 	system("cls");
 }
 
-CampoSeisPuntos* Vista::creandoMatriz6()
-{
+CampoAbstracto* Vista::creandoMatriz6(){
+	CampoAbstracto* c;
 	cout<<"Creando Matriz de 6 ptos..." << endl;
-	return new CampoSeisPuntos();
+	c = new CampoSeisPuntos();
+	return c;
 }
 
-CampoNuevePuntos* Vista::creandoMatriz9()
-{
+CampoAbstracto* Vista::creandoMatriz9(){
+	CampoAbstracto* c;
 	cout << "Creando Matriz de 9 ptos..." << endl;
-	return new CampoNuevePuntos();
+	c = new CampoNuevePuntos();
+	return c;
 }
 
-CampoQuincePuntos* Vista::creandoMatriz15()
-{
+CampoAbstracto* Vista::creandoMatriz15(){
+	CampoAbstracto* c;
 	cout << "Creando Matriz de 15 ptos..." << endl;
-	return new CampoQuincePuntos();
+	c = new CampoQuincePuntos();
+	return c;
 }
 
 

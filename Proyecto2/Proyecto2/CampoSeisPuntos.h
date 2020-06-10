@@ -14,5 +14,6 @@ public:
 	ElementosDeMatriz* retornarPos(int x, int y);
 	void ingresaCampo(CampoAbstracto*);
 	int getCol();
+	ContenedorV* retornaContenedor();
 };
 

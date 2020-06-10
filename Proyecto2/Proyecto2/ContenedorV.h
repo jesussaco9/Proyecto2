@@ -1,6 +1,8 @@
 #pragma once
 #include "CampoAbstracto.h"
 
+class CampoAbstracto;
+
 class ContenedorV{
 private:
 	int can;

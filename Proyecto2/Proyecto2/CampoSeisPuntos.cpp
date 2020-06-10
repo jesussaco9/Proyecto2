@@ -75,3 +75,7 @@ void CampoSeisPuntos::ingresaCampo(CampoAbstracto*){//No se desarrolla
 int CampoSeisPuntos::getCol(){
 	return col;
 }
+
+ContenedorV* CampoSeisPuntos::retornaContenedor(){//No se desarrolla
+	return nullptr;
+}

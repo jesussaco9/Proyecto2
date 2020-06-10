@@ -77,3 +77,7 @@ ElementosDeMatriz* CampoQuincePuntos::retornarPos(int x, int y){
 int CampoQuincePuntos::getCol(){
 	return col;
 }
+
+ContenedorV* CampoQuincePuntos::retornaContenedor(){//No se desarrolla
+	return nullptr;
+}
