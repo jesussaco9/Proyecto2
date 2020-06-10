@@ -24,6 +24,7 @@ public:
 	//void menuMatrizMixto();
 	void MostrarCampoDeJuego();
 	int menuModoJuego();
+	void creaCampo();
 	void comenzarJuego();
 	void crea6puntos();
 	void crea9puntos();

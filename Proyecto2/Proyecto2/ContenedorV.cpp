@@ -30,6 +30,13 @@ int ContenedorV::getTamano(){
 	return tam;
 }
 
+bool ContenedorV::ultimaPosicionValida(int pos){
+	if (pos == can - 1) {
+		return true;
+	}
+	return false;
+}
+
 CampoAbstracto* ContenedorV::getCampoAbstracto(int pos){
 	if (pos >= 0 && pos < can) {
 		return vec[pos];

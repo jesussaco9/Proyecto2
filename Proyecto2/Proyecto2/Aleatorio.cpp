@@ -1,13 +1,12 @@
 #include"Aleatorio.h"
 
-Aleatorio::Aleatorio()
-{
+Aleatorio::Aleatorio(ContenedorM* m){
+	tab = m;
 	filas=0;
 	columnas=0;
 }
 
-Aleatorio::~Aleatorio()
-{
+Aleatorio::~Aleatorio(){
 
 }
 
@@ -22,25 +21,21 @@ bool Aleatorio::jugada(){
 			tab->ingresaPunto(x,y);
 		bandera = true;
 	}
-
 	return bandera;
 }
 
-string Aleatorio::toString()
-{
+string Aleatorio::toString(){
 	return string();
 }
 
-void Aleatorio::mover()
-{
+void Aleatorio::mover(){
+
 }
 
-void Aleatorio::setFilas(int f)
-{
+void Aleatorio::setFilas(int f){
 	this->filas = f;
 }
 
-void Aleatorio::setColumnas(int c)
-{
+void Aleatorio::setColumnas(int c){
 	this->columnas = c;
 }

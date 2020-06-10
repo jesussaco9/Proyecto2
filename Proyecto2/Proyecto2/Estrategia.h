@@ -6,5 +6,6 @@
 #include <ctime>
 class Estrategia {
 public:
+	Estrategia() {}
 	virtual bool jugada() = 0;
 };

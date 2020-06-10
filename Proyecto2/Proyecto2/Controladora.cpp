@@ -45,8 +45,10 @@ void Controladora::menuMatriz(){
 			crea15puntos();
 			break;
 		case 4:
+			creaCampo();
 			cout << "creando matriz..." << endl;
 			MostrarCampoDeJuego();
+			system("pause");
 			break;
 		default:
 			break;
@@ -55,7 +57,6 @@ void Controladora::menuMatriz(){
 }
 
 void Controladora::MostrarCampoDeJuego(){
-	campoMatriz = new ContenedorM(campoAbs->retornaContenedor());
 	cout<<campoMatriz->toStirng();
 }
 
@@ -63,6 +64,10 @@ int Controladora::menuModoJuego(){
 	int opcion;
 	opcion = Vista::menuModoJuego();
 	return opcion;
+}
+
+void Controladora::creaCampo(){
+	campoMatriz = new ContenedorM(campoAbs->retornaContenedor());
 }
 
 void Controladora::comenzarJuego(){
@@ -78,6 +83,7 @@ void Controladora::comenzarJuego(){
 			a->setColumnas(campoMatriz->getColumna());
 			int inicio = 0;
 			inicio = Vista::primerMov();
+			system("pause");
 			int cont=0;
 			if (inicio == 1) {
 				cont = 2;
@@ -89,27 +95,22 @@ void Controladora::comenzarJuego(){
 
 			while (campoMatriz->continuaJuego()) {
 				if (cont % 2 == 0) {
-
-					/*inter->turnoB();*/
 					string color = "Blanco";
-					/*movPieza(t, color);*/
 					a->jugada();
+
 					system("cls");
 					MostrarCampoDeJuego();
-
-
 				}
 				else if (cont % 2 != 0) {
-
-					/*inter->turnoN();*/
 					string color = "Negro";
-					/*movPieza(t, color);*/
 					Vista::coordenadas();
 					int a, b;
 					cin >> a; cin >> b;
+					campoMatriz->ingresaPunto(a, b);
 					system("cls");
 					MostrarCampoDeJuego();
 				}
+				cont++;
 			}
 			if (campoMatriz->continuaJuego() == false) {
 				Vista::ganador();
@@ -138,5 +139,5 @@ void Controladora::crea15puntos(){
 }
 
 void Controladora::creaModoAleatorio(){
-	a = new Aleatorio();
+	a = new Aleatorio(campoMatriz);
 }

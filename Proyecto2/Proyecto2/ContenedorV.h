@@ -14,6 +14,7 @@ public:
 	void agregaCampo(CampoAbstracto*);
 	int getCantidad();
 	int getTamano();
+	bool ultimaPosicionValida(int);
 	CampoAbstracto* getCampoAbstracto(int);
 };
 

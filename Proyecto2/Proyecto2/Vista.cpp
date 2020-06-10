@@ -91,8 +91,7 @@ int Vista::menuModoJuego(){
 	system("cls");
 }
 
-int Vista::primerMov()
-{
+int Vista::primerMov(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el Jugador que inicia la partida:\n";

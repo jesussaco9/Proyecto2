@@ -11,7 +11,7 @@ private:
 	int filas;
 	int columnas;
 public:
-	Aleatorio();
+	Aleatorio(ContenedorM*);
 	~Aleatorio();
 	virtual bool jugada();
 	string toString();
