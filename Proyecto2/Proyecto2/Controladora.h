@@ -7,6 +7,7 @@
 #include "CampoNuevePuntos.h"
 #include "CampoSeisPuntos.h"
 #include "CampoQuincePuntos.h"
+#include "CampoResultante.h"
 
 class Controladora {
 private:
@@ -19,6 +20,7 @@ public:
 	int menuModalidad();
 	void menuMatriz();
 	//void menuMatrizMixto();
+	void MostrarCampoDeJuego();
 	void menuModoJuego();
 	void comenzarJuego();
 	void crea6puntos();

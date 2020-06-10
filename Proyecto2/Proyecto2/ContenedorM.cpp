@@ -17,6 +17,7 @@ ContenedorM::ContenedorM(/*int f,int c,int cM*/ContenedorV* vec){
 				mat[i][j] = NULL;
 		}
 	}
+	llenarMatrizElementos();
 }
 
 ContenedorM::~ContenedorM(){

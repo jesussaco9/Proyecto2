@@ -6,11 +6,15 @@
 #include "ContenedorM.h"
 #include "ProcesaCompuesto.h"
 #include"Conexion.h"
+#include "Controladora.h"
 using namespace std;
 
 
 int main() {
-	CampoAbstracto* resul = new CampoResultante();
+	Controladora* inicio = new Controladora();
+	inicio->menuMatriz();
+
+	/*CampoAbstracto* resul = new CampoResultante();
 	ContenedorV* vec = new ContenedorV();
 	CampoAbstracto* cSeis = new CampoSeisPuntos();
 	CampoAbstracto* cSeis2 = new CampoSeisPuntos();
@@ -35,7 +39,7 @@ int main() {
 	mat->ingresaPunto(9, 12);
 	mat->ingresaPunto(2,2);
 	cout << "-----------------" << endl;
-	cout << mat->toStirng();
+	cout << mat->toStirng();*/
 
 
 	system("pause");

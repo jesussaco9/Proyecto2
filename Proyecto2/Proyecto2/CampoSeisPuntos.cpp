@@ -3,9 +3,9 @@
 CampoSeisPuntos::CampoSeisPuntos()
 	:CampoAbstracto(){
 	codigo = "class CampoSeisPuntos";
-	fil = 10;
+	//fil = 10;
 	col = 4;
-	matrizSeis = new ElementosDeMatriz * *[fil];
+	/*matrizSeis = new ElementosDeMatriz * *[fil];
 	for (int i = 0; i < fil; i++) {
 		matrizSeis[i] = new ElementosDeMatriz * [col];
 	}
@@ -28,11 +28,11 @@ CampoSeisPuntos::CampoSeisPuntos()
 				matrizSeis[i][j] = NULL;
 			}
 		}
-	}
+	}*/
 }
 
 CampoSeisPuntos::~CampoSeisPuntos(){
-	for (int i = 0; i < fil; i++) {
+	/*for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			delete matrizSeis[i][j];
 		}
@@ -40,7 +40,7 @@ CampoSeisPuntos::~CampoSeisPuntos(){
 	for (int i = 0; i < fil; i++) {
 		delete[] matrizSeis[i];
 	}
-	delete[] matrizSeis;
+	delete[] matrizSeis;*/
 }
 
 string CampoSeisPuntos::getCodigo(){
@@ -48,7 +48,7 @@ string CampoSeisPuntos::getCodigo(){
 }
 
 string CampoSeisPuntos::toString(){
-	stringstream s;
+	/*stringstream s;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (matrizSeis[i][j] != NULL) {
@@ -59,14 +59,15 @@ string CampoSeisPuntos::toString(){
 			}
 		}
 		cout << endl;
-	}
-	return s.str();
+	}*/
+	return "";
 }
 
 ElementosDeMatriz* CampoSeisPuntos::retornarPos(int x, int y) {
-	if (x >= 0 && x <= fil && y >= 0 && y <= col)
+	/*if (x >= 0 && x <= fil && y >= 0 && y <= col)
 		return matrizSeis[x][y];
-	else return NULL;
+	else return NULL;*/
+	return nullptr;
 }
 
 void CampoSeisPuntos::ingresaCampo(CampoAbstracto*){//No se desarrolla

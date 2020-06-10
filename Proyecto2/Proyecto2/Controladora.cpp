@@ -1,8 +1,9 @@
 #include "Controladora.h"
 
 Controladora::Controladora(){
-	contenedorCampos = new ContenedorV();
-	campoMatriz = new ContenedorM(contenedorCampos);
+	/*contenedorCampos = new ContenedorV();
+	campoMatriz = new ContenedorM(contenedorCampos);*/
+	campoAbs = new CampoResultante();
 }
 
 void Controladora::menuPrincipal(){
@@ -46,7 +47,6 @@ int Controladora::menuModalidad()
 void Controladora::menuMatriz(){
 	int opcion;
 	do {
-
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
 		case 1:
@@ -59,7 +59,7 @@ void Controladora::menuMatriz(){
 			crea15puntos();
 			break;
 		case 4:
-			//menuMatrizMixto();
+			MostrarCampoDeJuego();
 			break;
 		default:
 			break;
@@ -67,34 +67,11 @@ void Controladora::menuMatriz(){
 	} while (opcion != 4);
 }
 
-//void Controladora::menuMatrizMixto()
-//{
-//	int opcion;
-//	do {
-//
-//		opcion = Vista::menuMatrizMixto();
-//		switch (opcion) {
-//		case 1:
-//			CampoAbstracto * campo6 = Vista::creandoMatriz6();
-//			campoAbs->ingresaCampo(campo6);
-//			break;
-//		case 2:
-//			CampoAbstracto * campo9 = Vista::creandoMatriz9();
-//			campoAbs->ingresaCampo(campo9);
-//			break;
-//		case 3:
-//			CampoAbstracto * campo15 = Vista::creandoMatriz15();
-//			campoAbs->ingresaCampo(campo15);
-//			break;
-//		case 4:
-//
-//			break;
-//		default:
-//			break;
-//		}
-//
-//	} while (opcion != 4);
-//}
+void Controladora::MostrarCampoDeJuego(){
+	campoMatriz = new ContenedorM(campoAbs->retornaContenedor());
+	//campoMatriz->llenarMatrizElementos();
+	cout<<campoMatriz->toStirng();
+}
 
 void Controladora::menuModoJuego()
 {
