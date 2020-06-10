@@ -1,5 +1,10 @@
 #include "Controladora.h"
 
+Controladora::Controladora(){
+	contenedorCampos = new ContenedorV();
+	campoMatriz = new ContenedorM(contenedorCampos);
+}
+
 void Controladora::menuPrincipal()
 {
 	int opcion;
@@ -37,15 +42,15 @@ void Controladora::menuModalidad()
 	} while (opcion != 2);
 }
 
-void Controladora::menuMatriz()
-{
+void Controladora::menuMatriz(){
 	int opcion;
 	do {
 
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
 		case 1:
-
+			CampoAbstracto* campo6 = new CampoSeisPuntos();
+			campoAbs->ingresaCampo(campo6);
 			break;
 		case 2:
 
