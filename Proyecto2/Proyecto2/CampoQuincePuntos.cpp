@@ -5,6 +5,7 @@ CampoQuincePuntos::CampoQuincePuntos():
 	codigo = "class CampoQuincePuntos";
 	fil = 10;
 	col = 6;
+	
 	matrizQuince = new ElementosDeMatriz * *[fil];
 	for (int i = 0; i < fil; i++) {
 		matrizQuince[i] = new ElementosDeMatriz * [col];

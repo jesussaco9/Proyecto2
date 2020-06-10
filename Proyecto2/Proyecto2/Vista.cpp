@@ -39,7 +39,7 @@ int Vista::menuModalidad(){
 	cout << "\t\tSeleccione la modalidad deseada:\n";
 	cout << "\t\t1. Persona vs Computadora\n";
 	cout << "\t\t2. Persona vs Persona\n";
-	cout << "\t\t3. Salir";
+	cout << "\t\t3. Salir\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
 	cout << "\t\t-> "; return opcion();
@@ -52,7 +52,7 @@ int Vista::menuMatriz(){
 	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
 	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
-	cout << "\t\t3. Matriz(15 ptos) 3x5\n";
+	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
 	cout << "\t\t4. Mostrar Campo de Juego\n";
 	cout << "\t\t5. Regresar\n";
 	cout << "===================================================\n";

@@ -8,8 +8,7 @@ Aleatorio::~Aleatorio()
 {
 }
 
-void Aleatorio::jugada()
-{
+void Aleatorio::jugada(){
 	
 }
 

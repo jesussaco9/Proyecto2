@@ -41,11 +41,21 @@ void ContenedorM::pasaInfoVectorMatriz(){
 		int cantM = vector->getCantidad();
 		for (int i = 0; i < cantM; i++) {
 			if (tipo == typeid(*vector->getCampoAbstracto(i)).name()) {
-				varFil = 5;
+				if (varFil == 10) {
+					varFil = 10;
+				}
+				else{
+					varFil = 5;
+				}
 				varCol = varCol + 4;
 			}
 			else if (tipo2 == typeid(*vector->getCampoAbstracto(i)).name()) {
-				varFil = 5;
+				if (varFil == 10) {
+					varFil = 10;
+				}
+				else {
+					varFil = 5;
+				}
 				varCol = varCol + 6;
 			}
 			else if (tipo3 == typeid(*vector->getCampoAbstracto(i)).name()) {
@@ -59,7 +69,6 @@ void ContenedorM::pasaInfoVectorMatriz(){
 
 void ContenedorM::llenarMatrizElementos(){
 	int cantM = vector->getCantidad();
-	//int inicio = 0;
 	string tipo = "class CampoSeisPuntos";
 	string tipo2 = "class CampoNuevePuntos";
 	string tipo3 = "class CampoQuincePuntos";

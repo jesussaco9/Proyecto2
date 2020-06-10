@@ -4,6 +4,8 @@ Controladora::Controladora(){
 	/*contenedorCampos = new ContenedorV();
 	campoMatriz = new ContenedorM(contenedorCampos);*/
 	campoAbs = new CampoResultante();
+
+	
 }
 
 void Controladora::menuPrincipal(){
@@ -69,7 +71,6 @@ void Controladora::menuMatriz(){
 
 void Controladora::MostrarCampoDeJuego(){
 	campoMatriz = new ContenedorM(campoAbs->retornaContenedor());
-	//campoMatriz->llenarMatrizElementos();
 	cout<<campoMatriz->toStirng();
 }
 
@@ -106,7 +107,6 @@ void Controladora::comenzarJuego(){
 	int modalidad = 0;
 	modalidad=menuModalidad();
 	if (modalidad == 1) {
-
 	}
 }
 
