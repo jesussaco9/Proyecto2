@@ -3,6 +3,7 @@
 
 class Punto:public ElementosDeMatriz{
 private:
+	string NombreClase;
 public:
 	Punto();
 	virtual ~Punto();
@@ -12,7 +13,7 @@ public:
 	virtual int getPosicionY();
 	virtual void setPosicionX(int);
 	virtual void setPosicionY(int);
-	string getTipo();
+	string getNombreClase();
 	void setGanador(string);
 };
 

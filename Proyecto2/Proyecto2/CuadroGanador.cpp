@@ -54,6 +54,7 @@ string CuadroGanador::getGanador(){
 	return ganador;
 }
 
-string CuadroGanador::getTipo(){
-	return string();
+string CuadroGanador::getNombreClase(){
+	return "CuadroGanador";
 }
+

@@ -57,3 +57,7 @@ void Conexion::setGanador(string)
 {
 }
 
+string Conexion::getNombreClase(){
+	return "Conexion";
+}
+

@@ -41,8 +41,8 @@ int Punto::getPosicionY() {
 }
 
 
-string Punto::getTipo() {
-	return tipo;
+string Punto::getNombreClase() {
+	return "Punto";
 }
 
 void Punto::setGanador(string)

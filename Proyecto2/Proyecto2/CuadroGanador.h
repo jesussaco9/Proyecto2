@@ -6,6 +6,7 @@ private:
 	string ganador;
 	string ganador2;
 	int valor;
+	string nombreClase;
 public:
 	CuadroGanador();
 	virtual ~CuadroGanador();
@@ -18,5 +19,5 @@ public:
 	void setGanador(string);
 	void setGanador2(string);
 	string getGanador();
-	string getTipo();
+	string getNombreClase();
 };

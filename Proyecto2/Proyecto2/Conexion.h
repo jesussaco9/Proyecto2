@@ -5,6 +5,7 @@
 class Conexion:public ElementosDeMatriz{
 private:
 	string separadorHorizontal;
+	string NombreClase;
 public:
 	Conexion();
 	virtual ~Conexion();
@@ -18,4 +19,5 @@ public:
 	virtual void setPosicionY(int);
 	string getTipo();
 	void setGanador(string);
+	string getNombreClase();
 };

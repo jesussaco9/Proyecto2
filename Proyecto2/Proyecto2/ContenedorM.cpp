@@ -1,9 +1,9 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(/*int f,int c,int cM*/ContenedorV* vec){
+ContenedorM::ContenedorM(ContenedorV* vec){
 	vector = vec;
-	//fil = 0;
-	//col = 0;
+	contador1 = 0;
+	contador2 = 0;
 	inicia = 0;
 	fin = 0;
 	pasaInfoVectorMatriz();
@@ -318,13 +318,17 @@ bool ContenedorM::continuaJuego(){
 
 bool ContenedorM::posicionVacia(int x,int y){
 	ElementosDeMatriz* v= new Punto();
-	ElementosDeMatriz* v2 = new Conexion();
-	ElementosDeMatriz* v3 = new CuadroGanador();
+	/*ElementosDeMatriz* v2 = new Conexion();
+	ElementosDeMatriz* v3 = new CuadroGanador();*/
+
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (i==x-1 && j==y-1) {
-				if (mat[i][j] == NULL && mat[i][j] !=v && mat[i][j] != v2 && mat[i][j] != v3)
-					return true;
+				if (mat[i][j] == NULL) {
+					if (mat[i][j] != v) {
+						return true;
+					}
+				}
 			}
 		}
 	}
@@ -343,16 +347,18 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 					if (mat[i-1][j] != NULL) {
 						if (mat[i][j+1] != NULL) {
 							if (mat[i+1][j]!=NULL) {
-									if (jugador % 2 == 0) {
-										if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")) {
-											mat[i][j] = new Cuadro1();
-										}
+								if (jugador % 2 == 0) {
+									if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")) {
+										mat[i][j] = new Cuadro1();
+										contador1++;
 									}
-									else {
-										if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2")) {
-											mat[i][j] = new Cuadro2();
-										}
+								}
+								else {
+									if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2")) {
+										mat[i][j] = new Cuadro2();
+										contador2++;
 									}
+								}
 							}
 						}
 					}
@@ -361,6 +367,14 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 		}
 	}
 	//return bandera;
+}
+
+int ContenedorM::getContador1(){
+	return contador1;
+}
+
+int ContenedorM::getContador2(){
+	return contador2;
 }
 
 

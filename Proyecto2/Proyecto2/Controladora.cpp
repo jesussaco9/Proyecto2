@@ -117,8 +117,18 @@ void Controladora::comenzarJuego(){
 				cont++;
 			}
 			if (campoMatriz->continuaJuego() == false) {
-				Vista::ganador();
-				system("pause");
+				if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
+					Vista::textoGanoJugador1();
+				}
+				else if (campoMatriz->getContador1() < campoMatriz->getContador2()){
+					Vista::textoGanoJugador2();
+				}
+				else{
+					Vista::textoJuegoEmpatado();
+				}
+				Vista::textoGraciasPorJugar();
+				//Vista::ganador();
+				//system("pause");
 			}
 		}
 	}

@@ -105,17 +105,39 @@ int Vista::primerMov(){
 
 int Vista::coordenada1(){
 	int n;
-	cout << "Ingreso el primer numero" << endl;
+	cout << "Ingreso el primer numero[FILA]" << endl;
 	cout << "-> "; cin >> n;
 	return n;
 }
 
 int Vista::coordenada2(){
 	int n;
-	cout << "Ingreso el segundo numero" << endl;
+	cout << "Ingreso el segundo numero[COLUMNA]" << endl;
 	cout << "-> "; cin >> n;
 	return n;
 	return 0;
+}
+
+void Vista::textoGanoJugador1(){
+	cout << "    ¡¡¡Felicidades!!!   " << endl;
+	cout << "El Ganador fue el jugador #1" << endl;
+	system("pause");
+}
+
+void Vista::textoGanoJugador2(){
+	cout << "    ¡¡¡Felicidades!!!   " << endl;
+	cout << "El Ganador fue el jugador #2" << endl;
+	system("pause");
+}
+
+void Vista::textoJuegoEmpatado(){
+	cout << "El juego termino Empatado  :-(" << endl;
+	system("pause");
+}
+
+void Vista::textoGraciasPorJugar(){
+	cout << "    ¡Gracias por Jugar!" << endl;
+	system("pause");
 }
 
 void Vista::coordenadas()

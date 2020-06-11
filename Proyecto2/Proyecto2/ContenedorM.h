@@ -21,8 +21,10 @@ private:
 	int inicia, fin;
 	string separador;//Siguiendo el UML del profe
 	int cantidadM;
+	int contador1;
+	int contador2;
 public:
-	ContenedorM(/*int,int,int*/ContenedorV*);
+	ContenedorM(ContenedorV*);
 	virtual ~ContenedorM();
 	void pasaInfoVectorMatriz();
 	void llenarMatrizElementos();
@@ -40,5 +42,7 @@ public:
 	bool continuaJuego();
 	bool posicionVacia(int,int);
 	void validaCuadroCerrado(int);
+	int getContador1();
+	int getContador2();
 };
 
