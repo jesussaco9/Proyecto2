@@ -141,7 +141,7 @@ void ContenedorM::llenarMatrizElementos(){
 								}
 							}
 							else {
-								mat[i][inicia] == new ElementoVacio();;
+								mat[i][inicia] = new ElementoVacio();;
 							}
 						}
 						setInicia(inicia);
@@ -348,13 +348,13 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 						if (mat[i][j+1] != NULL) {
 							if (mat[i+1][j]!=NULL) {
 								if (jugador % 2 == 0) {
-									if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")) {
+									if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")&&(mat[i][j]->getNombreClase() != "ElementoVacio")) {
 										mat[i][j] = new Cuadro1();
 										contador1++;
 									}
 								}
 								else {
-									if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2")) {
+									if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2") && (mat[i][j]->getNombreClase() != "ElementoVacio")) {
 										mat[i][j] = new Cuadro2();
 										contador2++;
 									}

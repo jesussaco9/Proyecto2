@@ -72,7 +72,7 @@ void Controladora::creaCampo(){
 
 void Controladora::comenzarJuego(){
 	int modalidad = 0, modo=0;
-	int f, c;
+	//int f, c;
 	modalidad=menuModalidad();
 	if (modalidad == 1) {
 		menuMatriz();

@@ -1,7 +1,7 @@
 #include "Conexion.h"
 
 
-Conexion::Conexion():ElementosDeMatriz(){
+Conexion::Conexion()/*:ElementosDeMatriz()*/{
 }
 
 Conexion::~Conexion() {
