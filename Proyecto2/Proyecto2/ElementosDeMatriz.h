@@ -14,7 +14,7 @@ protected:
 	string color;
 	string tipo;
 public:
-	ElementosDeMatriz();
+	//ElementosDeMatriz();
 	virtual ~ElementosDeMatriz();
 	virtual string toString() = 0;
 	virtual string toString2() = 0;

@@ -1,6 +1,6 @@
 #include "Punto.h"
 
-Punto::Punto() :ElementosDeMatriz() {
+Punto::Punto() /*:ElementosDeMatriz()*/ {
 }
 
 Punto::~Punto() {

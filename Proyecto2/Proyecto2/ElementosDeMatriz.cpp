@@ -1,7 +1,7 @@
 #include "ElementosDeMatriz.h"
 
-ElementosDeMatriz::ElementosDeMatriz(){
-}
+//ElementosDeMatriz::ElementosDeMatriz(){
+//}
 
 ElementosDeMatriz::~ElementosDeMatriz(){
 }

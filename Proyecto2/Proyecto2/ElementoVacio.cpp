@@ -1,6 +1,6 @@
 #include "ElementoVacio.h"
 
-ElementoVacio::ElementoVacio():ElementosDeMatriz(){
+ElementoVacio::ElementoVacio()/*:ElementosDeMatriz()*/{
 }
 
 string ElementoVacio::toString(){
