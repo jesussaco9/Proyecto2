@@ -3,7 +3,7 @@
 
 class CampoAbstracto;
 
-class ContenedorV{
+class ContenedorV {
 private:
 	int can;
 	int tam;
@@ -14,7 +14,7 @@ public:
 	void agregaCampo(CampoAbstracto*);
 	int getCantidad();
 	int getTamano();
-	bool ultimaPosicionValida(int);
 	CampoAbstracto* getCampoAbstracto(int);
+	bool ultimaPosicionValida(int);
 };
 

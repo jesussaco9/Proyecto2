@@ -113,7 +113,7 @@ void ContenedorM::llenarMatrizElementos(){
 									mat[i][inicia] = NULL;
 								}
 							}
-							else{////
+							else{
 								mat[i][inicia] = new ElementoVacio();
 							}
 						}
@@ -302,10 +302,12 @@ bool ContenedorM::continuaJuego(){
 }
 
 bool ContenedorM::posicionVacia(int x,int y){
+	ElementosDeMatriz* v= new Punto();
+	ElementosDeMatriz* v2 = new Conexion();
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			if (i==x && j==y) {
-				if (mat[i][j] == NULL)
+			if (i==x-1 && j==y-1) {
+				if (mat[i][j] == NULL && mat[i][j] !=v && mat[i][j] != v2)
 					return true;
 			}
 		}

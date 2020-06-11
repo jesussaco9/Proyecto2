@@ -18,6 +18,8 @@ public:
 	static int menuMatrizMixto();
 	static int menuModoJuego();
 	static int primerMov();
+	static int coordenada1();
+	static int coordenada2();
 	static void coordenadas();
 	static void ganador();
 	static CampoAbstracto* creandoMatriz6();

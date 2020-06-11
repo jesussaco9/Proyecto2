@@ -149,6 +149,7 @@
     <ClCompile Include="ContenedorM.cpp" />
     <ClCompile Include="ContenedorV.cpp" />
     <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="CuadroGanador.cpp" />
     <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="ElementoVacio.cpp" />
     <ClCompile Include="main.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="ContenedorM.h" />
     <ClInclude Include="ContenedorV.h" />
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="CuadroGanador.h" />
     <ClInclude Include="ElementosDeMatriz.h" />
     <ClInclude Include="ElementoVacio.h" />
     <ClInclude Include="Estrategia.h" />

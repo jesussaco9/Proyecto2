@@ -103,6 +103,21 @@ int Vista::primerMov(){
 	system("cls");
 }
 
+int Vista::coordenada1(){
+	int n;
+	cout << "Ingreso el primer numero" << endl;
+	cout << "-> "; cin >> n;
+	return n;
+}
+
+int Vista::coordenada2(){
+	int n;
+	cout << "Ingreso el segundo numero" << endl;
+	cout << "-> "; cin >> n;
+	return n;
+	return 0;
+}
+
 void Vista::coordenadas()
 {
 	cout << "===================================================\n";

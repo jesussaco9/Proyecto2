@@ -17,9 +17,13 @@ bool Aleatorio::jugada(){
 		srand(time(0));
 		x = 1 + (rand() % filas);
 		y = 1 + (rand() % columnas);
-		if(tab->posicionVacia(x,y))
-			tab->ingresaPunto(x,y);
-		bandera = true;
+		if (tab->posicionVacia(x, y)) {
+			tab->ingresaPunto(x, y);
+			bandera = true;
+		}
+		else {
+			bandera = false;
+		}
 	}
 	return bandera;
 }

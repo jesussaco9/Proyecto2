@@ -30,7 +30,9 @@ int ContenedorV::getTamano(){
 	return tam;
 }
 
-bool ContenedorV::ultimaPosicionValida(int pos){
+
+bool ContenedorV::ultimaPosicionValida(int pos)
+{
 	if (pos == can - 1) {
 		return true;
 	}

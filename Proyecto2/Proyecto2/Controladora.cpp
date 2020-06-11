@@ -47,8 +47,8 @@ void Controladora::menuMatriz(){
 		case 4:
 			creaCampo();
 			cout << "creando matriz..." << endl;
-			MostrarCampoDeJuego();
-			system("pause");
+			/*MostrarCampoDeJuego();*/
+			Sleep(3000);
 			break;
 		default:
 			break;
@@ -95,17 +95,23 @@ void Controladora::comenzarJuego(){
 
 			while (campoMatriz->continuaJuego()) {
 				if (cont % 2 == 0) {
-					string color = "Blanco";
-					a->jugada();
-
+					string color = "Azul";
+					if (a->jugada())
+					{
+						cout << "Computadora realizo mov..." << endl;
+						Sleep(3000);
+					}
+				/*	else {
+						a->jugada();
+					}*/
 					system("cls");
 					MostrarCampoDeJuego();
 				}
 				else if (cont % 2 != 0) {
-					string color = "Negro";
+					string color = "Rojo";
 					Vista::coordenadas();
-					int a, b;
-					cin >> a; cin >> b;
+					int a = Vista::coordenada1();
+					int b = Vista::coordenada2();
 					campoMatriz->ingresaPunto(a, b);
 					system("cls");
 					MostrarCampoDeJuego();
