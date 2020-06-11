@@ -18,3 +18,7 @@ string ElementoVacio::toString2(){
 string ElementoVacio::getNombreClase(){
 	return "ElementoVacio";
 }
+
+void ElementoVacio::setGanador(string)
+{
+}

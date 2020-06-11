@@ -14,21 +14,22 @@ int main() {
 	Controladora* inicio = new Controladora();
 	inicio->menuPrincipal();
 	//inicio->menuMatriz();
-	/*CampoAbstracto* resul = new CampoResultante();
-	ContenedorV* vec = new ContenedorV();
-	CampoAbstracto* cSeis = new CampoSeisPuntos();
-	CampoAbstracto* cSeis2 = new CampoSeisPuntos();
-	CampoAbstracto* cNueve = new CampoNuevePuntos();
-	CampoAbstracto* cQuince = new CampoQuincePuntos();
+	//CampoAbstracto* resul = new CampoResultante();
+	//ContenedorV* vec = new ContenedorV();
+	//CampoAbstracto* cSeis = new CampoSeisPuntos();
+	//CampoAbstracto* cSeis2 = new CampoSeisPuntos();
+	//CampoAbstracto* cNueve = new CampoNuevePuntos();
+	//CampoAbstracto* cQuince = new CampoQuincePuntos();
 	
-	resul->ingresaCampo(cSeis);
-	resul->ingresaCampo(cNueve);
-	resul->ingresaCampo(cQuince);
+	//resul->ingresaCampo(cSeis);
+	//resul->ingresaCampo(cNueve);
+	//resul->ingresaCampo(cQuince);
 
-	ContenedorM* mat = new ContenedorM(resul->retornaContenedor());
-	mat->llenarMatrizElementos();
+	/*ContenedorM* mat = new ContenedorM(resul->retornaContenedor());
+
 	cout << mat->toStirng();
-
+	mat->validaCuadroCerrado(1);*/
+	/*
 	mat->ingresaPunto(1,2);
 	mat->ingresaPunto(3,2);
 	mat->ingresaPunto(5,2);

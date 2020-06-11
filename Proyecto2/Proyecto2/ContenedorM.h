@@ -7,6 +7,9 @@
 #include "Punto.h"
 #include "Conexion.h"
 #include "ElementoVacio.h"
+#include "CuadroGanador.h"
+#include "Cuadro1.h"
+#include "Cuadro2.h"
 using namespace std;
 
 class ContenedorM{
@@ -36,7 +39,6 @@ public:
 	void setFin(int);
 	bool continuaJuego();
 	bool posicionVacia(int,int);
-	/*string getSeparador();
-	void setSeparador(string);*/
+	void validaCuadroCerrado(int);
 };
 

@@ -22,6 +22,10 @@ public:
 	virtual int getPosicionY();
 	virtual void setPosicionX(int);
 	virtual void setPosicionY(int);
+	virtual void setGanador(string);
+	virtual void setGanador2(string);
+	virtual string getGanador();
 	virtual string getTipo();
+	virtual string getNombreClase();
 };
 

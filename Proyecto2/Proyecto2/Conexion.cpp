@@ -53,3 +53,7 @@ string Conexion::getTipo() {
 	return tipo;
 }
 
+void Conexion::setGanador(string)
+{
+}
+

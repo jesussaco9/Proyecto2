@@ -9,5 +9,6 @@ public:
 	virtual string toString();
 	virtual string toString2();
 	string getNombreClase();
+	void setGanador(string);
 };
 

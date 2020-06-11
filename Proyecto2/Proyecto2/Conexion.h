@@ -17,4 +17,5 @@ public:
 	virtual void setPosicionX(int);
 	virtual void setPosicionY(int);
 	string getTipo();
+	void setGanador(string);
 };

@@ -109,7 +109,10 @@ void ContenedorM::llenarMatrizElementos(){
 								if ((i%2==0)&&(inicia%2==0)){
 									mat[i][inicia] = new Punto();
 								}
-								else{
+								else if ((i % 2 != 0) && (inicia % 2 != 0)){
+									mat[i][inicia] = new CuadroGanador();
+								}
+								else {
 									mat[i][inicia] = NULL;
 								}
 							}
@@ -129,6 +132,9 @@ void ContenedorM::llenarMatrizElementos(){
 							if (i < 5) {
 								if ((i % 2 == 0) && (inicia % 2 == 0)) {
 									mat[i][inicia] = new Punto();
+								}
+								else if ((i % 2 != 0) && (inicia % 2 != 0)) {
+									mat[i][inicia] = new CuadroGanador();
 								}
 								else {
 									mat[i][inicia] = NULL;
@@ -150,6 +156,9 @@ void ContenedorM::llenarMatrizElementos(){
 							if (i < 10) {
 								if ((i % 2 == 0) && (inicia % 2 == 0)) {
 									mat[i][inicia] = new Punto();
+								}
+								else if ((i % 2 != 0) && (inicia % 2 != 0)) {
+									mat[i][inicia] = new CuadroGanador();
 								}
 								else {
 									mat[i][inicia] = NULL;
@@ -201,6 +210,8 @@ string ContenedorM::toStirng() const{
 					}
 					else if (i % 2 == 0) {
 						cout << mat[i][j]->toString();
+					}else if (i % 2 != 0 && j % 2 != 0) {
+						cout << mat[i][j]->toString2();
 					}
 					else {
 						cout << mat[i][j]->toString2();
@@ -223,6 +234,9 @@ string ContenedorM::toStirng() const{
 					}
 					else if (i % 2 == 0) {
 						cout << mat[i][j]->toString();
+					}
+					else if (i % 2 != 0 && j % 2 != 0) {
+						cout << mat[i][j]->toString2();
 					}
 					else {
 						cout << mat[i][j]->toString2();
@@ -291,23 +305,25 @@ void ContenedorM::setFin(int f){
 }
 
 bool ContenedorM::continuaJuego(){
+	bool bandera = false;
 	for (int i = 0; i < fil; i++) {
-		for (int j = 0; j <= col; j++) {
-			if (mat[i][j] != NULL) {
-				return true;
+		for (int j = 0; j < col; j++) {
+			if (mat[i][j] == NULL) {
+				bandera = true;
 			}
 		}
 	}
-	return false;
+	return bandera;
 }
 
 bool ContenedorM::posicionVacia(int x,int y){
 	ElementosDeMatriz* v= new Punto();
 	ElementosDeMatriz* v2 = new Conexion();
+	ElementosDeMatriz* v3 = new CuadroGanador();
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (i==x-1 && j==y-1) {
-				if (mat[i][j] == NULL && mat[i][j] !=v && mat[i][j] != v2)
+				if (mat[i][j] == NULL && mat[i][j] !=v && mat[i][j] != v2 && mat[i][j] != v3)
 					return true;
 			}
 		}
@@ -315,11 +331,37 @@ bool ContenedorM::posicionVacia(int x,int y){
 	return false;
 }
 
-//string ContenedorM::getSeparador(){
-//	return separador;
-//}
-//
-//void ContenedorM::setSeparador(string sepa){
-//	this->separador = sepa;
-//}
+void ContenedorM::validaCuadroCerrado(int jugador){
+	//bool bandera = false;
+	Cuadro1* c1 = new Cuadro1();
+	Cuadro2* c2 = new Cuadro2();
+	int con;
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+			if ((i % 2 != 0) && (j % 2 != 0)) {
+				if (mat[i][j-1] != NULL) {
+					if (mat[i-1][j] != NULL) {
+						if (mat[i][j+1] != NULL) {
+							if (mat[i+1][j]!=NULL) {
+									if (jugador % 2 == 0) {
+										if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")) {
+											mat[i][j] = new Cuadro1();
+										}
+									}
+									else {
+										if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2")) {
+											mat[i][j] = new Cuadro2();
+										}
+									}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//return bandera;
+}
+
+
 

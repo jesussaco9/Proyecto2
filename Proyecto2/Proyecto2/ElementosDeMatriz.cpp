@@ -1,19 +1,28 @@
 #include "ElementosDeMatriz.h"
 
-ElementosDeMatriz::ElementosDeMatriz()
-{
+ElementosDeMatriz::ElementosDeMatriz(){
 }
 
-ElementosDeMatriz::~ElementosDeMatriz()
-{
+ElementosDeMatriz::~ElementosDeMatriz(){
 }
 
 void ElementosDeMatriz::setPosicionX(int px) {
 	posicionX = px;
 }
 
-void ElementosDeMatriz::setPosicionY(int py) {
+void ElementosDeMatriz::setPosicionY(int py){
 	posicionY = py;
+}
+
+void ElementosDeMatriz::setGanador(string){
+}
+
+void ElementosDeMatriz::setGanador2(string)
+{
+}
+
+string ElementosDeMatriz::getGanador(){
+	return string();
 }
 
 int ElementosDeMatriz::getPosicionX() {
@@ -27,4 +36,9 @@ int ElementosDeMatriz::getPosicionY() {
 
 string ElementosDeMatriz::getTipo() {
 	return tipo;
+}
+
+string ElementosDeMatriz::getNombreClase()
+{
+	return string();
 }

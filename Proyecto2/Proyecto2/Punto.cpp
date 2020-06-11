@@ -45,3 +45,7 @@ string Punto::getTipo() {
 	return tipo;
 }
 
+void Punto::setGanador(string)
+{
+}
+

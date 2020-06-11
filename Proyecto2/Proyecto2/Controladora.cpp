@@ -96,14 +96,11 @@ void Controladora::comenzarJuego(){
 			while (campoMatriz->continuaJuego()) {
 				if (cont % 2 == 0) {
 					string color = "Azul";
-					if (a->jugada())
-					{
-						cout << "Computadora realizo mov..." << endl;
+					if (a->jugada()){
+						cout << "Computadora realizando movimiento..." << endl;
 						Sleep(3000);
+						campoMatriz->validaCuadroCerrado(cont);
 					}
-				/*	else {
-						a->jugada();
-					}*/
 					system("cls");
 					MostrarCampoDeJuego();
 				}
@@ -113,6 +110,7 @@ void Controladora::comenzarJuego(){
 					int a = Vista::coordenada1();
 					int b = Vista::coordenada2();
 					campoMatriz->ingresaPunto(a, b);
+					campoMatriz->validaCuadroCerrado(cont);
 					system("cls");
 					MostrarCampoDeJuego();
 				}
