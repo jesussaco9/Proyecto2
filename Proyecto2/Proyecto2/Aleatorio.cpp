@@ -64,6 +64,31 @@ bool Aleatorio::jugada() {
 		}
 	}
 	return bandera;
+
+	/*bool bandera = false;
+	int x, y;
+	int acumulado = 0;
+	Vector v;
+	while (bandera == false) {
+		srand(time(0));
+		x = 1 + (rand() % filas);
+		y = 1 + (rand() % columnas);
+		acumulado = x + y;
+		if (!v.usado(acumulado)) {
+			if (tab->ingresaPuntoM(x, y)) {
+				v.agrega(acumulado);
+				bandera = true;
+			}
+			else {
+				bandera = false;
+			}
+		}
+		else {
+			bandera = false;
+		}
+			
+	}
+	return bandera;*/
 }
 
 string Aleatorio::toString(){

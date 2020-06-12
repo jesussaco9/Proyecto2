@@ -15,7 +15,7 @@ ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista){
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			mat[i][j] = new ElementoVacio();
+				mat[i][j] = new ElementoVacio();
 		}
 	}
 	llenarMatrizElementos();
@@ -100,10 +100,13 @@ void ContenedorM::llenarMatrizElementos(){
 	string tipo = "class CampoSeisPuntos";
 	string tipo2 = "class CampoNuevePuntos";
 	string tipo3 = "class CampoQuincePuntos";
-
+	int valC = 0;
+	int contador = 0;
 		for (int k = 0; k < cantM; k++) {
 				if (tipo == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
+					/*valC = fin;
+					contador++;*/
 					for (int i = 0; i < fil;i++) {
 						for (inicia =this->getInicia(); inicia < fin; inicia++) {
 							if (i < 5) {
@@ -128,6 +131,8 @@ void ContenedorM::llenarMatrizElementos(){
 				}
 				else if (tipo2 == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
+					/*valC = fin;
+					contador++;*/
 					for (int i = 0; i < fil; i++) {
 						for (inicia = this->getInicia(); inicia < fin; inicia++) {
 							if (i < 5) {
@@ -152,34 +157,30 @@ void ContenedorM::llenarMatrizElementos(){
 				}
 				else if (tipo3 == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
+					valC = fin;
+					/*contador++;*/
 					for (int i = 0; i < fil; i++) {
 						for (inicia=this->getInicia(); inicia < fin; inicia++) {
 							if (i < 9) {
-								if ((i % 2 == 0) && (inicia % 2 == 0)) {
+								if ((inicia==valC-1)&&((i==6)|| (i == 8))) {
+									mat[i][inicia] = new ElementoVacio();
+								}
+								else if ((i % 2 == 0) && (inicia % 2 == 0)) {
 									mat[i][inicia] = new Punto();
 								}
 								else if ((i % 2 != 0) && (inicia % 2 != 0)) {
 									mat[i][inicia] = new CuadroGanador();
 								}
+								/*else*//*if (mat[6][valC-1] == NULL && mat[8][valC-1] == NULL) {
+									mat[i][inicia] = new ElementoVacio();
+								}*/
 								else {
-										mat[i][inicia] = NULL;
+									mat[i][inicia] = NULL;
 								}
 							}
 							else {
 								mat[i][inicia] = new ElementoVacio();
 							}
-							/*if (i == 5 && inicia == 5) {
-								mat[i][inicia] = new ElementoVacio();
-							}
-							if (i == 6 && inicia == 5) {
-								mat[i][inicia] = new ElementoVacio();
-							}
-							if (i == 7 && inicia == 5) {
-								mat[i][inicia] = new ElementoVacio();
-							}
-							if (i == 8 && inicia == 5) {
-								mat[i][inicia] = new ElementoVacio();
-							}*/
 						}
 						setInicia(inicia);
 						inicia = inicia - 6;
@@ -285,7 +286,7 @@ void ContenedorM::ingresaPunto(int x, int y){
 }
 
 bool ContenedorM::ingresaPuntoM(int x, int y){
-	//ElementosDeMatriz* v = new Punto();
+	ElementosDeMatriz* v = new Punto();
 	//int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
