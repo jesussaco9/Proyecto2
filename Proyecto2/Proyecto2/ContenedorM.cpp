@@ -168,7 +168,7 @@ void ContenedorM::llenarMatrizElementos(){
 							else {
 								mat[i][inicia] = new ElementoVacio();
 							}
-							if (i == 5 && inicia == 5) {
+							/*if (i == 5 && inicia == 5) {
 								mat[i][inicia] = new ElementoVacio();
 							}
 							if (i == 6 && inicia == 5) {
@@ -179,7 +179,7 @@ void ContenedorM::llenarMatrizElementos(){
 							}
 							if (i == 8 && inicia == 5) {
 								mat[i][inicia] = new ElementoVacio();
-							}
+							}*/
 						}
 						setInicia(inicia);
 						inicia = inicia - 6;
