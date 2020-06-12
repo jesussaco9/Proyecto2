@@ -15,7 +15,7 @@ ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista){
 	}
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-				mat[i][j] = NULL;
+			mat[i][j] = new ElementoVacio();
 		}
 	}
 	llenarMatrizElementos();
@@ -154,7 +154,7 @@ void ContenedorM::llenarMatrizElementos(){
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
 					for (int i = 0; i < fil; i++) {
 						for (inicia=this->getInicia(); inicia < fin; inicia++) {
-							if (i < 10) {
+							if (i < 9) {
 								if ((i % 2 == 0) && (inicia % 2 == 0)) {
 									mat[i][inicia] = new Punto();
 								}
@@ -162,10 +162,22 @@ void ContenedorM::llenarMatrizElementos(){
 									mat[i][inicia] = new CuadroGanador();
 								}
 								else {
-									mat[i][inicia] = NULL;
+										mat[i][inicia] = NULL;
 								}
 							}
 							else {
+								mat[i][inicia] = new ElementoVacio();
+							}
+							if (i == 5 && inicia == 5) {
+								mat[i][inicia] = new ElementoVacio();
+							}
+							if (i == 6 && inicia == 5) {
+								mat[i][inicia] = new ElementoVacio();
+							}
+							if (i == 7 && inicia == 5) {
+								mat[i][inicia] = new ElementoVacio();
+							}
+							if (i == 8 && inicia == 5) {
 								mat[i][inicia] = new ElementoVacio();
 							}
 						}
@@ -273,7 +285,7 @@ void ContenedorM::ingresaPunto(int x, int y){
 }
 
 bool ContenedorM::ingresaPuntoM(int x, int y){
-	ElementosDeMatriz* v = new Punto();
+	//ElementosDeMatriz* v = new Punto();
 	//int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
