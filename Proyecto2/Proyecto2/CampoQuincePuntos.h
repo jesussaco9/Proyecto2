@@ -6,7 +6,6 @@ class CampoQuincePuntos: public CampoAbstracto{
 private:
 	string codigo;
 	int fil, col;
-	ElementosDeMatriz*** matrizQuince;
 public:
 	CampoQuincePuntos();
 	virtual ~CampoQuincePuntos();

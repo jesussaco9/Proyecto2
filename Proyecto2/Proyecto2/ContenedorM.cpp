@@ -105,8 +105,6 @@ void ContenedorM::llenarMatrizElementos(){
 		for (int k = 0; k < cantM; k++) {
 				if (tipo == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
-					/*valC = fin;
-					contador++;*/
 					for (int i = 0; i < fil;i++) {
 						for (inicia =this->getInicia(); inicia < fin; inicia++) {
 							if (i < 5) {
@@ -131,8 +129,6 @@ void ContenedorM::llenarMatrizElementos(){
 				}
 				else if (tipo2 == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
-					/*valC = fin;
-					contador++;*/
 					for (int i = 0; i < fil; i++) {
 						for (inicia = this->getInicia(); inicia < fin; inicia++) {
 							if (i < 5) {
@@ -158,7 +154,6 @@ void ContenedorM::llenarMatrizElementos(){
 				else if (tipo3 == typeid(*vector->getCampoAbstracto(k)).name()) {
 					fin = fin + vector->getCampoAbstracto(k)->getCol();
 					valC = fin;
-					/*contador++;*/
 					for (int i = 0; i < fil; i++) {
 						for (inicia=this->getInicia(); inicia < fin; inicia++) {
 							if (i < 9) {
@@ -171,9 +166,6 @@ void ContenedorM::llenarMatrizElementos(){
 								else if ((i % 2 != 0) && (inicia % 2 != 0)) {
 									mat[i][inicia] = new CuadroGanador();
 								}
-								/*else*//*if (mat[6][valC-1] == NULL && mat[8][valC-1] == NULL) {
-									mat[i][inicia] = new ElementoVacio();
-								}*/
 								else {
 									mat[i][inicia] = NULL;
 								}
@@ -287,16 +279,8 @@ void ContenedorM::ingresaPunto(int x, int y){
 
 bool ContenedorM::ingresaPuntoM(int x, int y){
 	ElementosDeMatriz* v = new Punto();
-	//int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-		/*	if ((i % 2 == 0) && (j % 2 == 0)) {
-				return false;
-			}
-			else if((i % 2 != 0) && (j % 2 != 0)){
-				return false;
-			}
-			else*/
 			if ((x == i) && (y == j)) {
 				if (mat[i][j] == NULL) {
 					mat[i][j] = new Conexion();
@@ -343,7 +327,6 @@ void ContenedorM::setFin(int f){
 }
 
 bool ContenedorM::continuaJuego(){
-	/*bool bandera = false;*/
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (mat[i][j] == NULL) {
@@ -356,9 +339,6 @@ bool ContenedorM::continuaJuego(){
 
 bool ContenedorM::posicionVacia(int x,int y){
 	ElementosDeMatriz* v= new Punto();
-	/*ElementosDeMatriz* v2 = new Conexion();
-	ElementosDeMatriz* v3 = new CuadroGanador();*/
-
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (i==x-1 && j==y-1) {
@@ -374,7 +354,6 @@ bool ContenedorM::posicionVacia(int x,int y){
 }
 
 void ContenedorM::validaCuadroCerrado(int jugador){
-	//bool bandera = false;
 	Cuadro1* c1 = new Cuadro1();
 	Cuadro2* c2 = new Cuadro2();
 	int con;
@@ -404,7 +383,6 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 			}
 		}
 	}
-	//return bandera;
 }
 
 int ContenedorM::getContador1(){
