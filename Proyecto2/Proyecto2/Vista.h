@@ -18,6 +18,9 @@ public:
 	static int menuMatrizMixto();
 	static int menuModoJuego();
 	static int primerMov();
+	static int primerMov2();
+	static void turnoJ1();
+	static void turnoJ2();
 	static int coordenada1();
 	static int coordenada2();
 	static void textoGanoJugador1();

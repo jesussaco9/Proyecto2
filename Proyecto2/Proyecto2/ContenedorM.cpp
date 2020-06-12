@@ -2,6 +2,7 @@
 
 ContenedorM::ContenedorM(ContenedorV* vec){
 	vector = vec;
+
 	contador1 = 0;
 	contador2 = 0;
 	inicia = 0;
@@ -271,6 +272,30 @@ void ContenedorM::ingresaPunto(int x, int y){
 	}
 }
 
+bool ContenedorM::ingresaPuntoM(int x, int y){
+	ElementosDeMatriz* v = new Punto();
+	int a = x - 1, b = y - 1;
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+		/*	if ((i % 2 == 0) && (j % 2 == 0)) {
+				return false;
+			}
+			else if((i % 2 != 0) && (j % 2 != 0)){
+				return false;
+			}
+			else*/
+			if ((a == i) && (b == j)) {
+				if (mat[i][j] == NULL) {
+					mat[i][j] = new Conexion();
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+ 
 int ContenedorM::getFila(){
 	return fil;
 }
@@ -305,15 +330,15 @@ void ContenedorM::setFin(int f){
 }
 
 bool ContenedorM::continuaJuego(){
-	bool bandera = false;
+	/*bool bandera = false;*/
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (mat[i][j] == NULL) {
-				bandera = true;
+				return true;
 			}
 		}
 	}
-	return bandera;
+	return false;
 }
 
 bool ContenedorM::posicionVacia(int x,int y){
@@ -324,11 +349,11 @@ bool ContenedorM::posicionVacia(int x,int y){
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if (i==x-1 && j==y-1) {
-				if (mat[i][j] == NULL) {
+				/*if (mat[i][j] == NULL) {*/
 					if (mat[i][j] != v) {
 						return true;
 					}
-				}
+				/*}*/
 			}
 		}
 	}
@@ -375,6 +400,16 @@ int ContenedorM::getContador1(){
 
 int ContenedorM::getContador2(){
 	return contador2;
+}
+
+void ContenedorM::PosiblesJugadas(){
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; i < j; j++) {
+			if (mat[i][j]==NULL){
+			/*	coordenada(i, j);*/
+			}
+		}
+	}
 }
 
 

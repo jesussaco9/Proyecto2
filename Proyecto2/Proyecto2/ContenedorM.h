@@ -31,6 +31,7 @@ public:
 	ElementosDeMatriz* retornarPos(int x, int y);
 	string toStirng() const;
 	void ingresaPunto(int, int);//Siguiendo el UML del profe
+	bool ingresaPuntoM(int, int);
 	int getFila();
 	int getColumna();
 	void setFila(int);
@@ -44,5 +45,6 @@ public:
 	void validaCuadroCerrado(int);
 	int getContador1();
 	int getContador2();
+	void PosiblesJugadas();
 };
 

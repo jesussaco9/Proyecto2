@@ -95,7 +95,7 @@ int Vista::primerMov(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el Jugador que inicia la partida:\n";
-	cout << "\t\t1. Jugador 1 \n";
+	cout << "\t\t1. Computadora \n";
 	cout << "\t\t2. Jugador 2 \n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
@@ -103,6 +103,25 @@ int Vista::primerMov(){
 	system("cls");
 }
 
+int Vista::primerMov2() {
+	limpiaPantalla();
+	cout << "===================================================\n";
+	cout << "\t\tSeleccione el Jugador que inicia la partida:\n";
+	cout << "\t\t1. Jugador 1 \n";
+	cout << "\t\t2. Jugador 2 \n";
+	cout << "===================================================\n";
+	cout << "\t\tDigite la opcion:\n";
+	cout << "\t\t-> "; return opcion();
+	system("cls");
+}
+void Vista::turnoJ1()
+{
+	cout << "Turno Jugador 1" << endl;
+}
+void Vista::turnoJ2()
+{
+	cout << "Turno Jugador 2" << endl;
+}
 int Vista::coordenada1(){
 	int n;
 	cout << "Ingreso el primer numero[FILA]" << endl;

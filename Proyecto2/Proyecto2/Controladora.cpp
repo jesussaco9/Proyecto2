@@ -46,9 +46,9 @@ void Controladora::menuMatriz(){
 			break;
 		case 4:
 			creaCampo();
-			cout << "creando matriz..." << endl;
+			cout << "\t\tCreando matriz... Espere un momento" << endl;
 			/*MostrarCampoDeJuego();*/
-			Sleep(3000);
+			Sleep(1000);
 			break;
 		default:
 			break;
@@ -97,8 +97,8 @@ void Controladora::comenzarJuego(){
 				if (cont % 2 == 0) {
 					string color = "Azul";
 					if (a->jugada()){
-						cout << "Computadora realizando movimiento..." << endl;
-						Sleep(3000);
+						cout << "Computadora realizando movimiento...Espere un momento" << endl;
+						Sleep(1000);
 						campoMatriz->validaCuadroCerrado(cont);
 					}
 					system("cls");
@@ -130,6 +130,61 @@ void Controladora::comenzarJuego(){
 				//Vista::ganador();
 				//system("pause");
 			}
+		}
+	}
+	else if (modalidad == 2) {
+		menuMatriz();
+	/*	a->setFilas(campoMatriz->getFila());
+		a->setColumnas(campoMatriz->getColumna());*/
+		int inicio = 0;
+		inicio = Vista::primerMov2();
+		system("pause");
+		int cont = 0;
+		if (inicio == 1) {
+			cont = 2;
+		}
+		else if (inicio == 2) {
+			cont = 1;
+		}
+		MostrarCampoDeJuego();
+		while (campoMatriz->continuaJuego()) {
+			if (cont % 2 == 0) {
+				string color = "Azul";
+				Vista::turnoJ1();
+				Vista::coordenadas();
+				int a = Vista::coordenada1();
+				int b = Vista::coordenada2();
+				campoMatriz->ingresaPunto(a, b);
+				campoMatriz->validaCuadroCerrado(cont);
+				system("cls");
+				MostrarCampoDeJuego();
+			}
+			else if (cont % 2 != 0) {
+				string color = "Rojo";
+				Vista::turnoJ2();
+				Vista::coordenadas();
+				int a = Vista::coordenada1();
+				int b = Vista::coordenada2();
+				campoMatriz->ingresaPunto(a, b);
+				campoMatriz->validaCuadroCerrado(cont);
+				system("cls");
+				MostrarCampoDeJuego();
+			}
+			cont++;
+		}
+		if (campoMatriz->continuaJuego() == false) {
+			if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
+				Vista::textoGanoJugador1();
+			}
+			else if (campoMatriz->getContador1() < campoMatriz->getContador2()) {
+				Vista::textoGanoJugador2();
+			}
+			else {
+				Vista::textoJuegoEmpatado();
+			}
+			Vista::textoGraciasPorJugar();
+			//Vista::ganador();
+			//system("pause");
 		}
 	}
 }
