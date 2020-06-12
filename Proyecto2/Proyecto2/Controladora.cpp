@@ -45,7 +45,6 @@ void Controladora::menuMatriz(){
 		case 4:
 			creaCampo();
 			cout << "\t\tCreando matriz... Espere un momento" << endl;
-			/*MostrarCampoDeJuego();*/
 			Sleep(1000);
 			break;
 		default:
@@ -95,6 +94,7 @@ void Controladora::comenzarJuego(){
 			while (campoMatriz->continuaJuego()) {
 				if (cont % 2 == 0) {
 					string color = "Azul";
+
 					if (a->jugada()){
 						cout << "Computadora realizando movimiento...Espere un momento" << endl;
 						Sleep(1000);
@@ -104,15 +104,14 @@ void Controladora::comenzarJuego(){
 					MostrarCampoDeJuego();
 				}
 				else if (cont % 2 != 0) {
-					string color = "Rojo";
-					Vista::coordenadas();
-					int a = Vista::coordenada1();
-					int b = Vista::coordenada2();
-					campoMatriz->ingresaPunto(a, b);
-
-					campoMatriz->validaCuadroCerrado(cont);
-					system("cls");
-					MostrarCampoDeJuego();
+						string color = "Rojo";
+						Vista::coordenadas();
+						int a = Vista::coordenada1();
+						int b = Vista::coordenada2();
+						campoMatriz->ingresaPunto(a, b);
+						campoMatriz->validaCuadroCerrado(cont);
+						system("cls");
+						MostrarCampoDeJuego();
 				}
 				cont++;
 			}
@@ -134,8 +133,6 @@ void Controladora::comenzarJuego(){
 	}
 	else if (modalidad == 2) {
 		menuMatriz();
-	/*	a->setFilas(campoMatriz->getFila());
-		a->setColumnas(campoMatriz->getColumna());*/
 		int inicio = 0;
 		inicio = Vista::primerMov2();
 		system("pause");

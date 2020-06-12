@@ -256,6 +256,8 @@ string ContenedorM::toStirng() const{
 		}
 		cout<< endl;
 	}
+	cout << endl;
+	cout << "Pts Jugador1=  " << contador1 << "    Pts Jugador2=  " << contador2 << endl;
 	cout << "===================================================\n";
 	return s.str();
 }
@@ -354,9 +356,6 @@ bool ContenedorM::posicionVacia(int x,int y){
 }
 
 void ContenedorM::validaCuadroCerrado(int jugador){
-	Cuadro1* c1 = new Cuadro1();
-	Cuadro2* c2 = new Cuadro2();
-	int con;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if ((i % 2 != 0) && (j % 2 != 0)) {
@@ -384,6 +383,8 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 		}
 	}
 }
+
+
 
 int ContenedorM::getContador1(){
 	return contador1;

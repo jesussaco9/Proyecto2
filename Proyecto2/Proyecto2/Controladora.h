@@ -23,7 +23,6 @@ public:
 	void menuPrincipal();
 	int menuModalidad();
 	void menuMatriz();
-	//void menuMatrizMixto();
 	void MostrarCampoDeJuego();
 	int menuModoJuego();
 	void creaCampo();
