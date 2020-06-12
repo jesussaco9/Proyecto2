@@ -1,11 +1,9 @@
 #include "Controladora.h"
 
 Controladora::Controladora(){
-	/*contenedorCampos = new ContenedorV();
-	campoMatriz = new ContenedorM(contenedorCampos);*/
-	campoAbs = new CampoResultante();
 
-	
+	campoAbs = new CampoResultante();
+	listaCoordenadas = new Lista();
 }
 
 void Controladora::menuPrincipal(){
@@ -67,15 +65,16 @@ int Controladora::menuModoJuego(){
 }
 
 void Controladora::creaCampo(){
-	campoMatriz = new ContenedorM(campoAbs->retornaContenedor());
+	campoMatriz = new ContenedorM(campoAbs->retornaContenedor(),listaCoordenadas);
 }
 
 void Controladora::comenzarJuego(){
 	int modalidad = 0, modo=0;
-	//int f, c;
+	
 	modalidad=menuModalidad();
 	if (modalidad == 1) {
 		menuMatriz();
+		campoMatriz->PosiblesJugadas();
 		modo=menuModoJuego();
 		if (modo == 1) {
 			creaModoAleatorio();
@@ -110,6 +109,7 @@ void Controladora::comenzarJuego(){
 					int a = Vista::coordenada1();
 					int b = Vista::coordenada2();
 					campoMatriz->ingresaPunto(a, b);
+
 					campoMatriz->validaCuadroCerrado(cont);
 					system("cls");
 					MostrarCampoDeJuego();
@@ -208,5 +208,5 @@ void Controladora::crea15puntos(){
 }
 
 void Controladora::creaModoAleatorio(){
-	a = new Aleatorio(campoMatriz);
+	a = new Aleatorio(campoMatriz,listaCoordenadas);
 }

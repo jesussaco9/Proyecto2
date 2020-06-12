@@ -32,10 +32,11 @@ public:
 	}
 };
 
-Aleatorio::Aleatorio(ContenedorM* m){
+Aleatorio::Aleatorio(ContenedorM* m, Lista* l){
 	tab = m;
 	filas=0;
 	columnas=0;
+	lis = l;
 }
 
 Aleatorio::~Aleatorio(){
@@ -44,7 +45,27 @@ Aleatorio::~Aleatorio(){
 
 
 bool Aleatorio::jugada() {
+	int cantidadElementos = lis->getN();
 	bool bandera = false;
+	int x, y, ran;
+	Coordenada* cor;
+	while (bandera == false) {
+		srand(time(0));
+		ran = 1 + (rand() % cantidadElementos);
+		cor = lis->recuperarElemento(ran);
+		x = cor->getX();
+		y = cor->getY();
+		if (tab->ingresaPuntoM(x, y)) {
+			bandera = true;
+			lis->eliminaObjeto(ran);
+		}
+		else{
+			bandera = false;
+		}
+	}
+	return bandera;
+
+	/*bool bandera = false;
 	int x, y;
 	int acumulado = 0;
 	Vector v;
@@ -67,7 +88,7 @@ bool Aleatorio::jugada() {
 		}
 			
 	}
-	return bandera;
+	return bandera;*/
 }
 
 string Aleatorio::toString(){

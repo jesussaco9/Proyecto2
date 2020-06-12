@@ -10,12 +10,14 @@
 #include "CuadroGanador.h"
 #include "Cuadro1.h"
 #include "Cuadro2.h"
+#include "Lista.h"
 using namespace std;
 
 class ContenedorM{
 private:
 	ElementosDeMatriz*** mat;//Siguiendo el UML del profe
 	ContenedorV* vector;
+	Lista* lista;
 	int fil;
 	int col;
 	int inicia, fin;
@@ -24,7 +26,7 @@ private:
 	int contador1;
 	int contador2;
 public:
-	ContenedorM(ContenedorV*);
+	ContenedorM(ContenedorV*,Lista*);
 	virtual ~ContenedorM();
 	void pasaInfoVectorMatriz();
 	void llenarMatrizElementos();

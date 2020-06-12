@@ -1,8 +1,8 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(ContenedorV* vec){
+ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista){
 	vector = vec;
-
+	lista = _lista;
 	contador1 = 0;
 	contador2 = 0;
 	inicia = 0;
@@ -274,7 +274,7 @@ void ContenedorM::ingresaPunto(int x, int y){
 
 bool ContenedorM::ingresaPuntoM(int x, int y){
 	ElementosDeMatriz* v = new Punto();
-	int a = x - 1, b = y - 1;
+	//int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 		/*	if ((i % 2 == 0) && (j % 2 == 0)) {
@@ -284,7 +284,7 @@ bool ContenedorM::ingresaPuntoM(int x, int y){
 				return false;
 			}
 			else*/
-			if ((a == i) && (b == j)) {
+			if ((x == i) && (y == j)) {
 				if (mat[i][j] == NULL) {
 					mat[i][j] = new Conexion();
 					return true;
@@ -402,11 +402,12 @@ int ContenedorM::getContador2(){
 	return contador2;
 }
 
-void ContenedorM::PosiblesJugadas(){
+void ContenedorM::PosiblesJugadas(){	
 	for (int i = 0; i < fil; i++) {
-		for (int j = 0; i < j; j++) {
+		for (int j = 0; j < col; j++) {
 			if (mat[i][j]==NULL){
-			/*	coordenada(i, j);*/
+				Coordenada* cordenada = new Coordenada(i, j);
+				lista->agregarCoordenada(cordenada);
 			}
 		}
 	}

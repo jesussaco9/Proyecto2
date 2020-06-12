@@ -9,6 +9,7 @@
 #include "CampoQuincePuntos.h"
 #include "CampoResultante.h"
 #include "Aleatorio.h"
+#include "Lista.h"
 
 class Controladora {
 private:
@@ -16,6 +17,7 @@ private:
 	ContenedorV* contenedorCampos;
 	CampoAbstracto* campoAbs;
 	Aleatorio* a;
+	Lista* listaCoordenadas;
 public:
 	Controladora();
 	void menuPrincipal();
