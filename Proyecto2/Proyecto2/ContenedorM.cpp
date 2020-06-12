@@ -7,6 +7,7 @@ ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista){
 	contador2 = 0;
 	inicia = 0;
 	fin = 0;
+	sigue = true;
 	pasaInfoVectorMatriz();
 	separador = "  ";
 	mat = new ElementosDeMatriz** [fil];
@@ -280,7 +281,7 @@ void ContenedorM::ingresaPunto(int x, int y){
 }
 
 bool ContenedorM::ingresaPuntoM(int x, int y){
-	ElementosDeMatriz* v = new Punto();
+	//ElementosDeMatriz* v = new Punto();
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if ((x == i) && (y == j)) {
@@ -356,6 +357,7 @@ bool ContenedorM::posicionVacia(int x,int y){
 }
 
 void ContenedorM::validaCuadroCerrado(int jugador){
+	this->setSigue(false);
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			if ((i % 2 != 0) && (j % 2 != 0)) {
@@ -367,12 +369,14 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 									if ((mat[i][j]->getNombreClase() != "Cuadro1")&&(mat[i][j]->getNombreClase() != "Cuadro2")&&(mat[i][j]->getNombreClase() != "ElementoVacio")) {
 										mat[i][j] = new Cuadro1();
 										contador1++;
+										this->setSigue(true);
 									}
 								}
 								else {
 									if ((mat[i][j]->getNombreClase() != "Cuadro1") && (mat[i][j]->getNombreClase() != "Cuadro2") && (mat[i][j]->getNombreClase() != "ElementoVacio")) {
 										mat[i][j] = new Cuadro2();
 										contador2++;
+										this->setSigue(true);
 									}
 								}
 							}
@@ -403,6 +407,14 @@ void ContenedorM::PosiblesJugadas(){
 			}
 		}
 	}
+}
+
+void ContenedorM::setSigue(bool sig){
+	sigue = sig;
+}
+
+bool ContenedorM::getSigue(){
+	return sigue;
 }
 
 

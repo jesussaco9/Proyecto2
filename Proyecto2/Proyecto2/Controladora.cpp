@@ -94,16 +94,20 @@ void Controladora::comenzarJuego(){
 			while (campoMatriz->continuaJuego()) {
 				if (cont % 2 == 0) {
 					string color = "Azul";
-
-					if (a->jugada()){
-						cout << "Computadora realizando movimiento...Espere un momento" << endl;
-						Sleep(1000);
-						campoMatriz->validaCuadroCerrado(cont);
+					campoMatriz->setSigue(true);
+					while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
+						if (a->jugada()) {
+							cout << "Computadora realizando movimiento...Espere un momento" << endl;
+							Sleep(1000);
+							campoMatriz->validaCuadroCerrado(cont);
+						}
+						system("cls");
+						MostrarCampoDeJuego();
 					}
-					system("cls");
-					MostrarCampoDeJuego();
 				}
 				else if (cont % 2 != 0) {
+					campoMatriz->setSigue(true);
+					while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 						string color = "Rojo";
 						Vista::coordenadas();
 						int a = Vista::coordenada1();
@@ -112,6 +116,7 @@ void Controladora::comenzarJuego(){
 						campoMatriz->validaCuadroCerrado(cont);
 						system("cls");
 						MostrarCampoDeJuego();
+					}
 				}
 				cont++;
 			}
@@ -146,26 +151,32 @@ void Controladora::comenzarJuego(){
 		MostrarCampoDeJuego();
 		while (campoMatriz->continuaJuego()) {
 			if (cont % 2 == 0) {
-				string color = "Azul";
-				Vista::turnoJ1();
-				Vista::coordenadas();
-				int a = Vista::coordenada1();
-				int b = Vista::coordenada2();
-				campoMatriz->ingresaPunto(a, b);
-				campoMatriz->validaCuadroCerrado(cont);
-				system("cls");
-				MostrarCampoDeJuego();
+				campoMatriz->setSigue(true);
+				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
+					string color = "Azul";
+					Vista::turnoJ1();
+					Vista::coordenadas();
+					int a = Vista::coordenada1();
+					int b = Vista::coordenada2();
+					campoMatriz->ingresaPunto(a, b);
+					campoMatriz->validaCuadroCerrado(cont);
+					system("cls");
+					MostrarCampoDeJuego();
+				}
 			}
 			else if (cont % 2 != 0) {
-				string color = "Rojo";
-				Vista::turnoJ2();
-				Vista::coordenadas();
-				int a = Vista::coordenada1();
-				int b = Vista::coordenada2();
-				campoMatriz->ingresaPunto(a, b);
-				campoMatriz->validaCuadroCerrado(cont);
-				system("cls");
-				MostrarCampoDeJuego();
+				campoMatriz->setSigue(true);
+				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
+					string color = "Rojo";
+					Vista::turnoJ2();
+					Vista::coordenadas();
+					int a = Vista::coordenada1();
+					int b = Vista::coordenada2();
+					campoMatriz->ingresaPunto(a, b);
+					campoMatriz->validaCuadroCerrado(cont);
+					system("cls");
+					MostrarCampoDeJuego();
+				}
 			}
 			cont++;
 		}
