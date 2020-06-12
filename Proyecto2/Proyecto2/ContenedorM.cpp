@@ -162,7 +162,7 @@ void ContenedorM::llenarMatrizElementos(){
 					for (int i = 0; i < fil; i++) {
 						for (inicia=this->getInicia(); inicia < fin; inicia++) {
 							if (i < 9) {
-								if ((inicia==valC-1)&&((i==6)|| (i == 8))) {
+								if ((inicia==valC-1)&&((i==6) || (i == 8) || (i == 5) || (i == 7))) {
 									mat[i][inicia] = new ElementoVacio();
 								}
 								else if ((i % 2 == 0) && (inicia % 2 == 0)) {
