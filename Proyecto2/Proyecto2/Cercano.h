@@ -5,11 +5,12 @@ using std::string;
 class Cercano :public Estrategia
 {
 private:
-	char** tab;
+	ContenedorM* tab;
+	Lista* lis;
 	int filas;
 	int columnas;
 public:
-	Cercano();
+	Cercano(ContenedorM*, Lista*);
 	~Cercano();
 	virtual bool jugada();
 	string toString();

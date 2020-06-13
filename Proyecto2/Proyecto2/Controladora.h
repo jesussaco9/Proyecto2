@@ -21,8 +21,10 @@ private:
 	ContenedorV* contenedorCampos;
 	CampoAbstracto* campoAbs;
 	Estrategia* e;
+	Estrategia* aux;
 	Lista* listaCoordenadas;
 	int cont;
+	int cont2;
 	int modalidad;
 public:
 	Controladora();

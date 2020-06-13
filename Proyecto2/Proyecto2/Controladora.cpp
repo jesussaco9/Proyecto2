@@ -71,28 +71,42 @@ void Controladora::creaCampo(){
 
 void Controladora::comenzarJuego(){
 	int modo=0;
-	
+	int auxCon = 1;
 	modalidad=menuModalidad();
 	if (modalidad == 1) {
 		menuMatriz();
 		campoMatriz->PosiblesJugadas();
 		modo=menuModoJuego();
 		creaModo(modo);
+		
 		while (campoMatriz->continuaJuego()) {
 			if (cont % 2 == 0) {
+				campoMatriz->setInicio(cont2);
 				string color = "Azul";
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
+					e = aux;
 					if (e->jugada()) {
 						cout << "Computadora realizando movimiento...Espere un momento" << endl;
-						Sleep(3000);
+						Sleep(2000);
 						campoMatriz->validaCuadroCerrado(cont);
+					}
+					else {
+						e = new Aleatorio(campoMatriz, listaCoordenadas);
+						if (e->jugada()) {
+							cout << "Computadora realizando movimiento...Espere un momento" << endl;
+							Sleep(2000);
+							campoMatriz->validaCuadroCerrado(cont);
+							cont2++;
+						}
 					}
 					system("cls");
 					MostrarCampoDeJuego();
 				}
+				cont2+=2;
 			}
 			else if (cont % 2 != 0) {
+				/*campoMatriz->setInicio(cont2);*/
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					string color = "Rojo";
@@ -100,6 +114,8 @@ void Controladora::comenzarJuego(){
 					Vista::coordenadas();
 					int a = Vista::coordenada1();
 					int b = Vista::coordenada2();
+					campoMatriz->setCor1(a-1);
+					campoMatriz->setCor2(b-1);
 					campoMatriz->ingresaPunto(a, b);
 					campoMatriz->validaCuadroCerrado(cont);
 					system("cls");
@@ -207,18 +223,23 @@ void Controladora::creaModo(int estrategia) {
 	{
 	case 1:
 		e = new Aleatorio(campoMatriz, listaCoordenadas);
+		aux = e;
 		break;
 	case 2:
-		e = new Cercano();
+		e = new Cercano(campoMatriz, listaCoordenadas);
+		aux = e;
 		break;
 	case 3:
-		e = new Periferico();
+		e = new Periferico(campoMatriz, listaCoordenadas);
+		aux = e;
 		break;
 	case 4:
 		e = new Central();
+		aux = e;
 		break;
 	case 5:
 		e = new Islas();
+		aux = e;
 		break;
 	default:
 		break;
@@ -227,11 +248,14 @@ void Controladora::creaModo(int estrategia) {
 	e->setColumnas(campoMatriz->getColumna());
 	int inicio = 0;
 	inicio = Vista::primerMov();
+	
 	system("pause");
 	if (inicio == 1) {
+		cont2 = 1;
 		cont = 2;
 	}
 	else if (inicio == 2) {
+		cont2 = 2;
 		cont = 1;
 	}
 	MostrarCampoDeJuego();

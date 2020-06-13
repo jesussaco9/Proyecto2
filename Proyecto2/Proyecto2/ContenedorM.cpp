@@ -1,6 +1,9 @@
 ﻿#include "ContenedorM.h"
 
 ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista, int modo) {
+	cor1 = 0;
+	cor2 = 0;
+	inicio = 0;
 	this->modo = modo;
 	vector = vec;
 	lista = _lista;
@@ -425,6 +428,32 @@ void ContenedorM::setSigue(bool sig){
 
 bool ContenedorM::getSigue(){
 	return sigue;
+}
+
+void ContenedorM::setCor1(int c1){
+	this->cor1 = c1;
+}
+
+void ContenedorM::setCor2(int c2){
+	this->cor2 = c2;
+}
+
+int ContenedorM::getCor1(){
+	return cor1;
+}
+
+int ContenedorM::getCor2(){
+	return cor2;
+}
+
+void ContenedorM::setInicio(int i)
+{
+	this->inicio=i;
+}
+
+int ContenedorM::getInicio()
+{
+	return inicio;
 }
 
 

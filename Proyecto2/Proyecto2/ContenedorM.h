@@ -27,6 +27,9 @@ private:
 	int contador2;
 	bool sigue;
 	int modo;
+	int cor1;
+	int cor2;
+	int inicio;
 public:
 	ContenedorM(ContenedorV*,Lista*,int);
 	virtual ~ContenedorM();
@@ -52,5 +55,11 @@ public:
 	void PosiblesJugadas();
 	void setSigue(bool);
 	bool getSigue();
+	void setCor1(int);
+	void setCor2(int);
+	int getCor1();
+	int getCor2();
+	void setInicio(int);
+	int getInicio();
 };
 
