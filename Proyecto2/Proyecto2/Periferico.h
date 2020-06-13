@@ -10,8 +10,10 @@ private:
 	int columnas;
 public:
 	Periferico();
-	~Periferico();
+	~Periferico(); 
 	virtual bool jugada();
 	string toString();
 	void mover();
+	virtual void setFilas(int);
+	virtual void setColumnas(int);
 };

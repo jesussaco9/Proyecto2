@@ -155,6 +155,7 @@
     <ClCompile Include="CuadroGanador.cpp" />
     <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="ElementoVacio.cpp" />
+    <ClCompile Include="Estrategia.cpp" />
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Periferico.cpp" />

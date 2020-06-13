@@ -14,4 +14,6 @@ public:
 	virtual bool jugada();
 	string toString();
 	void mover();
+	virtual void setFilas(int);
+	virtual void setColumnas(int);
 };

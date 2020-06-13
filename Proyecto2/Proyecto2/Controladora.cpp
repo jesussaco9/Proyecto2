@@ -4,6 +4,7 @@ Controladora::Controladora(){
 
 	campoAbs = new CampoResultante();
 	listaCoordenadas = new Lista();
+	cont = 0;
 }
 
 void Controladora::menuPrincipal(){
@@ -75,65 +76,47 @@ void Controladora::comenzarJuego(){
 		menuMatriz();
 		campoMatriz->PosiblesJugadas();
 		modo=menuModoJuego();
-		if (modo == 1) {
-			creaModoAleatorio();
-			a->setFilas(campoMatriz->getFila());
-			a->setColumnas(campoMatriz->getColumna());
-			int inicio = 0;
-			inicio = Vista::primerMov();
-			system("pause");
-			int cont=0;
-			if (inicio == 1) {
-				cont = 2;
-			}
-			else if (inicio == 2) {
-				cont = 1;
-			}
-			MostrarCampoDeJuego();
-
-			while (campoMatriz->continuaJuego()) {
-				if (cont % 2 == 0) {
-					string color = "Azul";
-					campoMatriz->setSigue(true);
-					while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
-						if (a->jugada()) {
-							cout << "Computadora realizando movimiento...Espere un momento" << endl;
-							Sleep(1000);
-							campoMatriz->validaCuadroCerrado(cont);
-						}
-						system("cls");
-						MostrarCampoDeJuego();
-					}
-				}
-				else if (cont % 2 != 0) {
-					campoMatriz->setSigue(true);
-					while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
-						string color = "Rojo";
-						Vista::coordenadas();
-						int a = Vista::coordenada1();
-						int b = Vista::coordenada2();
-						campoMatriz->ingresaPunto(a, b);
+		creaModo(modo);
+		while (campoMatriz->continuaJuego()) {
+			if (cont % 2 == 0) {
+				string color = "Azul";
+				campoMatriz->setSigue(true);
+				while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
+					if (e->jugada()) {
+						cout << "Computadora realizando movimiento...Espere un momento" << endl;
+						Sleep(1000);
 						campoMatriz->validaCuadroCerrado(cont);
-						system("cls");
-						MostrarCampoDeJuego();
 					}
+					system("cls");
+					MostrarCampoDeJuego();
 				}
-				cont++;
 			}
-			if (campoMatriz->continuaJuego() == false) {
-				if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
-					Vista::textoGanoJugador1();
+			else if (cont % 2 != 0) {
+				campoMatriz->setSigue(true);
+				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
+					string color = "Rojo";
+					Vista::coordenadas();
+					int a = Vista::coordenada1();
+					int b = Vista::coordenada2();
+					campoMatriz->ingresaPunto(a, b);
+					campoMatriz->validaCuadroCerrado(cont);
+					system("cls");
+					MostrarCampoDeJuego();
 				}
-				else if (campoMatriz->getContador1() < campoMatriz->getContador2()){
-					Vista::textoGanoJugador2();
-				}
-				else{
-					Vista::textoJuegoEmpatado();
-				}
-				Vista::textoGraciasPorJugar();
-				//Vista::ganador();
-				//system("pause");
 			}
+			cont++;
+		}
+		if (campoMatriz->continuaJuego() == false) {
+			if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
+				Vista::textoGanoJugador1();
+			}
+			else if (campoMatriz->getContador1() < campoMatriz->getContador2()){
+				Vista::textoGanoJugador2();
+			}
+			else{
+				Vista::textoJuegoEmpatado();
+			}
+			Vista::textoGraciasPorJugar();
 		}
 	}
 	else if (modalidad == 2) {
@@ -215,6 +198,39 @@ void Controladora::crea15puntos(){
 	campoAbs->ingresaCampo(c);
 }
 
-void Controladora::creaModoAleatorio(){
-	a = new Aleatorio(campoMatriz,listaCoordenadas);
+void Controladora::creaModo(int estrategia) {
+
+	int opcion = estrategia;
+	switch (opcion)
+	{
+	case 1:
+		e = new Aleatorio(campoMatriz, listaCoordenadas);
+		break;
+	case 2:
+		e = new Cercano();
+		break;
+	case 3:
+		e = new Periferico();
+		break;
+	case 4:
+		e = new Central();
+		break;
+	case 5:
+		
+		break;
+	default:
+		break;
+	}
+	e->setFilas(campoMatriz->getFila());
+	e->setColumnas(campoMatriz->getColumna());
+	int inicio = 0;
+	inicio = Vista::primerMov();
+	system("pause");
+	if (inicio == 1) {
+		cont = 2;
+	}
+	else if (inicio == 2) {
+		cont = 1;
+	}
+	MostrarCampoDeJuego();
 }
