@@ -1,6 +1,7 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista){
+ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista, int modo) {
+	this->modo = modo;
 	vector = vec;
 	lista = _lista;
 	contador1 = 0;
@@ -257,10 +258,19 @@ string ContenedorM::toStirng() const{
 		}
 		cout<< endl;
 	}
-	cout << endl;
-	cout << "Pts Jugador1=  " << contador1 << "    Pts Jugador2=  " << contador2 << endl;
-	cout << "===================================================\n";
-	return s.str();
+	if (modo == 1) {
+		cout <<"\t\tPUNTOS"<<endl;
+		cout << "Computadora=  " <<"["<< contador1 <<"]"<< "   Jugador2=  " << "[" << contador2 << "]" << endl;
+		cout << "===================================================\n";
+		return s.str();
+	}
+	else {
+		cout << "\t\tPUNTOS" << endl;
+		cout << "Jugador1=  " << "[" << contador1 << "]" << "   Jugador2=  " << "[" << contador2 << "]" << endl;
+		cout << "===================================================\n";
+		return s.str();
+	}
+	
 }
 
 void ContenedorM::ingresaPunto(int x, int y){

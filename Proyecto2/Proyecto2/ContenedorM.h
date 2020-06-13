@@ -26,8 +26,9 @@ private:
 	int contador1;
 	int contador2;
 	bool sigue;
+	int modo;
 public:
-	ContenedorM(ContenedorV*,Lista*);
+	ContenedorM(ContenedorV*,Lista*,int);
 	virtual ~ContenedorM();
 	void pasaInfoVectorMatriz();
 	void llenarMatrizElementos();

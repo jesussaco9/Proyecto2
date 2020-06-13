@@ -9,6 +9,10 @@
 #include "CampoQuincePuntos.h"
 #include "CampoResultante.h"
 #include "Aleatorio.h"
+#include "Cercano.h"
+#include"Periferico.h"
+#include"Central.h"
+#include"Islas.h"
 #include "Lista.h"
 
 class Controladora {
@@ -16,8 +20,10 @@ private:
 	ContenedorM* campoMatriz;
 	ContenedorV* contenedorCampos;
 	CampoAbstracto* campoAbs;
-	Aleatorio* a;
+	Estrategia* e;
 	Lista* listaCoordenadas;
+	int cont;
+	int modalidad;
 public:
 	Controladora();
 	void menuPrincipal();
@@ -30,5 +36,5 @@ public:
 	void crea6puntos();
 	void crea9puntos();
 	void crea15puntos();
-	void creaModoAleatorio();
+	void creaModo(int);
 };
