@@ -5,6 +5,7 @@ Controladora::Controladora(){
 	campoAbs = new CampoResultante();
 	listaCoordenadas = new Lista();
 	cont = 0;
+	modalidad = 0;
 }
 
 void Controladora::menuPrincipal(){
@@ -65,11 +66,11 @@ int Controladora::menuModoJuego(){
 }
 
 void Controladora::creaCampo(){
-	campoMatriz = new ContenedorM(campoAbs->retornaContenedor(),listaCoordenadas);
+	campoMatriz = new ContenedorM(campoAbs->retornaContenedor(),listaCoordenadas,modalidad);
 }
 
 void Controladora::comenzarJuego(){
-	int modalidad = 0, modo=0;
+	int modo=0;
 	
 	modalidad=menuModalidad();
 	if (modalidad == 1) {
@@ -84,7 +85,7 @@ void Controladora::comenzarJuego(){
 				while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
 					if (e->jugada()) {
 						cout << "Computadora realizando movimiento...Espere un momento" << endl;
-						Sleep(1000);
+						Sleep(3000);
 						campoMatriz->validaCuadroCerrado(cont);
 					}
 					system("cls");
@@ -95,6 +96,7 @@ void Controladora::comenzarJuego(){
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					string color = "Rojo";
+					Vista::turnoJ2;
 					Vista::coordenadas();
 					int a = Vista::coordenada1();
 					int b = Vista::coordenada2();

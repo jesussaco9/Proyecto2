@@ -23,6 +23,7 @@ private:
 	Estrategia* e;
 	Lista* listaCoordenadas;
 	int cont;
+	int modalidad;
 public:
 	Controladora();
 	void menuPrincipal();
