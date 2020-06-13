@@ -12,7 +12,7 @@
 #include "Cercano.h"
 #include"Periferico.h"
 #include"Central.h"
-
+#include"Islas.h"
 #include "Lista.h"
 
 class Controladora {

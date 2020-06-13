@@ -1,17 +1,14 @@
 #pragma once
 #include"Estrategia.h"
-#include<iostream>
-using std::string;
-class Islas :public Estrategia
+class Islas: public Estrategia
 {
-private:
-	char** tab;
-	int filas;
-	int columnas;
 public:
 	Islas();
 	~Islas();
-	virtual void jugada();
+	virtual bool jugada();
 	string toString();
 	void mover();
+	void setFilas(int);
+	void setColumnas(int);
 };
+

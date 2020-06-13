@@ -216,7 +216,7 @@ void Controladora::creaModo(int estrategia) {
 		e = new Central();
 		break;
 	case 5:
-		
+		e = new Islas();
 		break;
 	default:
 		break;

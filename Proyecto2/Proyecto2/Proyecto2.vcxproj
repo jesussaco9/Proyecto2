@@ -156,6 +156,7 @@
     <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="ElementoVacio.cpp" />
     <ClCompile Include="Estrategia.cpp" />
+    <ClCompile Include="Islas.cpp" />
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Periferico.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="ElementosDeMatriz.h" />
     <ClInclude Include="ElementoVacio.h" />
     <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="Islas.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ProcesaCompuesto.h" />
     <ClInclude Include="Punto.h" />
