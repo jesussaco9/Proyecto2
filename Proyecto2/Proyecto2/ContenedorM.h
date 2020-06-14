@@ -39,7 +39,7 @@ public:
 	void llenarMatrizElementos();
 	ElementosDeMatriz* retornarPos(int x, int y);
 	string toStirng() const;
-	void ingresaPunto(int, int);//Siguiendo el UML del profe
+	bool ingresaPunto(int, int);//Siguiendo el UML del profe
 	bool ingresaPuntoM(int, int);
 	int getFila();
 	int getColumna();

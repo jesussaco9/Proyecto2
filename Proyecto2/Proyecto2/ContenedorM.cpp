@@ -278,19 +278,28 @@ string ContenedorM::toStirng() const{
 	
 }
 
-void ContenedorM::ingresaPunto(int x, int y){
+bool ContenedorM::ingresaPunto(int x, int y){
 	int a = x - 1, b = y - 1;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			if (i==a&&j==b) {
-				if (mat[i][j] == NULL) {
-					mat[i][j] = new Conexion();
+			if (a < fil && b < col) {
+				if (i == a && j == b) {
+					if (mat[i][j] == NULL) {
+						mat[i][j] = new Conexion();
+						return true;
+					}
+					else {
+						cout << "No se puede agregar la conexion, introduzca una nueva coordenada..." << endl;
+						system("pause");
+						return false;
+					}
 				}
-				else{
-					cout << "No se puede agregar la linea! No sea bruto!" << endl;
-					system("pause");
-				}
+			}else {
+				cout << "Excedio el limite de la matriz, introduzca una nueva coordenada..." << endl;
+				system("pause");
+				return false;
 			}
+			
 		}
 	}
 }
