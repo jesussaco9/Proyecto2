@@ -12,8 +12,7 @@ Periferico::~Periferico()
 {
 }
 
-bool Periferico::jugada()
-{
+bool Periferico::jugada(){
 	int n = tab->getColumna();
 	int inicio = 0;
 	int nlimite = n - 1;
