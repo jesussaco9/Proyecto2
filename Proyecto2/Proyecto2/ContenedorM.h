@@ -30,6 +30,8 @@ private:
 	int cor1;
 	int cor2;
 	int inicio;
+	int jugadaMX;
+	int jugadaMY;
 public:
 	ContenedorM(ContenedorV*,Lista*,int);
 	virtual ~ContenedorM();
@@ -61,5 +63,9 @@ public:
 	int getCor2();
 	void setInicio(int);
 	int getInicio();
+	int getJugadaMX();
+	void setJugadaMX(int);
+	int getJugadaMY();
+	void setJugadaMY(int);
 };
 

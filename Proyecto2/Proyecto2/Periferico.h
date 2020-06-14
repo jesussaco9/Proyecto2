@@ -2,8 +2,7 @@
 #include"Estrategia.h"
 #include<iostream>
 using std::string;
-class Periferico :public Estrategia
-{
+class Periferico :public Estrategia{
 private:
 	ContenedorM* tab;
 	Lista* lis;
@@ -20,4 +19,5 @@ public:
 	virtual void setColumnas(int);
 	int getInicio();
 	void setInicio(int);
+	void setCont(int);
 };

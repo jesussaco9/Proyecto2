@@ -89,6 +89,7 @@ void Controladora::comenzarJuego(){
 					if (e->jugada()) {
 						cout << "Computadora realizando movimiento...Espere un momento" << endl;
 						Sleep(2000);
+						e->setCont(0);
 						campoMatriz->validaCuadroCerrado(cont);
 					}
 					else {
@@ -96,6 +97,7 @@ void Controladora::comenzarJuego(){
 						if (e->jugada()) {
 							cout << "Computadora realizando movimiento...Espere un momento" << endl;
 							Sleep(2000);
+							aux->setCont(1);
 							campoMatriz->validaCuadroCerrado(cont);
 							cont2++;
 						}
@@ -110,7 +112,7 @@ void Controladora::comenzarJuego(){
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					string color = "Rojo";
-					Vista::turnoJ2;
+					Vista::turnoJ2();
 					Vista::coordenadas();
 					int a = Vista::coordenada1();
 					int b = Vista::coordenada2();
@@ -234,11 +236,11 @@ void Controladora::creaModo(int estrategia) {
 		aux = e;
 		break;
 	case 4:
-		e = new Central();
+		e = new Central(campoMatriz, listaCoordenadas);
 		aux = e;
 		break;
 	case 5:
-		e = new Islas();
+		e = new Islas(campoMatriz, listaCoordenadas);
 		aux = e;
 		break;
 	default:

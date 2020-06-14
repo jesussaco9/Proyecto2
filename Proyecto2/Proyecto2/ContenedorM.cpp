@@ -4,6 +4,8 @@ ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista, int modo) {
 	cor1 = 0;
 	cor2 = 0;
 	inicio = 0;
+	jugadaMX = 0;
+	jugadaMY = 0;
 	this->modo = modo;
 	vector = vec;
 	lista = _lista;
@@ -300,6 +302,8 @@ bool ContenedorM::ingresaPuntoM(int x, int y){
 			if ((x == i) && (y == j)) {
 				if (mat[i][j] == NULL) {
 					mat[i][j] = new Conexion();
+					this->setJugadaMX(i);
+					this->setJugadaMY(j);
 					return true;
 				}
 			}
@@ -383,6 +387,7 @@ void ContenedorM::validaCuadroCerrado(int jugador){
 										mat[i][j] = new Cuadro1();
 										contador1++;
 										this->setSigue(true);
+
 									}
 								}
 								else {
@@ -412,14 +417,15 @@ int ContenedorM::getContador2(){
 }
 
 void ContenedorM::PosiblesJugadas(){	
-	for (int i = 0; i < fil; i++) {
-		for (int j = 0; j < col; j++) {
-			if (mat[i][j]==NULL){
-				Coordenada* cordenada = new Coordenada(i, j);
-				lista->agregarCoordenada(cordenada);
+		for (int i = 0; i < fil; i++) {
+			for (int j = 0; j < col; j++) {
+				if (mat[i][j] == NULL) {
+					Coordenada* cordenada = new Coordenada(i, j);
+					lista->agregarCoordenada(cordenada);
+				}
 			}
 		}
-	}
+
 }
 
 void ContenedorM::setSigue(bool sig){
@@ -455,6 +461,23 @@ int ContenedorM::getInicio()
 {
 	return inicio;
 }
+
+int ContenedorM::getJugadaMX(){
+	return jugadaMX;
+}
+
+void ContenedorM::setJugadaMX(int x){
+	this->jugadaMX = x;
+}
+
+int ContenedorM::getJugadaMY(){
+	return jugadaMY;
+}
+
+void ContenedorM::setJugadaMY(int y){
+	this->jugadaMY = y;
+}
+
 
 
 

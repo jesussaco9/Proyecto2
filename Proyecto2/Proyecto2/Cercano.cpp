@@ -95,3 +95,7 @@ void Cercano::setColumnas(int c)
 {
 	this->columnas = c;
 }
+
+void Cercano::setCont(int)
+{
+}

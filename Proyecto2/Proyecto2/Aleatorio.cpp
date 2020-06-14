@@ -49,3 +49,7 @@ void Aleatorio::setFilas(int f){
 void Aleatorio::setColumnas(int c){
 	this->columnas = c;
 }
+
+void Aleatorio::setCont(int)
+{
+}

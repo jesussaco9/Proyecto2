@@ -20,4 +20,5 @@ public:
 	void mover();
 	void setFilas(int);
 	void setColumnas(int);
+	void setCont(int);
 };

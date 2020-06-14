@@ -13,4 +13,5 @@ public:
 	virtual bool jugada() = 0;
 	virtual void setFilas(int) {};
 	virtual void setColumnas(int) {};
+	virtual void setCont(int) = 0;
 };

@@ -17,4 +17,5 @@ public:
 	void mover();
 	virtual void setFilas(int);
 	virtual void setColumnas(int);
+	void setCont(int);
 };

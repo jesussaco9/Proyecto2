@@ -14,120 +14,40 @@ Periferico::~Periferico()
 
 bool Periferico::jugada()
 {
-	bool bandera = false;
-	int c = tab->getColumna();
-	int f = tab->getFila();
-	int aux = 0;
-	int aux2 = 0;
-	int aux3 = tab->getColumna();
-	int aux4 = tab->getFila();
-	for (int i = this->getInicio(); i < c; i++) {
-		if (this->getInicio() <= c - 1) {
-			if (tab->ingresaPuntoM(aux, i)) {
-				this->setInicio(i);
-				bandera = true;
+	int n = tab->getColumna();
+	int inicio = 0;
+	int nlimite = n - 1;
+	int nlimiteF = tab->getFila();
+	int c = 1;
+	while (c <= (n * n)) {
+		for (int i = inicio; i <= nlimite; i++) {
+			if (tab->ingresaPuntoM(inicio, i)) {
+				c++;
 				return true;
 			}
-			else {
-				bandera = false;
+		}
+		for (int i = inicio; i <= nlimite; i++) {
+			if (tab->ingresaPuntoM(i, nlimite)) {
+				c++;
+				return true;
 			}
 		}
+		for (int i = nlimite - 1; i >= inicio; i--) {
+			if (tab->ingresaPuntoM(nlimiteF-1, i)) {
+				c++;
+				return true;
+			}
+		 }
+		for (int i = nlimite -1; i >= inicio+1; i--) {
+			if (tab->ingresaPuntoM(i,inicio)) {
+				c++;
+				return true;
+			}
+		}
+		nlimiteF -= 1;
+		inicio += 1;
+		nlimite -= 1;
 	}
-	for (int i = 0; i < f; i++) {
-		if (tab->ingresaPuntoM(i, aux)) {
-			bandera = true;
-			return true;
-		}
-		else {
-			bandera = false;
-		}
-	}
-	for (int i = 0; i < f; i++) {
-		if (tab->ingresaPuntoM(i, aux3 - 1)) {
-			bandera = true;
-			return true;
-		}
-		else {
-			bandera = false;
-		}
-	}
-	for (int i = 0; i < c; i++) {
-		if (tab->ingresaPuntoM(f - 1, i)) {
-			bandera = true;
-			return true;
-		}
-		else {
-			bandera = false;
-		}
-	}
-	
-	
-	
-
-	//while (!bandera)
-	//{
-	//	if (aux % 2 == 0) {
-	//		for (int i = 1; i < c; i + 2) {
-	//			if (tab->ingresaPuntoM(aux, i)) {
-	//				bandera = true;
-	//				i++;
-	//				aux++;
-	//				return true;
-	//			}
-	//			else {
-	//				bandera = false;
-	//			}
-
-	//		}
-	//	}
-	//	else {
-	//		for (int i = 0; i < c; i + 2) {
-	//			if (tab->ingresaPuntoM(aux, i)) {
-	//				bandera = true;
-	//				aux++;
-	//				return true;
-	//			}
-	//			else {
-	//				bandera = false;
-	//			}
-
-	//		}
-	//	}
-	//	bandera = true;
-	///*	for (int i = 1; i < f; i + 2) {
-	//		if (tab->ingresaPuntoM(i, aux3)) {
-	//			bandera = true;
-	//			return true;
-	//		}
-	//		else {
-	//			bandera = false;
-	//		}
-	//	}
-	//	for (int i = c; i > 0; i--) {
-	//		if (tab->ingresaPuntoM(aux4, i)) {
-	//			bandera = true;
-	//			return true;
-	//		}
-	//		else {
-	//			bandera = false;
-	//		}
-	//	}
-	//	for (int i = f; i > 0; i--) {
-	//		if (tab->ingresaPuntoM(i, aux2)) {
-	//			bandera = true;
-	//			return true;
-	//		}
-	//		else {
-	//			bandera = false;
-	//		}
-	//	}*/	
-	//	/*aux++;*/
-	//	aux3--;
-	//	aux4--;
-	//	aux2++;
-	//}
-	
-	
 	return false;
 }
 
@@ -147,4 +67,8 @@ int Periferico::getInicio(){
 
 void Periferico::setInicio(int ini){
 	this->ini = ini;
+}
+
+void Periferico::setCont(int)
+{
 }
