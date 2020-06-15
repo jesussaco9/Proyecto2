@@ -166,6 +166,9 @@ void Controladora::comenzarJuego(){
 						if (campoMatriz->ingresaPunto(a, b)) {
 							bandera = true;
 						}
+						else {
+							bandera = false;
+						}
 						campoMatriz->validaCuadroCerrado(cont);
 						system("cls");
 						MostrarCampoDeJuego();
@@ -305,6 +308,9 @@ void Controladora::creaModo(int estrategia) {
 	case 5:
 		e = new Islas(campoMatriz, listaCoordenadas);
 		aux = e;
+		break;
+	case 6:
+		menuMatriz();
 		break;
 	default:
 		break;
