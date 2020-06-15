@@ -190,6 +190,10 @@ void Vista::textoGraciasPorJugar(){
 	system("pause");
 }
 
+void Vista::textoMaquinaJugando(){
+	cout << "Computadora realizando movimiento...Espere un momento" << endl;
+}
+
 void Vista::coordenadas(){
 	cout << "===================================================\n";
 	cout << "Ingrese las coordenadas de la posicion: [fila][columna]\n";

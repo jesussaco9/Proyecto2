@@ -1,7 +1,6 @@
 #include "Controladora.h"
 
 Controladora::Controladora(){
-
 	campoAbs = new CampoResultante();
 	listaCoordenadas = new Lista();
 	cont = 0;
@@ -130,12 +129,11 @@ void Controladora::comenzarJuego(){
 		while (campoMatriz->continuaJuego()) {
 			if (cont % 2 == 0) {
 				campoMatriz->setInicio(cont2);
-				string color = "Azul";
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
 					e = aux;
 					if (e->jugada()) {
-						cout << "Computadora realizando movimiento...Espere un momento" << endl;
+						Vista::textoMaquinaJugando();
 						Sleep(2000);
 						e->setCont(0);
 						campoMatriz->validaCuadroCerrado(cont);
@@ -143,7 +141,7 @@ void Controladora::comenzarJuego(){
 					else {
 						e = new Aleatorio(campoMatriz, listaCoordenadas);
 						if (e->jugada()) {
-							cout << "Computadora realizando movimiento...Espere un momento" << endl;
+							Vista::textoMaquinaJugando();
 							Sleep(2000);
 							aux->setCont(1);
 							campoMatriz->validaCuadroCerrado(cont);
@@ -156,11 +154,9 @@ void Controladora::comenzarJuego(){
 				cont2+=2;
 			}
 			else if (cont % 2 != 0) {
-				/*campoMatriz->setInicio(cont2);*/
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					do {
-						string color = "Rojo";
 						Vista::turnoJ2();
 						Vista::coordenadas();
 						int a = Vista::coordenada1();

@@ -34,6 +34,7 @@ public:
 	static void textoGanoJugador2();
 	static void textoJuegoEmpatado();
 	static void textoGraciasPorJugar();
+	static void textoMaquinaJugando();
 	static void coordenadas();
 	static void ganador();
 	static CampoAbstracto* creandoMatriz6();
