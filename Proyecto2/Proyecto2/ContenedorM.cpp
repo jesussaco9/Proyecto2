@@ -1,6 +1,6 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(ContenedorV* vec, Lista<Coordenada>* _lista, int modo) {
+ContenedorM::ContenedorM(ContenedorV* vec, Lista<Coordenada>* _lista, int modo, Lista<Coordenada>* lcp) {
 	cor1 = 0;
 	cor2 = 0;
 	inicio = 0;
@@ -9,6 +9,7 @@ ContenedorM::ContenedorM(ContenedorV* vec, Lista<Coordenada>* _lista, int modo) 
 	this->modo = modo;
 	vector = vec;
 	lista = _lista;
+	listaPorPartida = lcp;
 	contador1 = 0;
 	contador2 = 0;
 	inicia = 0;
@@ -286,6 +287,8 @@ bool ContenedorM::ingresaPunto(int x, int y){
 				if (i == a && j == b) {
 					if (mat[i][j] == NULL) {
 						mat[i][j] = new Conexion();
+						Coordenada* cordenada = new Coordenada(i, j);
+						listaPorPartida->agregarCoordenada(cordenada);
 						return true;
 					}
 					else {
@@ -313,6 +316,8 @@ bool ContenedorM::ingresaPuntoM(int x, int y){
 					mat[i][j] = new Conexion();
 					this->setJugadaMX(i);
 					this->setJugadaMY(j);
+					Coordenada* cordenada = new Coordenada(i, j);
+					listaPorPartida->agregarCoordenada(cordenada);
 					return true;
 				}
 			}
@@ -485,6 +490,14 @@ int ContenedorM::getJugadaMY(){
 
 void ContenedorM::setJugadaMY(int y){
 	this->jugadaMY = y;
+}
+
+ContenedorV* ContenedorM::getContenedorV(){
+	return vector;
+}
+
+Lista<Coordenada>* ContenedorM::getLista(){
+	return lista;
 }
 
 

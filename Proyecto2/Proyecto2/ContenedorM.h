@@ -18,6 +18,7 @@ private:
 	ElementosDeMatriz*** mat;//Siguiendo el UML del profe
 	ContenedorV* vector;
 	Lista<Coordenada>* lista;
+	Lista<Coordenada>* listaPorPartida;
 	int fil;
 	int col;
 	int inicia, fin;
@@ -33,7 +34,7 @@ private:
 	int jugadaMX;
 	int jugadaMY;
 public:
-	ContenedorM(ContenedorV*,Lista<Coordenada>*,int);
+	ContenedorM(ContenedorV*,Lista<Coordenada>*,int, Lista<Coordenada>*);
 	virtual ~ContenedorM();
 	void pasaInfoVectorMatriz();
 	void llenarMatrizElementos();
@@ -67,5 +68,7 @@ public:
 	void setJugadaMX(int);
 	int getJugadaMY();
 	void setJugadaMY(int);
+	ContenedorV* getContenedorV();
+	Lista<Coordenada>* getLista();
 };
 

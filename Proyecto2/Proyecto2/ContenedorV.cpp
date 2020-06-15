@@ -30,6 +30,10 @@ int ContenedorV::getTamano(){
 	return tam;
 }
 
+int ContenedorV::inicializarPrimeraPosicion(){
+	return 0;
+}
+
 
 bool ContenedorV::ultimaPosicionValida(int pos)
 {

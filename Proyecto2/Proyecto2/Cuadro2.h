@@ -1,5 +1,6 @@
 #pragma once
 #include"ElementosDeMatriz.h"
+#include "Lista.h"
 
 class Cuadro2 : public ElementosDeMatriz {
 	string nombreClase;

@@ -1,6 +1,9 @@
 #pragma once
 #include "Coordenada.h"
 
+
+//class Partida;
+
 template<class T>
 class Nodo {
 private:
@@ -47,20 +50,24 @@ template<class T>
 class Lista{
 private:
     Nodo<T>* primero;
+    Nodo<T>* actual;
     int n;
 public:
     Lista();
     void agregarCoordenada(T*);
+    void ingresarDeUltimo(T* ptr);
     virtual string toString();
     bool estaVacia() const;
     virtual ~Lista();
     bool eliminaObjeto(int pos);
     Coordenada* recuperarElemento(int pos);
     int getN();
+    void inicializarActual();
+    Coordenada* recuperarCoordenadasArchivos();
 };
 
 template<class T>
-Lista<T>::Lista() : primero(NULL), n(0) {
+Lista<T>::Lista() : primero(NULL), n(0), actual(NULL) {
 }
 
 template<class T>
@@ -69,6 +76,26 @@ void Lista<T>::agregarCoordenada(T* a) {
     n++;
 }
 
+template<class T>
+inline void Lista<T>::ingresarDeUltimo(T* ptr) {
+    Nodo<T>* p = primero; //p Es un puntero  externo...
+    if (p == NULL) {//Esto quiere decir que la lista esta vacia
+        agregarCoordenada(ptr);
+    }
+    else {//El ese me enviara al final de la lista...
+        Nodo<T>* nuevo = new Nodo<T>(ptr, NULL);
+        n++;
+        while (p->obtenerSiguiente() != NULL) {
+            p = p->obtenerSiguiente();
+        }
+        p->fijarSiguiente(nuevo);//Aqui lo ingreso al final...
+    }
+}
+
+template<class T>
+inline void Lista<T>::inicializarActual() {
+    actual = primero;
+}
 
 template<class T>
 string Lista<T>::toString() {
@@ -146,4 +173,10 @@ Coordenada* Lista<T>::recuperarElemento(int pos) {
 
 template<class T>
 Lista<T>::~Lista() {
+}
+template<class T>
+inline Coordenada* Lista<T>::recuperarCoordenadasArchivos() {
+    Coordenada* i = actual->obtenerDato();
+    actual = actual->obtenerSiguiente();
+    return i;
 }

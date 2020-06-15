@@ -7,6 +7,7 @@ Controladora::Controladora(){
 	modalidad = 0;
 	SubjUsuarios = new Suscripcion();
 	dia = new DiaYCodigo();
+	listaCoordenadasPorPartida = new Lista<Coordenada>();
 }
 
 void Controladora::menuPrincipal() {
@@ -112,7 +113,7 @@ int Controladora::menuModoJuego(){
 }
 
 void Controladora::creaCampo(){
-	campoMatriz = new ContenedorM(campoAbs->retornaContenedor(),listaCoordenadas,modalidad);
+	campoMatriz = new ContenedorM(campoAbs->retornaContenedor(),listaCoordenadas,modalidad, listaCoordenadasPorPartida);
 }
 
 void Controladora::comenzarJuego(){
@@ -189,6 +190,7 @@ void Controladora::comenzarJuego(){
 				Vista::textoJuegoEmpatado();
 			}
 			Vista::textoGraciasPorJugar();
+			guardar();
 		}
 	}
 	else if (modalidad == 2) {
@@ -260,8 +262,8 @@ void Controladora::comenzarJuego(){
 				Vista::textoJuegoEmpatado();
 			}
 			Vista::textoGraciasPorJugar();
-			//Vista::ganador();
-			//system("pause");
+			menuJuego();
+			guardar();
 		}
 	}
 }
@@ -357,4 +359,20 @@ void Controladora::crearUsuario(){
 	catch (Error& e) {
 		e.porque();
 	}
+}
+
+void Controladora::guardar() {
+	GestorArchivos gestor("coordenadas.txt");
+	gestor.abrirFlujoModoEscritura();
+	gestor.guardarCoordenadas(listaCoordenadasPorPartida);
+	gestor.cerrarFlujo();
+}
+
+void Controladora::recuperar() {
+	GestorArchivos gestor("coordenadas.txt");
+	gestor.abrirFlujoModoLectura();
+	Lista<Coordenada>* listaCoordenadas = gestor.recuperarCoordenadas();
+
+	listaCoordenadasPorPartida = listaCoordenadas;
+	gestor.cerrarFlujo();
 }
