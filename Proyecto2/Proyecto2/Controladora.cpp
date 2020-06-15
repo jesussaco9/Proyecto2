@@ -6,11 +6,43 @@ Controladora::Controladora(){
 	listaCoordenadas = new Lista();
 	cont = 0;
 	modalidad = 0;
+	SubjUsuarios = new Suscripcion();
+	dia = new DiaYCodigo();
 }
 
-void Controladora::menuPrincipal(){
+void Controladora::menuPrincipal() {
 	int opcion;
 	do {
+		Vista::cargando();
+		opcion = Vista::presentacionInicial(dia);
+		switch (opcion) {
+		case 1://Suscripcion
+			system("cls");
+			crearUsuario();
+			break;
+		case 2://Jugar
+			system("cls");
+			menuValidacion();
+			break;
+		case 3://Cargar partidas
+			system("cls");
+			break;
+		case 4://Cambiar de dia
+			dia->setCont();
+			dia->setCodigo();
+			menuPrincipal();
+			system("cls");
+			break;
+		default:
+			exit(0);
+		}
+
+	} while (opcion != 4);
+}
+void Controladora::menuJuego(){
+	int opcion;
+	do {
+		Vista::cargando();
 		opcion = Vista::menuPrincipal();
 		switch (opcion) {
 		case 1:
@@ -18,10 +50,25 @@ void Controladora::menuPrincipal(){
 			comenzarJuego();
 			break;
 		default:
-			exit(0);
+			menuPrincipal();
 		}
 
 	} while (opcion != 1);
+}
+
+void Controladora::menuValidacion(){
+	Observer* o;
+	try{
+		if (Vista::ValidaUsuario(SubjUsuarios) != NULL) {
+			menuJuego();
+		}
+		else {
+			throw Error("\tAcceso denegado, suscribase primero");
+		}
+	}
+	catch (Error& e) {
+		e.porque();
+	}
 }
 
 int Controladora::menuModalidad(){
@@ -281,4 +328,31 @@ void Controladora::creaModo(int estrategia) {
 		cont = 1;
 	}
 	MostrarCampoDeJuego();
+}
+
+void Controladora::crearUsuario(){
+	Observer* u;
+	bool respuesta;
+	try
+	{
+		u = Vista::crearUsuario();
+		respuesta = Vista::deseaPagar();
+		if (respuesta) {
+			if (u != NULL) {
+				SubjUsuarios->agrega(u);
+				Vista::SuscripcionExitosa();
+				cout<<u->toString();
+				Vista::pausa();
+			}
+			else {
+				throw Error("\tNo se pudo realizar la Suscripcion");
+			}
+		}
+		else{
+			throw Error("\tNo se pudo realizar la Suscripcion");
+		}
+	}
+	catch (Error& e) {
+		e.porque();
+	}
 }

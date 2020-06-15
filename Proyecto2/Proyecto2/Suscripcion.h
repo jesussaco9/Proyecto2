@@ -10,11 +10,12 @@ private:
 	int can;
 	Observer** vec;
 public:
-	Suscripcion(int);
+	Suscripcion();
 	virtual ~Suscripcion();
 	virtual void agrega(Observer*);
 	virtual void notifica();
 	virtual string toString();
 	int getCodigoDiario();
 	void setCodigodiaro(int);
+	Observer* recuperaUsuario(string);
 };

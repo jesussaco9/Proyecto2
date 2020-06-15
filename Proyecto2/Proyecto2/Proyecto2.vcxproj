@@ -153,6 +153,7 @@
     <ClCompile Include="Cuadro1.cpp" />
     <ClCompile Include="Cuadro2.cpp" />
     <ClCompile Include="CuadroGanador.cpp" />
+    <ClCompile Include="DiaYCodigo.cpp" />
     <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="ElementoVacio.cpp" />
     <ClCompile Include="Estrategia.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Cuadro1.h" />
     <ClInclude Include="Cuadro2.h" />
     <ClInclude Include="CuadroGanador.h" />
+    <ClInclude Include="DiaYCodigo.h" />
     <ClInclude Include="ElementosDeMatriz.h" />
     <ClInclude Include="ElementoVacio.h" />
     <ClInclude Include="Estrategia.h" />

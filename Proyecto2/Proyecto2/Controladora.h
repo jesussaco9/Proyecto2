@@ -14,7 +14,9 @@
 #include"Central.h"
 #include"Islas.h"
 #include "Lista.h"
-
+#include "Subject.h".
+#include "Suscripcion.h"
+#include "DiaYCodigo.h"
 class Controladora {
 private:
 	ContenedorM* campoMatriz;
@@ -23,12 +25,16 @@ private:
 	Estrategia* e;
 	Estrategia* aux;
 	Lista* listaCoordenadas;
+	Subject* SubjUsuarios;
+	DiaYCodigo* dia;
 	int cont;
 	int cont2;
 	int modalidad;
 public:
 	Controladora();
 	void menuPrincipal();
+	void menuJuego();
+	void menuValidacion();
 	int menuModalidad();
 	void menuMatriz();
 	void MostrarCampoDeJuego();
@@ -39,4 +45,21 @@ public:
 	void crea9puntos();
 	void crea15puntos();
 	void creaModo(int);
+	void crearUsuario();
+};
+
+class Error {
+private:
+	string msj;
+public:
+	Error(string ms) :msj(ms) {
+
+	}
+	virtual ~Error() {
+
+	}
+	void porque() {
+		cout << msj << endl;
+		system("pause");
+	}
 };

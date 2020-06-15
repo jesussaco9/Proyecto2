@@ -1,10 +1,9 @@
 #include "Persona.h"
 
 
-Persona::Persona(string nom, string ced, double sal) {
+Persona::Persona(string nom, string ced):Observer(nom,ced) {
 	nombre = nom;
 	cedula = ced;
-	saldo = sal;
 	codigoDeAcceso = 0;
 }
 
@@ -17,21 +16,14 @@ void Persona::actualizar(int cod) {
 
 string Persona::toString() {
 	stringstream s;
-	s << "Nombre de Usuario: " << nombre << endl;
-	s << "Id: " << cedula << endl;
-	s << "Saldo: " << saldo << endl;
-	if (codigoDeAcceso != 0) {
-		s << "Codgo de Acceso: " << codigoDeAcceso << endl;
-	}
-	else {
-		s << "El usuario no cuenta con codigo de acceso" << endl;
-	}
+	s << "\t\tNombre de Usuario: " << nombre << endl;
+	s << "\t\tId: " << cedula << endl << endl;
 	return s.str();
 }
-
-void Persona::setSaldo(double sal) {
-	saldo = sal;
-}
+//
+//void Persona::setSaldo(double sal) {
+//	saldo = sal;
+//}
 
 void Persona::setCodigo(int cod) {
 	codigoDeAcceso = cod;

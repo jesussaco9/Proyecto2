@@ -22,6 +22,35 @@ int Vista::opcion(){
 	}
 }
 
+string Vista::pedirCadena() {
+	string cad;
+	getline(cin, cad);
+	return cad;
+	cin.clear();
+}
+
+void Vista::cargando(){
+	cout << endl << endl << endl << endl;
+	cout << "\t\tCargando "; Sleep(200);
+	cout << " * "; Sleep(300);
+	cout << " * "; Sleep(300);
+	cout << " * "; Sleep(300);
+	system("cls");
+}
+int Vista::presentacionInicial(DiaYCodigo* d) {
+	cout << "===================================================\n";
+	cout << "\t\tBienvenido(a) a Dots\n";
+	cout << "===================================================\n";
+	cout << "\t\t1.Suscribirse			 Dia de la Semana:\n"; 
+	cout << "\t\t2.Jugar partida de Dots          "; cout << d->getDia(); cout << endl;
+	cout << "\t\t3.Cargar Partidas Guardadas      Codigo de acceso del dia:\n";
+	cout << "\t\t4.Cambiar dia				  "; cout << d->getCodigo(); cout << endl;
+	cout << "\t\t5.Salir del juego\n";
+	cout << "\t\tDigite la opcion:\n";
+	cout << "\t\t-> "; return opcion();
+	system("cls");
+}
+
 int Vista::menuPrincipal(){
 	cout << "===================================================\n";
 	cout << "\t\tBienvenido(a) a Dots\n";
@@ -50,10 +79,12 @@ int Vista::menuMatriz(){
 	limpiaPantalla();
 	cout << "===================================================\n";
 	cout << "\t\tSeleccione el tamannio de matriz en que desea jugar:\n";
+	cout << "\t\tNota: Puuede agregar varias opciones 1, 2 o 3 \n";
+	cout << "\t\t	   o si desea solo agrega una opcion.\n";
 	cout << "\t\t1. Matriz(6 ptos) 3x2\n";
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
 	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
-	cout << "\t\t4. Salir\n";
+	cout << "\t\t4. Jugar\n";
 	cout << "\t\t5. Regresar\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
@@ -159,8 +190,7 @@ void Vista::textoGraciasPorJugar(){
 	system("pause");
 }
 
-void Vista::coordenadas()
-{
+void Vista::coordenadas(){
 	cout << "===================================================\n";
 	cout << "Ingrese las coordenadas de la posicion: [fila][columna]\n";
 }
@@ -189,5 +219,67 @@ CampoAbstracto* Vista::creandoMatriz15(){
 	c = new CampoQuincePuntos();
 	return c;
 }
+
+Observer* Vista::crearUsuario(){
+	limpiaPantalla();
+	Observer* usuario;
+	string nombre,id;
+	cout << "===================================================\n";
+	cout << "\t\tSuscripcion\n";
+	cout << "===================================================\n";
+	cout << "\t\tIngrese la identificacion del usuario\n";
+	cout << "\t\t-> "; id = pedirCadena();
+	cout << "\t\tIngrese el nombre del usuario\n";
+	cout << "\t\t-> "; nombre = pedirCadena();
+	system("cls");
+	usuario = new Persona(nombre,id);
+	return usuario;
+}
+
+Observer* Vista::ValidaUsuario(Subject* sub){
+	Observer* usuario;
+	Subject* s;
+	string ced;
+	cout << "===================================================\n";
+	cout << "\t\tIngrese la cedula del usuario:\n";
+	cout << "\t\t***Ya debe estar Subscrito***\n";
+	cout << "===================================================\n";
+	cout << "\t\t-> "; ced = pedirCadena();
+	usuario = sub->recuperaUsuario(ced);
+	if (usuario != NULL) {
+		return usuario;
+	}
+	else
+	{
+		return NULL;
+	}
+}
+
+bool Vista::deseaPagar(){
+	bool bandera = false;
+	string respuesta;
+	cout << "===================================================\n";
+	cout << "\t\tDesea pagar 500 colones para suscribirse?\n";
+	cout << "\t\tSi lo desea ingrese S, de lo contrario ingrese N\n";
+	cout << "\t\t-> "; cin >>respuesta;
+	if (respuesta == "S" || respuesta == "s") {
+		bandera = true;
+	}
+	else{
+		bandera = false;
+	}
+	return bandera;
+}
+
+void Vista::SuscripcionExitosa(){
+	cout << "\t\tSuscripcion realizada con exito!!!\n";
+	cout << endl;
+}
+
+void Vista::pausa(){
+	system("pause");
+}
+
+
 
 

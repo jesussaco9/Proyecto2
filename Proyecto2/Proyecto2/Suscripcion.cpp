@@ -1,8 +1,8 @@
 #include "Suscripcion.h"
 
-Suscripcion::Suscripcion(int cod) {
-	codigoDiario = cod;
-	tam = 10;
+Suscripcion::Suscripcion() {
+	codigoDiario = 0;
+	tam = 1;
 	can = 0;
 	vec = new Observer * [tam];
 	for (int i = 0; i < tam; i++) {
@@ -47,3 +47,13 @@ int Suscripcion::getCodigoDiario() {
 void Suscripcion::setCodigodiaro(int cod) {
 	this->codigoDiario = cod;
 }
+
+Observer* Suscripcion::recuperaUsuario(string id){
+	for (int i = 0; i < can; i++) {
+		if (vec[i]->getId() == id) {
+			return vec[i];
+		}
+	}
+	return NULL;
+}
+
