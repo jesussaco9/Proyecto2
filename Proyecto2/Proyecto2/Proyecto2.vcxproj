@@ -157,6 +157,7 @@
     <ClCompile Include="ElementosDeMatriz.cpp" />
     <ClCompile Include="ElementoVacio.cpp" />
     <ClCompile Include="Estrategia.cpp" />
+    <ClCompile Include="GestorArchivos.cpp" />
     <ClCompile Include="Islas.cpp" />
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="main.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="ElementosDeMatriz.h" />
     <ClInclude Include="ElementoVacio.h" />
     <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="GestorArchivos.h" />
     <ClInclude Include="Islas.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Observer.h" />
