@@ -2,7 +2,7 @@
 
 Controladora::Controladora(){
 	campoAbs = new CampoResultante();
-	listaCoordenadas = new Lista();
+	listaCoordenadas = new Lista<Coordenada>();
 	cont = 0;
 	modalidad = 0;
 	SubjUsuarios = new Suscripcion();

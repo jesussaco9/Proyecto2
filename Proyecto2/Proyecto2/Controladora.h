@@ -24,7 +24,7 @@ private:
 	CampoAbstracto* campoAbs;
 	Estrategia* e;
 	Estrategia* aux;
-	Lista* listaCoordenadas;
+	Lista<Coordenada>* listaCoordenadas;
 	Subject* SubjUsuarios;
 	DiaYCodigo* dia;
 	int cont;

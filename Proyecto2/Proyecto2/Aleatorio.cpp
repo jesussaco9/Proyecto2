@@ -1,6 +1,6 @@
 #include"Aleatorio.h"
 
-Aleatorio::Aleatorio(ContenedorM* m, Lista* l){
+Aleatorio::Aleatorio(ContenedorM* m, Lista<Coordenada>* l){
 	tab = m;
 	filas=0;
 	columnas=0;

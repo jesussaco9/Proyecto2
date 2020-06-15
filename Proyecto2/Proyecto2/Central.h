@@ -7,13 +7,13 @@ class Central :public Estrategia{
 
 private:
 	ContenedorM* tab;
-	Lista* lis;
+	Lista<Coordenada>* lis;
 	int filas;
 	int columnas;
 	int limite1;
 	int limite2;
 public:
-	Central(ContenedorM* m, Lista* l);
+	Central(ContenedorM* m, Lista<Coordenada>* l);
 	~Central();
 	virtual bool jugada();
 	string toString();

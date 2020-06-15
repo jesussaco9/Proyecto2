@@ -3,12 +3,12 @@
 class Islas: public Estrategia{
 private:
 	ContenedorM* tab;
-	Lista* lis;
+	Lista<Coordenada>* lis;
 	int filas;
 	int columnas;
 	int cont;
 public:
-	Islas(ContenedorM*, Lista*);
+	Islas(ContenedorM*, Lista<Coordenada>*);
 	~Islas();
 	virtual bool jugada();
 	string toString();

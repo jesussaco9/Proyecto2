@@ -6,11 +6,11 @@ class Cercano :public Estrategia
 {
 private:
 	ContenedorM* tab;
-	Lista* lis;
+	Lista<Coordenada>* lis;
 	int filas;
 	int columnas;
 public:
-	Cercano(ContenedorM*, Lista*);
+	Cercano(ContenedorM*, Lista<Coordenada>*);
 	~Cercano();
 	virtual bool jugada();
 	string toString();

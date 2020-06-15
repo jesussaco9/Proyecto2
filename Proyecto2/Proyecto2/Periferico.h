@@ -5,12 +5,12 @@ using std::string;
 class Periferico :public Estrategia{
 private:
 	ContenedorM* tab;
-	Lista* lis;
+	Lista<Coordenada>* lis;
 	int filas;
 	int columnas;
 	int ini;
 public:
-	Periferico(ContenedorM*, Lista*);
+	Periferico(ContenedorM*, Lista<Coordenada>*);
 	~Periferico(); 
 	virtual bool jugada();
 	string toString();

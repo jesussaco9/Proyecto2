@@ -1,6 +1,6 @@
 #include"Cercano.h"
 
-Cercano::Cercano(ContenedorM* m, Lista* l)
+Cercano::Cercano(ContenedorM* m, Lista<Coordenada>* l)
 {
 	tab = m;
 	lis = l;

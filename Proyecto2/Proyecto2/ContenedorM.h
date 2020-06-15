@@ -17,7 +17,7 @@ class ContenedorM{
 private:
 	ElementosDeMatriz*** mat;//Siguiendo el UML del profe
 	ContenedorV* vector;
-	Lista* lista;
+	Lista<Coordenada>* lista;
 	int fil;
 	int col;
 	int inicia, fin;
@@ -33,7 +33,7 @@ private:
 	int jugadaMX;
 	int jugadaMY;
 public:
-	ContenedorM(ContenedorV*,Lista*,int);
+	ContenedorM(ContenedorV*,Lista<Coordenada>*,int);
 	virtual ~ContenedorM();
 	void pasaInfoVectorMatriz();
 	void llenarMatrizElementos();

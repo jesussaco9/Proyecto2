@@ -1,6 +1,6 @@
 ﻿#include "ContenedorM.h"
 
-ContenedorM::ContenedorM(ContenedorV* vec, Lista* _lista, int modo) {
+ContenedorM::ContenedorM(ContenedorV* vec, Lista<Coordenada>* _lista, int modo) {
 	cor1 = 0;
 	cor2 = 0;
 	inicio = 0;

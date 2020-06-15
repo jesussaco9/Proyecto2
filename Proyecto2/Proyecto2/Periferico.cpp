@@ -1,6 +1,6 @@
 #include"Periferico.h"
 
-Periferico::Periferico(ContenedorM* m, Lista* l){
+Periferico::Periferico(ContenedorM* m, Lista<Coordenada>* l){
 	tab = m;
 	filas = 0;
 	columnas = 0;

@@ -1,5 +1,5 @@
 #include"Central.h"
-Central::Central(ContenedorM* m, Lista* l){
+Central::Central(ContenedorM* m, Lista<Coordenada>* l){
 	tab = m;
 	filas = 0;
 	columnas =0;

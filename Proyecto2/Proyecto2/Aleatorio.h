@@ -9,11 +9,11 @@ using std::string;
 class Aleatorio :public Estrategia{
 private:
 	ContenedorM* tab;
-	Lista* lis;
+	Lista<Coordenada>* lis;
 	int filas;
 	int columnas;
 public:
-	Aleatorio(ContenedorM*, Lista*);
+	Aleatorio(ContenedorM*, Lista<Coordenada>*);
 	~Aleatorio();
 	virtual bool jugada();
 	string toString();

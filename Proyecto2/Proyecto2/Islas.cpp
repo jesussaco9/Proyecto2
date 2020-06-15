@@ -1,6 +1,6 @@
 #include "Islas.h"
 
-Islas::Islas(ContenedorM* m, Lista* l){
+Islas::Islas(ContenedorM* m, Lista<Coordenada>* l){
 	tab = m;
 	filas = 0;
 	columnas = 0;
