@@ -33,3 +33,7 @@ int CampoNuevePuntos::getCol(){
 ContenedorV* CampoNuevePuntos::retornaContenedor(){//No se desarrolla
 	return nullptr;
 }
+
+void CampoNuevePuntos::limpiaVector()
+{
+}

@@ -15,5 +15,6 @@ public:
 	virtual ElementosDeMatriz* retornarPos(int x, int y);
 	int getCol();
 	ContenedorV* retornaContenedor();
+	virtual void limpiaVector();
 };
 

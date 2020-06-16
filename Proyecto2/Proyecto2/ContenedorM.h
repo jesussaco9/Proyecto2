@@ -70,5 +70,6 @@ public:
 	void setJugadaMY(int);
 	ContenedorV* getContenedorV();
 	Lista<Coordenada>* getLista();
+	void limpiaMatriz();
 };
 

@@ -17,5 +17,6 @@ public:
 	int inicializarPrimeraPosicion();
 	CampoAbstracto* getCampoAbstracto(int);
 	bool ultimaPosicionValida(int);
+	virtual void limpiaVector();
 };
 

@@ -45,12 +45,13 @@ public:
 	int menuModoJuego();
 	void creaCampo();
 	void comenzarJuego();
+	void limpiaContenedores();
 	void crea6puntos();
 	void crea9puntos();
 	void crea15puntos();
 	void creaModo(int);
 	void crearUsuario();
-
+	
 	void guardar();
 	void recuperar();
 };

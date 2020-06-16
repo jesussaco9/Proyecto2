@@ -15,5 +15,6 @@ public:
 	void ingresaCampo(CampoAbstracto*);
 	int getCol();
 	ContenedorV* retornaContenedor();
+	virtual void limpiaVector();
 };
 

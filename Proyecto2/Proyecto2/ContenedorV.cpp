@@ -43,6 +43,12 @@ bool ContenedorV::ultimaPosicionValida(int pos)
 	return false;
 }
 
+void ContenedorV::limpiaVector(){
+	for (int i = 0; i < tam; i++) {
+		vec[i] = NULL;
+	}
+}
+
 CampoAbstracto* ContenedorV::getCampoAbstracto(int pos){
 	if (pos >= 0 && pos < can) {
 		return vec[pos];

@@ -35,3 +35,7 @@ int CampoQuincePuntos::getCol(){
 ContenedorV* CampoQuincePuntos::retornaContenedor(){//No se desarrolla
 	return nullptr;
 }
+
+void CampoQuincePuntos::limpiaVector()
+{
+}

@@ -79,6 +79,7 @@ int Controladora::menuModalidad(){
 
 void Controladora::menuMatriz(){
 	int opcion;
+	//campoAbs = new CampoResultante();
 	do {
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
@@ -95,6 +96,9 @@ void Controladora::menuMatriz(){
 			creaCampo();
 			cout << "\t\tCreando matriz... Espere un momento" << endl;
 			Sleep(1000);
+			break;
+		case 5:
+			menuJuego();
 			break;
 		default:
 			break;
@@ -127,60 +131,60 @@ void Controladora::comenzarJuego(){
 		modo=menuModoJuego();
 		creaModo(modo);
 		
-		while (campoMatriz->continuaJuego()) {
-			if (cont % 2 == 0) {
-				campoMatriz->setInicio(cont2);
-				campoMatriz->setSigue(true);
-				while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
-					e = aux;
-					if (e->jugada()) {
-						Vista::textoMaquinaJugando();
-						Sleep(2000);
-						e->setCont(0);
-						campoMatriz->validaCuadroCerrado(cont);
-					}
-					else {
-						e = new Aleatorio(campoMatriz, listaCoordenadas);
+			while (campoMatriz->continuaJuego()) {
+				if (cont % 2 == 0) {
+					campoMatriz->setInicio(cont2);
+					campoMatriz->setSigue(true);
+					while ((campoMatriz->getSigue() == true)&&(campoMatriz->continuaJuego()==true)) {
+						e = aux;
 						if (e->jugada()) {
 							Vista::textoMaquinaJugando();
 							Sleep(2000);
-							aux->setCont(1);
+							e->setCont(0);
 							campoMatriz->validaCuadroCerrado(cont);
-							cont2++;
-						}
-					}
-					system("cls");
-					MostrarCampoDeJuego();
-				}
-				cont2+=2;
-			}
-			else if (cont % 2 != 0) {
-				campoMatriz->setSigue(true);
-				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
-					do {
-						Vista::turnoJ2();
-						Vista::coordenadas();
-						int a = Vista::coordenada1();
-						int b = Vista::coordenada2();
-						campoMatriz->setCor1(a - 1);
-						campoMatriz->setCor2(b - 1);
-						if (campoMatriz->ingresaPunto(a, b)) {
-							bandera = true;
 						}
 						else {
-							bandera = false;
+							e = new Aleatorio(campoMatriz, listaCoordenadas);
+							if (e->jugada()) {
+								Vista::textoMaquinaJugando();
+								Sleep(2000);
+								aux->setCont(1);
+								campoMatriz->validaCuadroCerrado(cont);
+								cont2++;
+							}
 						}
-						campoMatriz->validaCuadroCerrado(cont);
 						system("cls");
 						MostrarCampoDeJuego();
-					} while (bandera == false);
-					
+					}
+					cont2+=2;
 				}
+				else if (cont % 2 != 0) {
+					campoMatriz->setSigue(true);
+					while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
+						do {
+							Vista::turnoJ2();
+							Vista::coordenadas();
+							int a = Vista::coordenada1();
+							int b = Vista::coordenada2();
+							campoMatriz->setCor1(a - 1);
+							campoMatriz->setCor2(b - 1);
+							if (campoMatriz->ingresaPunto(a, b)) {
+								bandera = true;
+							}
+							else {
+								bandera = false;
+							}
+							campoMatriz->validaCuadroCerrado(cont);
+							system("cls");
+							MostrarCampoDeJuego();
+						} while (bandera == false);
+					
+					}
+				}
+				cont++;
 			}
-			cont++;
-		}
-		if (campoMatriz->continuaJuego() == false) {
-			if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
+			if (campoMatriz->continuaJuego() == false) {
+				if (campoMatriz->getContador1() > campoMatriz->getContador2()) {
 				Vista::textoGanoJugador1();
 			}
 			else if (campoMatriz->getContador1() < campoMatriz->getContador2()){
@@ -190,8 +194,10 @@ void Controladora::comenzarJuego(){
 				Vista::textoJuegoEmpatado();
 			}
 			Vista::textoGraciasPorJugar();
+			
 			guardar();
-		}
+			limpiaContenedores();
+			}
 	}
 	else if (modalidad == 2) {
 		menuMatriz();
@@ -267,6 +273,13 @@ void Controladora::comenzarJuego(){
 		}
 	}
 }
+
+void Controladora::limpiaContenedores(){
+	campoAbs->limpiaVector();
+	campoMatriz->limpiaMatriz();
+}
+
+
 
 void Controladora::crea6puntos(){
 	CampoAbstracto* c;

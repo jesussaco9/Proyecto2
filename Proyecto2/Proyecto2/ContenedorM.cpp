@@ -500,6 +500,14 @@ Lista<Coordenada>* ContenedorM::getLista(){
 	return lista;
 }
 
+void ContenedorM::limpiaMatriz(){
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+			mat[i][j] = NULL;
+		}
+	}
+}
+
 
 
 

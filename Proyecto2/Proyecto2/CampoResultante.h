@@ -15,5 +15,6 @@ public:
 	string toString();
 	ElementosDeMatriz* retornarPos(int x, int y);
 	int getCol();
+	virtual void limpiaVector();
 };
 

@@ -36,3 +36,7 @@ int CampoResultante::getCol()
 {
 	return 0;
 }
+
+void CampoResultante::limpiaVector()
+{
+}
