@@ -45,5 +45,7 @@ public:
 	static bool deseaPagar();
 	static void SuscripcionExitosa();
 	static void pausa();
+	static void textoCreandoMatriz();
+	static bool cambioEstrategia();
 };
 

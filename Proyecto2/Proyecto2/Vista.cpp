@@ -283,6 +283,24 @@ void Vista::pausa(){
 	system("pause");
 }
 
+void Vista::textoCreandoMatriz(){
+	cout << "\t\tCreando matriz... Espere un momento" << endl;
+}
+bool Vista::cambioEstrategia(){
+	bool bandera = false;
+	string respuesta;
+	cout << "===================================================\n";
+	cout << "Desea cambiar la estrategia?\n";
+	cout << "Si lo desea ingrese S, de lo contrario ingrese N\n";
+	cout << "-> "; cin >> respuesta;
+	if (respuesta == "S" || respuesta == "s") {
+		bandera = true;
+	}
+	else {
+		bandera = false;
+	}
+	return bandera;
+}
 
 
 

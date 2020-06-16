@@ -53,7 +53,8 @@ public:
 	void crea15puntos();
 	void creaModo(int);
 	void crearUsuario();
-	
+	void cambiarEstrategia();
+
 	void guardar();
 	void recuperar();
 };

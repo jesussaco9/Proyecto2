@@ -107,7 +107,7 @@ void Controladora::menuMatriz(){
 			break;
 		case 4:
 			creaCampo();
-			cout << "\t\tCreando matriz... Espere un momento" << endl;
+			Vista::textoCreandoMatriz();
 			Sleep(1000);
 			break;
 		default:
@@ -172,6 +172,8 @@ void Controladora::comenzarJuego(){
 					campoMatriz->setSigue(true);
 					while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 						do {
+							cambiarEstrategia();
+							MostrarCampoDeJuego();
 							Vista::turnoJ2();
 							Vista::coordenadas();
 							int a = Vista::coordenada1();
@@ -227,7 +229,6 @@ void Controladora::comenzarJuego(){
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					do {
-						string color = "Azul";
 						Vista::turnoJ1();
 						Vista::coordenadas();
 						int a = Vista::coordenada1();
@@ -248,7 +249,6 @@ void Controladora::comenzarJuego(){
 				campoMatriz->setSigue(true);
 				while ((campoMatriz->getSigue() == true) && (campoMatriz->continuaJuego() == true)) {
 					do {
-						string color = "Azul";
 						Vista::turnoJ2();
 						Vista::coordenadas();
 						int a = Vista::coordenada1();
@@ -384,6 +384,41 @@ void Controladora::crearUsuario(){
 		e.porque();
 	}
 }
+
+void Controladora::cambiarEstrategia()
+{
+	int m;
+	if (Vista::cambioEstrategia()) {
+		m = menuModoJuego();
+		switch (m)
+		{
+		case 1:
+			e = new Aleatorio(campoMatriz, listaCoordenadas);
+			aux = e;
+			break;
+		case 2:
+			e = new Cercano(campoMatriz, listaCoordenadas);
+			aux = e;
+			break;
+		case 3:
+			e = new Periferico(campoMatriz, listaCoordenadas);
+			aux = e;
+			break;
+		case 4:
+			e = new Central(campoMatriz, listaCoordenadas);
+			aux = e;
+			break;
+		case 5:
+			e = new Islas(campoMatriz, listaCoordenadas);
+			aux = e;
+			break;
+		default:
+			break;
+		}
+	}
+	system("cls");
+}
+
 
 void Controladora::guardar() {
 	GestorArchivos gestor("juegos.txt");
