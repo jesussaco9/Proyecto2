@@ -162,6 +162,7 @@
     <ClCompile Include="Lista.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Partida.cpp" />
     <ClCompile Include="Periferico.cpp" />
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="ProcesaCompuesto.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Islas.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="Partida.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="ProcesaCompuesto.h" />
     <ClInclude Include="Punto.h" />

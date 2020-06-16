@@ -8,6 +8,7 @@ Controladora::Controladora(){
 	SubjUsuarios = new Suscripcion();
 	dia = new DiaYCodigo();
 	listaCoordenadasPorPartida = new Lista<Coordenada>();
+	listaPartidas = new Lista<Partida>();
 }
 
 void Controladora::menuPrincipal() {
@@ -375,14 +376,14 @@ void Controladora::crearUsuario(){
 }
 
 void Controladora::guardar() {
-	GestorArchivos gestor("coordenadas.txt");
+	GestorArchivos gestor("juegos.txt");
 	gestor.abrirFlujoModoEscritura();
 	gestor.guardarCoordenadas(listaCoordenadasPorPartida);
 	gestor.cerrarFlujo();
 }
 
 void Controladora::recuperar() {
-	GestorArchivos gestor("coordenadas.txt");
+	GestorArchivos gestor("juegos.txt");
 	gestor.abrirFlujoModoLectura();
 	Lista<Coordenada>* listaCoordenadas = gestor.recuperarCoordenadas();
 

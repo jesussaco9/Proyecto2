@@ -18,7 +18,7 @@
 #include "Suscripcion.h"
 #include "DiaYCodigo.h"
 #include "GestorArchivos.h"
-//#include "Partida.h"
+#include "Partida.h"
 class Controladora {
 private:
 	ContenedorM* campoMatriz;
@@ -28,7 +28,8 @@ private:
 	Estrategia* aux;
 	Lista<Coordenada>* listaCoordenadas;
 	Lista<Coordenada>* listaCoordenadasPorPartida;
-	//Lista<Partida>* listaPartidas;
+	Lista<Partida>* listaPartidas;
+	Partida* partida;
 	Subject* SubjUsuarios;
 	DiaYCodigo* dia;
 	int cont;

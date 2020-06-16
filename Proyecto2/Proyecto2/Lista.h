@@ -1,8 +1,7 @@
 #pragma once
 #include "Coordenada.h"
+#include "Partida.h"
 
-
-//class Partida;
 
 template<class T>
 class Nodo {

@@ -33,9 +33,14 @@ public:
     virtual double recuperarDouble(char);
     virtual string recuperarString(char);
     virtual bool recuperarBool(char);
-//    //****Paso 4*****
+//    ****Paso 4*****
     virtual void guardarCoordenada(Coordenada*);
     virtual Coordenada* recuperarCoordenada();
     virtual void guardarCoordenadas(Lista<Coordenada>*);
     virtual Lista<Coordenada>* recuperarCoordenadas();
+
+    /*virtual void guardarCoordenada(Coordenada*);
+    virtual Coordenada* recuperarCoordenada();
+    virtual void guardarCoordenadas(Lista<Coordenada>*);
+    virtual Lista<Coordenada>* recuperarCoordenadas();*/
 };
