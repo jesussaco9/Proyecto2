@@ -37,6 +37,7 @@ private:
 	int modalidad;
 public:
 	Controladora();
+	virtual ~Controladora();
 	void menuPrincipal();
 	void menuJuego();
 	void menuValidacion();

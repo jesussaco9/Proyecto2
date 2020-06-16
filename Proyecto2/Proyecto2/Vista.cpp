@@ -85,7 +85,6 @@ int Vista::menuMatriz(){
 	cout << "\t\t2. Matriz(9 ptos) 3x3\n";
 	cout << "\t\t3. Matriz(15 ptos) 5x3\n";
 	cout << "\t\t4. Jugar\n";
-	cout << "\t\t5. Regresar\n";
 	cout << "===================================================\n";
 	cout << "\t\tDigite la opcion:\n";
 	cout << "\t\t-> "; return opcion();

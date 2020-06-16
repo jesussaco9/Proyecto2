@@ -11,7 +11,6 @@ class ElementosDeMatriz{
 protected:
 	int posicionX;
 	int posicionY;
-	string color;
 	string tipo;
 public:
 	//ElementosDeMatriz();

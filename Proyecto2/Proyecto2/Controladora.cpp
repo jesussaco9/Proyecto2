@@ -1,7 +1,7 @@
 #include "Controladora.h"
 
 Controladora::Controladora(){
-	campoAbs = new CampoResultante();
+	//campoAbs = new CampoResultante();
 	listaCoordenadas = new Lista<Coordenada>();
 	cont = 0;
 	modalidad = 0;
@@ -11,12 +11,22 @@ Controladora::Controladora(){
 	listaPartidas = new Lista<Partida>();
 }
 
+Controladora::~Controladora(){
+	//delete campoAbs;
+	delete listaCoordenadas;
+	delete SubjUsuarios;
+	delete dia;
+	listaCoordenadasPorPartida;
+	delete listaPartidas;
+}
+
 void Controladora::menuPrincipal() {
 	int opcion;
 	do {
 		Vista::cargando();
 		opcion = Vista::presentacionInicial(dia);
 		switch (opcion) {
+			recuperar();
 		case 1://Suscripcion
 			system("cls");
 			crearUsuario();
@@ -27,6 +37,8 @@ void Controladora::menuPrincipal() {
 			break;
 		case 3://Cargar partidas
 			system("cls");
+			cout<<listaCoordenadasPorPartida->toString();
+			system("pause");
 			break;
 		case 4://Cambiar de dia
 			dia->setCont();
@@ -80,7 +92,7 @@ int Controladora::menuModalidad(){
 
 void Controladora::menuMatriz(){
 	int opcion;
-	//campoAbs = new CampoResultante();
+	campoAbs = new CampoResultante();
 	do {
 		opcion = Vista::menuMatriz();
 		switch (opcion) {
@@ -97,9 +109,6 @@ void Controladora::menuMatriz(){
 			creaCampo();
 			cout << "\t\tCreando matriz... Espere un momento" << endl;
 			Sleep(1000);
-			break;
-		case 5:
-			menuJuego();
 			break;
 		default:
 			break;
@@ -269,6 +278,7 @@ void Controladora::comenzarJuego(){
 				Vista::textoJuegoEmpatado();
 			}
 			Vista::textoGraciasPorJugar();
+			limpiaContenedores();
 			menuJuego();
 			guardar();
 		}
